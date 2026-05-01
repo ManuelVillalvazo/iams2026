@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Pre-calificación Mentoría Científica</title>
+<style>
+body {
+background-color: #0d1117;
+color: #c9d1d9;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+overflow: hidden;
+}
+.form-container {
+width: 80%;
+max-width: 600px;
+text-align: left;
+}
+.step {
+display: none;
+animation: fadeIn 0.5s ease-in-out;
+}
+.step.active {
+display: block;
+}
+h2 { color: #58a6ff; font-size: 1.8rem; }
+input, select, textarea {
+width: 100%;
+padding: 12px;
+background: #161b22;
+border: 1px solid #30363d;
+color: white;
+border-radius: 6px;
+
+margin-top: 10px;
+font-size: 1.1rem;
+}
+button {
+background-color: #238636;
+color: white;
+border: none;
+padding: 12px 24px;
+border-radius: 6px;
+cursor: pointer;
+margin-top: 20px;
+font-weight: bold;
+}
+button:hover { background-color: #2ea043; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to {
+opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+<div class="form-container">
+<div id="step1" class="step active">
+<h2>1. ¿Cuál es tu nombre?</h2>
+<input type="text" id="name" placeholder="Ej: Juan Pérez - México">
+<button onclick="nextStep(2)">Siguiente</button>
+</div>
+<div id="step2" class="step">
+<h2>2. ¿Cuál es tu licenciatura o área de estudio?</h2>
+<select id="career">
+<option value="medicina">Medicina</option>
+<option value="ingenieria">Ingenierías</option>
+<option value="ciencias">Ciencias Exactas / Naturales</option>
+<option value="otra">Otra</option>
+</select>
+<button onclick="nextStep(3)">Siguiente</button>
+</div>
+<div id="step3" class="step">
+<h2>3. ¿Hablas algún otro idioma además de español?</h2>
+<textarea id="goal" rows="3" placeholder="Cuéntanos brevemente tu
+meta..."></textarea>
+<button onclick="nextStep(4)">Siguiente</button>
+</div>
+
+<div id="step4" class="step">
+<h2>4. ¡Listo! ¿Por dónde quieres recibir la información?</h2>
+<input type="text" id="contact" placeholder="WhatsApp o Correo">
+<button onclick="finish()">Enviar Solicitud</button>
+</div>
+</div>
+<script>
+function nextStep(step) {
+document.querySelectorAll('.step').forEach(s =>
+s.classList.remove('active'));
+document.getElementById('step' + step).classList.add('active');
+}
+function finish() {
+alert('¡Gracias! Los datos se han registrado. (Aquí conectarías con
+WhatsApp API o un backend)');
+}
+</script>
+</body>
+</html>
