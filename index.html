@@ -3,19 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4th IAMS World Congress 2026</title>
+
+  <title>4th IAMS World Congress 2026 | Campeche, Mexico</title>
+  <meta name="description" content="4th IAMS World Congress 2026 in Campeche, Mexico. International medical congress for recognition, networking, collaboration and professional community." />
 
   <style>
     :root {
-      --navy: #081833;
-      --blue: #132b63;
+      --navy: #071731;
+      --blue: #112a63;
+      --royal: #1d3f8f;
       --gold: #c9a24a;
+      --gold-soft: #f3dfaa;
       --cream: #f7f1e5;
       --white: #ffffff;
-      --light: #f6f7fb;
-      --text: #162033;
+      --light: #f5f7fb;
+      --text: #172033;
       --muted: #667085;
-      --border: #d9e0ea;
+      --border: #d8dee8;
+      --shadow: 0 24px 70px rgba(7, 23, 49, 0.18);
     }
 
     * {
@@ -37,31 +42,36 @@
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     .topbar {
       background: var(--navy);
       color: #dbe7f5;
       font-size: 12px;
-      padding: 9px 20px;
-      text-align: center;
       font-weight: 700;
+      padding: 9px 18px;
+      text-align: center;
     }
 
     header {
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
     }
 
     nav {
-      height: 64px;
-      padding: 0 20px;
+      height: 66px;
+      padding: 0 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -74,50 +84,106 @@
       color: var(--navy);
       font-weight: 900;
       letter-spacing: 0.04em;
-      font-size: 14px;
+      font-size: 13px;
     }
 
     .brand-mark {
       width: 38px;
       height: 38px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), #f5d982);
+      background: linear-gradient(135deg, var(--gold), #f6dc82);
       display: grid;
       place-items: center;
       font-family: Georgia, serif;
-      color: var(--navy);
       font-weight: 900;
+      color: var(--navy);
       font-size: 12px;
+      box-shadow: 0 8px 24px rgba(201, 162, 74, 0.35);
     }
 
-    .nav-cta {
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .mini-cta {
       background: var(--gold);
       color: var(--navy);
-      padding: 10px 14px;
       border-radius: 999px;
+      padding: 10px 13px;
+      font-size: 12px;
       font-weight: 900;
-      font-size: 13px;
+    }
+
+    .menu-toggle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--navy);
+      font-size: 22px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
     }
 
     .desktop-links {
       display: none;
     }
 
-    .hero {
-      min-height: 76vh;
-      background:
-        linear-gradient(180deg, rgba(8, 24, 51, 0.88) 0%, rgba(8, 24, 51, 0.72) 52%, rgba(8, 24, 51, 0.95) 100%),
-        url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1780953766/iStock-1486790456__1__1_bzcdvu.webp");
-      background-size: cover;
-      background-position: center;
-      color: white;
-      display: flex;
-      align-items: flex-end;
-      padding: 42px 20px;
+    .mobile-menu {
+      display: none;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 10px 18px 18px;
     }
 
-    .hero-inner {
-      max-width: 680px;
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 15px 2px;
+      border-bottom: 1px solid var(--border);
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .mobile-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-menu .buy-link {
+      margin-top: 14px;
+      background: var(--gold);
+      color: var(--navy);
+      text-align: center;
+      border-radius: 999px;
+      border-bottom: none;
+    }
+
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .hero-wrap {
+      display: grid;
+      grid-template-columns: 1fr;
+      min-height: 78vh;
+    }
+
+    .hero-copy {
+      padding: 52px 20px 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
     }
 
     .eyebrow {
@@ -131,67 +197,133 @@
 
     h1 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(40px, 12vw, 74px);
-      line-height: 0.98;
-      letter-spacing: -0.045em;
+      font-size: clamp(40px, 11vw, 86px);
+      line-height: 0.96;
+      letter-spacing: -0.055em;
       margin-bottom: 18px;
     }
 
-    .hero p {
+    .hero-copy p {
+      color: #dbe7f5;
       font-size: 17px;
-      color: #e5edf6;
-      margin-bottom: 24px;
       max-width: 620px;
+      margin-bottom: 24px;
     }
 
-    .hero-actions {
+    .hero-buttons {
       display: grid;
       grid-template-columns: 1fr;
       gap: 12px;
+      margin-bottom: 26px;
     }
 
     .btn {
+      border-radius: 999px;
+      min-height: 52px;
+      padding: 15px 20px;
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      border-radius: 999px;
-      padding: 15px 20px;
       font-weight: 900;
       font-size: 15px;
-      min-height: 52px;
+      cursor: pointer;
     }
 
     .btn-primary {
       background: var(--gold);
       color: var(--navy);
+      box-shadow: 0 16px 36px rgba(201, 162, 74, 0.28);
     }
 
     .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.55);
-      color: white;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.42);
       background: rgba(255,255,255,0.08);
     }
 
-    .quick-details {
-      background: white;
-      margin: -26px 20px 0;
-      position: relative;
-      z-index: 2;
-      border-radius: 24px;
-      box-shadow: 0 22px 60px rgba(8,24,51,0.18);
-      overflow: hidden;
+    .hero-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 999px;
+      padding: 10px 14px;
+      color: #e5edf6;
+      font-weight: 800;
+      font-size: 13px;
+      width: fit-content;
     }
 
-    .detail {
+    .hero-visual {
+      min-height: 330px;
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(7,23,49,0.08), rgba(7,23,49,0.78)),
+        url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1780953766/iStock-1486790456__1__1_bzcdvu.webp");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 36px;
+      pointer-events: none;
+    }
+
+    .campeche-card {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 22px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      color: var(--navy);
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .campeche-card span {
+      display: block;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-size: 11px;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .campeche-card strong {
+      display: block;
+      font-family: Georgia, serif;
+      font-size: 28px;
+      line-height: 1.05;
+    }
+
+    .quick-info {
+      background: var(--white);
+      margin: -24px 18px 0;
+      border-radius: 24px;
+      position: relative;
+      z-index: 3;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .info-item {
       padding: 18px 20px;
       border-bottom: 1px solid var(--border);
     }
 
-    .detail:last-child {
+    .info-item:last-child {
       border-bottom: none;
     }
 
-    .detail span {
+    .info-item span {
       display: block;
       color: var(--muted);
       font-size: 11px;
@@ -201,9 +333,9 @@
       margin-bottom: 5px;
     }
 
-    .detail strong {
+    .info-item strong {
       color: var(--navy);
-      font-size: 17px;
+      font-size: 16px;
     }
 
     section {
@@ -221,64 +353,21 @@
 
     .section-title h2 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(34px, 9vw, 56px);
       color: var(--navy);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
+      font-size: clamp(34px, 9vw, 60px);
+      line-height: 1.03;
+      letter-spacing: -0.045em;
       margin-bottom: 14px;
     }
 
     .section-title p {
       color: var(--muted);
       font-size: 16px;
-    }
-
-    .cards {
-      display: grid;
-      gap: 16px;
-    }
-
-    .card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 12px 30px rgba(8,24,51,0.06);
-    }
-
-    .card-tag {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 0.13em;
-      font-size: 11px;
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-
-    .card h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--navy);
-      font-size: 26px;
-      line-height: 1.1;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 15px;
+      max-width: 690px;
     }
 
     .numbers {
-      background: var(--navy);
-      color: white;
-    }
-
-    .numbers .section-title h2 {
-      color: white;
-    }
-
-    .numbers .section-title p {
-      color: #cbd5e1;
+      background: var(--light);
     }
 
     .number-grid {
@@ -288,165 +377,138 @@
     }
 
     .number-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 22px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
       padding: 22px;
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 12px 30px rgba(7,23,49,0.06);
     }
 
     .number-card strong {
-      display: block;
       font-family: Georgia, serif;
-      font-size: 36px;
-      color: var(--gold);
+      font-size: 40px;
+      color: var(--navy);
       line-height: 1;
-      margin-bottom: 8px;
     }
 
     .number-card span {
-      font-size: 13px;
-      color: #dbe7f5;
-      font-weight: 800;
-    }
-
-    .venue {
-      background: var(--cream);
-    }
-
-    .venue-image {
-      min-height: 280px;
-      border-radius: 26px;
-      background:
-        linear-gradient(rgba(8,24,51,0.05), rgba(8,24,51,0.05)),
-        url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1780953830/Centro-de-Convenciones-Campeche-Siglo-XXI-1_1_xrpf5t.webp");
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0 22px 60px rgba(8,24,51,0.16);
-      margin-bottom: 22px;
-    }
-
-    .list {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .list li {
-      padding: 13px 0;
-      border-top: 1px solid var(--border);
-      color: var(--blue);
-      font-weight: 800;
-      font-size: 15px;
-    }
-
-    .list li::before {
-      content: "✓";
-      color: var(--gold);
-      margin-right: 8px;
-      font-weight: 900;
-    }
-
-    .experience {
-      background: white;
-    }
-
-    .horizontal-scroll {
-      display: flex;
-      gap: 16px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding-bottom: 10px;
-    }
-
-    .scroll-card {
-      min-width: 78%;
-      scroll-snap-align: start;
-      background: var(--light);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 24px;
-    }
-
-    .scroll-card h3 {
-      font-family: Georgia, serif;
-      color: var(--navy);
-      font-size: 26px;
-      margin-bottom: 10px;
-    }
-
-    .scroll-card p {
       color: var(--muted);
-      font-size: 15px;
+      font-size: 13px;
+      font-weight: 800;
     }
 
-    .tickets {
+    .why {
       background: var(--navy);
-      color: white;
+      color: var(--white);
     }
 
-    .tickets .section-title h2 {
-      color: white;
+    .why .section-title h2 {
+      color: var(--white);
     }
 
-    .tickets .section-title p {
+    .why .section-title p {
       color: #cbd5e1;
     }
 
-    .ticket {
-      background: white;
-      color: var(--text);
-      border-radius: 28px;
-      padding: 28px;
-      margin-bottom: 18px;
+    .why-grid {
+      display: grid;
+      gap: 16px;
     }
 
-    .badge {
-      display: inline-block;
-      background: var(--cream);
-      color: var(--navy);
-      padding: 8px 12px;
-      border-radius: 999px;
+    .why-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 26px;
+      padding: 26px;
+    }
+
+    .why-card span {
+      color: var(--gold);
       font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 0.08em;
       text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 900;
+      display: block;
       margin-bottom: 12px;
     }
 
-    .ticket h3 {
+    .why-card h3 {
       font-family: Georgia, serif;
-      color: var(--navy);
-      font-size: 30px;
+      font-size: 28px;
       line-height: 1.08;
       margin-bottom: 10px;
     }
 
-    .price {
-      font-family: Georgia, serif;
-      color: var(--navy);
-      font-size: 50px;
-      margin: 16px 0;
-    }
-
-    .ticket p {
-      color: var(--muted);
+    .why-card p {
+      color: #dbe7f5;
       font-size: 15px;
     }
 
-    details {
-      background: white;
+    .countdown {
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .countdown-box {
+      background: var(--white);
+      border-radius: 30px;
+      padding: 30px 20px;
+      box-shadow: var(--shadow);
       border: 1px solid var(--border);
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin: 24px 0;
+    }
+
+    .time-card {
+      background: var(--navy);
+      color: var(--white);
       border-radius: 18px;
+      padding: 16px 8px;
+    }
+
+    .time-card strong {
+      display: block;
+      font-family: Georgia, serif;
+      color: var(--gold);
+      font-size: 28px;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .time-card span {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 900;
+      color: #dbe7f5;
+    }
+
+    .faq {
+      background: var(--light);
+    }
+
+    details {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
       padding: 20px;
       margin-bottom: 12px;
+      box-shadow: 0 10px 24px rgba(7,23,49,0.04);
     }
 
     summary {
-      cursor: pointer;
       color: var(--navy);
       font-weight: 900;
-      font-size: 16px;
+      cursor: pointer;
     }
 
     details p {
@@ -455,35 +517,155 @@
       font-size: 15px;
     }
 
-    .final {
+    .access {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .access .section-title h2 {
+      color: var(--white);
+    }
+
+    .access .section-title p {
+      color: #cbd5e1;
+    }
+
+    .access-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .access-card {
+      background: var(--white);
+      color: var(--text);
+      border-radius: 30px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .access-card.featured {
+      border: 2px solid var(--gold);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--cream);
+      color: var(--navy);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+    }
+
+    .access-card h3 {
+      font-family: Georgia, serif;
+      color: var(--navy);
+      font-size: 32px;
+      line-height: 1.08;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      font-family: Georgia, serif;
+      color: var(--navy);
+      font-size: 52px;
+      margin: 16px 0;
+    }
+
+    .access-card p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin: 18px 0;
+    }
+
+    .list li {
+      padding: 12px 0;
+      border-top: 1px solid var(--border);
+      color: var(--blue);
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .list li::before {
+      content: "✓";
+      color: var(--gold);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    .city-preview {
+      background: var(--cream);
+    }
+
+    .city-card {
       background:
-        linear-gradient(rgba(8,24,51,0.92), rgba(8,24,51,0.92)),
+        linear-gradient(rgba(7,23,49,0.2), rgba(7,23,49,0.76)),
         url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1780953766/iStock-1486790456__1__1_bzcdvu.webp");
       background-size: cover;
       background-position: center;
-      color: white;
-      text-align: center;
+      min-height: 380px;
+      border-radius: 34px;
+      padding: 28px;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-shadow: var(--shadow);
     }
 
-    .final h2 {
+    .city-card h2 {
       font-family: Georgia, serif;
-      font-size: clamp(34px, 10vw, 56px);
-      line-height: 1.05;
-      margin-bottom: 16px;
+      font-size: 44px;
+      line-height: 1;
+      margin-bottom: 12px;
+      letter-spacing: -0.04em;
     }
 
-    .final p {
-      color: #dbe7f5;
-      margin-bottom: 24px;
+    .city-card p {
+      color: #e5edf6;
       font-size: 16px;
     }
 
     footer {
       background: #03101f;
       color: #cbd5e1;
-      padding: 36px 20px;
-      font-size: 13px;
-      text-align: center;
+      padding: 42px 20px 95px;
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 28px;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .footer-grid h3 {
+      color: var(--white);
+      font-family: Georgia, serif;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: #cbd5e1;
+      font-weight: 700;
+      font-size: 14px;
     }
 
     .sticky-cta {
@@ -491,81 +673,95 @@
       left: 0;
       right: 0;
       bottom: 0;
-      z-index: 50;
+      z-index: 120;
       padding: 12px 16px;
       background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(10px);
       border-top: 1px solid var(--border);
+      backdrop-filter: blur(12px);
     }
 
     .sticky-cta a {
-      width: 100%;
-      background: var(--gold);
-      color: var(--navy);
-      border-radius: 999px;
-      padding: 15px 18px;
       display: flex;
       justify-content: center;
+      align-items: center;
+      min-height: 52px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--navy);
       font-weight: 900;
     }
 
-    @media (min-width: 820px) {
+    @media (min-width: 880px) {
       body {
         padding-bottom: 0;
       }
 
       .topbar {
-        text-align: left;
         padding: 10px 6%;
+        text-align: left;
       }
 
       nav {
-        padding: 0 6%;
         height: 78px;
+        padding: 0 6%;
       }
 
       .desktop-links {
         display: flex;
         align-items: center;
-        gap: 26px;
+        gap: 24px;
+        color: var(--blue);
         font-size: 14px;
         font-weight: 800;
-        color: var(--blue);
       }
 
-      .nav-cta {
-        padding: 12px 20px;
+      .menu-toggle {
+        display: none;
       }
 
-      .hero {
-        min-height: 86vh;
-        padding: 100px 6%;
-        align-items: center;
-        background:
-          linear-gradient(90deg, rgba(8,24,51,0.96) 0%, rgba(8,24,51,0.84) 42%, rgba(8,24,51,0.38) 100%),
-          url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1780953766/iStock-1486790456__1__1_bzcdvu.webp");
-        background-size: cover;
-        background-position: center;
+      .mobile-menu {
+        display: none !important;
       }
 
-      .hero-actions {
+      .hero-wrap {
+        grid-template-columns: 1fr 1fr;
+        min-height: 82vh;
+      }
+
+      .hero-copy {
+        padding: 90px 0 90px 12%;
+      }
+
+      .hero-buttons {
         grid-template-columns: auto auto;
         justify-content: flex-start;
       }
 
-      .quick-details {
+      .hero-visual {
+        min-height: auto;
+        margin: 48px 6% 48px 0;
+        border-radius: 42px;
+      }
+
+      .campeche-card {
+        left: 36px;
+        right: 36px;
+        bottom: 36px;
+      }
+
+      .quick-info {
         max-width: 1120px;
-        margin: -48px auto 0;
+        margin: -42px auto 0;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
       }
 
-      .detail {
+      .info-item {
         border-bottom: none;
         border-right: 1px solid var(--border);
       }
 
-      .detail:last-child {
+      .info-item:last-child {
         border-right: none;
       }
 
@@ -573,46 +769,38 @@
         padding: 96px 6%;
       }
 
-      .cards {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
       .number-grid {
         grid-template-columns: repeat(4, 1fr);
       }
 
-      .venue-layout {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 48px;
-        align-items: center;
+      .why-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
 
-      .venue-image {
-        min-height: 440px;
-        margin-bottom: 0;
+      .countdown-box {
+        padding: 46px;
       }
 
-      .horizontal-scroll {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        overflow: visible;
+      .time-card strong {
+        font-size: 52px;
       }
 
-      .scroll-card {
-        min-width: auto;
-      }
-
-      .ticket-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        gap: 24px;
+      .time-card span {
+        font-size: 12px;
       }
 
       .faq-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 16px;
+      }
+
+      .access-grid {
+        grid-template-columns: 1.2fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
       }
 
       .sticky-cta {
@@ -623,9 +811,7 @@
 </head>
 
 <body>
-  <div class="topbar">
-    4th IAMS World Congress 2026 · Campeche, Mexico
-  </div>
+  <div class="topbar">4th IAMS World Congress 2026 · Campeche, Mexico</div>
 
   <header>
     <nav>
@@ -635,88 +821,90 @@
       </a>
 
       <div class="desktop-links">
-        <a href="#about">About</a>
-        <a href="#venue">Venue</a>
-        <a href="#experience">Experience</a>
-        <a href="#registration">Registration</a>
+        <a href="#">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#past-events">Past Events</a>
+        <a href="#speakers">Ponentes</a>
+        <a href="#campeche">Campeche City</a>
         <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
       </div>
 
-      <a class="nav-cta" href="#registration">Reserve</a>
+      <div class="nav-actions">
+        <a class="mini-cta" href="#access">Buy Tickets</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      </div>
     </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">Home</a>
+      <a href="#past-events">Past Events</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About Us</a>
+      <a href="#speakers">Ponentes</a>
+      <a href="#campeche">Campeche City</a>
+      <a href="#digital-access">Congress Digital Access</a>
+      <a href="#access" class="buy-link">Buy Tickets</a>
+    </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="eyebrow">International Medical Community</div>
-        <h1>Bringing Medical Specialists Together Worldwide</h1>
-        <p>
-          Join the 4th IAMS World Congress 2026 in Campeche, Mexico:
-          an international gathering for recognition, professional networking and medical collaboration.
-        </p>
+    <section class="hero" id="home">
+      <div class="hero-wrap">
+        <div class="hero-copy">
+          <div class="eyebrow">4th IAMS World Congress 2026</div>
+          <h1>Bringing Medical Specialists Together Worldwide</h1>
+          <p>
+            An international medical gathering designed for professional recognition,
+            global networking and collaboration within the IAMS community.
+          </p>
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#registration">Reserve Your Place</a>
-          <a class="btn btn-secondary" href="#venue">View Congress Venue</a>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#access">Reserve Your Place</a>
+            <a class="btn btn-secondary" href="#campeche">Discover Campeche</a>
+          </div>
+
+          <div class="hero-location">📍 Campeche, Mexico · 2026</div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="campeche-card">
+            <span>Host City</span>
+            <strong>Campeche, Mexico</strong>
+          </div>
         </div>
       </div>
     </section>
 
-    <div class="quick-details">
-      <div class="detail">
+    <div class="quick-info">
+      <div class="info-item">
         <span>Congress</span>
         <strong>4th IAMS World Congress</strong>
       </div>
-      <div class="detail">
+      <div class="info-item">
         <span>Location</span>
         <strong>Campeche, Mexico</strong>
       </div>
-      <div class="detail">
+      <div class="info-item">
         <span>Venue</span>
         <strong>Campeche XXI Convention Center</strong>
       </div>
-      <div class="detail">
+      <div class="info-item">
         <span>Registration</span>
         <strong>$250 USD</strong>
       </div>
     </div>
 
-    <section id="about">
+    <section class="city-preview" id="campeche">
       <div class="inner">
-        <div class="section-title">
-          <div class="eyebrow">About the Congress</div>
-          <h2>Not just a conference. A medical community.</h2>
+        <div class="city-card">
+          <div class="eyebrow">Host Destination</div>
+          <h2>Campeche, Mexico</h2>
           <p>
-            The IAMS World Congress brings together physicians, specialists and international delegates
-            for a formal experience built around recognition, connection and professional presence.
+            A historic coastal city offering a distinctive Mexican setting for an international
+            medical congress, professional ceremonies and cultural hospitality.
           </p>
-        </div>
-
-        <div class="cards">
-          <div class="card">
-            <div class="card-tag">Recognition</div>
-            <h3>Professional distinction</h3>
-            <p>
-              Formal moments of induction and recognition within an international medical setting.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="card-tag">Network</div>
-            <h3>Global medical connections</h3>
-            <p>
-              Meet physicians, specialists, fellows and delegates from different countries and institutions.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="card-tag">Exchange</div>
-            <h3>Medical collaboration</h3>
-            <p>
-              Share experiences, perspectives and professional knowledge across borders.
-            </p>
-          </div>
         </div>
       </div>
     </section>
@@ -724,10 +912,11 @@
     <section class="numbers">
       <div class="inner">
         <div class="section-title">
-          <div class="eyebrow">Congress in Numbers</div>
+          <div class="eyebrow">Congress Numbers</div>
           <h2>A growing international medical gathering.</h2>
           <p>
-            Designed as an annual meeting point for the IAMS community and invited medical specialists.
+            The IAMS World Congress is positioned as an annual meeting point for medical
+            specialists, invited delegates and the broader IAMS professional community.
           </p>
         </div>
 
@@ -737,93 +926,137 @@
             <span>World Congress</span>
           </div>
           <div class="number-card">
-            <strong>IAMS</strong>
-            <span>International Academy</span>
-          </div>
-          <div class="number-card">
             <strong>2026</strong>
             <span>Campeche, Mexico</span>
           </div>
           <div class="number-card">
+            <strong>IAMS</strong>
+            <span>International Academy</span>
+          </div>
+          <div class="number-card">
             <strong>Global</strong>
-            <span>Medical Network</span>
+            <span>Medical Community</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="venue" class="venue">
-      <div class="inner venue-layout">
-        <div class="venue-image" aria-label="Campeche XXI Convention Center"></div>
+    <section class="why" id="about">
+      <div class="inner">
+        <div class="section-title">
+          <div class="eyebrow">Why Attend</div>
+          <h2>Recognition, connection and international presence.</h2>
+          <p>
+            The congress experience is built around the elements that matter in professional
+            communities: credibility, relationships, ceremony and shared identity.
+          </p>
+        </div>
 
-        <div>
-          <div class="section-title">
-            <div class="eyebrow">Congress Venue</div>
-            <h2>Campeche XXI Convention Center</h2>
+        <div class="why-grid">
+          <div class="why-card">
+            <span>Recognition</span>
+            <h3>Professional distinction</h3>
             <p>
-              A formal venue for international delegates, professional ceremonies,
-              networking sessions and medical presentations in Campeche, Mexico.
+              Formal moments of induction and recognition within an international medical setting.
             </p>
           </div>
 
-          <ul class="list">
-            <li>Professional venue for congress sessions</li>
-            <li>International destination experience</li>
-            <li>Designed for networking and ceremony</li>
-            <li>Located in Campeche, Mexico</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="experience">
-      <div class="inner">
-        <div class="section-title">
-          <div class="eyebrow">Congress Experience</div>
-          <h2>What the in-person pass includes.</h2>
-          <p>
-            The in-person experience is built around more than sessions:
-            it includes recognition, networking, meals and cultural hospitality.
-          </p>
-        </div>
-
-        <div class="horizontal-scroll">
-          <div class="scroll-card">
-            <h3>Medical Sessions</h3>
-            <p>Presentations and professional exchange with invited participants and specialists.</p>
+          <div class="why-card">
+            <span>Network</span>
+            <h3>Global medical connections</h3>
+            <p>
+              Meet physicians, specialists, fellows and invited delegates from different countries.
+            </p>
           </div>
 
-          <div class="scroll-card">
-            <h3>Induction Ceremony</h3>
-            <p>Formal recognition moments and welcoming of new inductees.</p>
-          </div>
-
-          <div class="scroll-card">
-            <h3>Networking</h3>
-            <p>Connection with physicians and international delegates.</p>
-          </div>
-
-          <div class="scroll-card">
-            <h3>Mexican Hospitality</h3>
-            <p>Two lunches, one dinner and a Mexican cultural celebration.</p>
+          <div class="why-card">
+            <span>Community</span>
+            <h3>Belonging to IAMS</h3>
+            <p>
+              Take part in a professional community designed for collaboration and long-term relationships.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="registration" class="tickets">
+    <section class="countdown">
+      <div class="inner">
+        <div class="countdown-box">
+          <div class="eyebrow">Countdown</div>
+          <div class="section-title" style="margin-bottom: 0;">
+            <h2>Next Congress Begins In</h2>
+            <p>Reserve your place for the 4th IAMS World Congress 2026 in Campeche, Mexico.</p>
+          </div>
+
+          <div class="countdown-grid" id="countdown">
+            <div class="time-card">
+              <strong id="days">--</strong>
+              <span>Days</span>
+            </div>
+            <div class="time-card">
+              <strong id="hours">--</strong>
+              <span>Hours</span>
+            </div>
+            <div class="time-card">
+              <strong id="minutes">--</strong>
+              <span>Minutes</span>
+            </div>
+            <div class="time-card">
+              <strong id="seconds">--</strong>
+              <span>Seconds</span>
+            </div>
+          </div>
+
+          <a class="btn btn-primary" href="#access">Reserve Your Place</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
       <div class="inner">
         <div class="section-title">
-          <div class="eyebrow">Registration</div>
-          <h2>Choose your access.</h2>
+          <div class="eyebrow">FAQ</div>
+          <h2>Frequently asked questions.</h2>
+        </div>
+
+        <div class="faq-grid">
+          <details>
+            <summary>Where will the congress take place?</summary>
+            <p>The 4th IAMS World Congress 2026 will take place in Campeche, Mexico.</p>
+          </details>
+
+          <details>
+            <summary>Who should attend?</summary>
+            <p>Physicians, medical specialists, fellows, invited delegates and professionals interested in international medical collaboration.</p>
+          </details>
+
+          <details>
+            <summary>Is this only an academic congress?</summary>
+            <p>No. The congress includes sessions, recognition, networking, ceremonies and international community-building.</p>
+          </details>
+
+          <details>
+            <summary>Will digital access be available?</summary>
+            <p>Digital access is planned approximately 20 days after the event, once recordings are edited and organized.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="access" id="access">
+      <div class="inner">
+        <div class="section-title">
+          <div class="eyebrow">Access Options</div>
+          <h2>Choose your congress access.</h2>
           <p>
-            Attend the full in-person congress in Campeche or join the interest list
-            for digital access after the event.
+            Attend the full in-person experience in Campeche or join the digital access list
+            for edited congress recordings after the event.
           </p>
         </div>
 
-        <div class="ticket-grid">
-          <div class="ticket">
+        <div class="access-grid">
+          <div class="access-card featured">
             <span class="badge">Main Experience</span>
             <h3>In-Person Congress Pass</h3>
             <div class="price">$250 USD</div>
@@ -838,12 +1071,12 @@
               <li>Mexican cultural celebration</li>
             </ul>
 
-            <a class="btn btn-primary" href="#">Reserve In-Person Pass</a>
+            <a class="btn btn-primary" href="#">Buy In-Person Ticket</a>
           </div>
 
-          <div class="ticket">
+          <div class="access-card" id="digital-access">
             <span class="badge">Available After Event</span>
-            <h3>Digital Access Package</h3>
+            <h3>Congress Digital Access</h3>
             <div class="price">$39 USD</div>
             <p>Available approximately 20 days after the congress, once recordings are edited.</p>
 
@@ -860,56 +1093,115 @@
       </div>
     </section>
 
-    <section id="faq">
+    <section class="numbers" id="past-events">
       <div class="inner">
         <div class="section-title">
-          <div class="eyebrow">FAQ</div>
-          <h2>Frequently asked questions.</h2>
-        </div>
-
-        <div class="faq-grid">
-          <details>
-            <summary>Where will the congress take place?</summary>
-            <p>The 4th IAMS World Congress 2026 will take place in Campeche, Mexico.</p>
-          </details>
-
-          <details>
-            <summary>Who should attend?</summary>
-            <p>Physicians, medical specialists, fellows, delegates and professionals interested in international medical collaboration.</p>
-          </details>
-
-          <details>
-            <summary>Is this only an academic congress?</summary>
-            <p>No. The congress includes sessions, recognition, networking, ceremonies and international community-building.</p>
-          </details>
-
-          <details>
-            <summary>Will digital access be available?</summary>
-            <p>Digital access is planned approximately 20 days after the event.</p>
-          </details>
+          <div class="eyebrow">Past Events</div>
+          <h2>Previous congresses and professional gatherings.</h2>
+          <p>
+            This section can later include photos, videos and highlights from previous IAMS events
+            to build trust and demonstrate the institutional value of the congress.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="final">
+    <section class="faq" id="speakers">
       <div class="inner">
-        <h2>Join the 4th IAMS World Congress 2026</h2>
-        <p>
-          Be part of an international medical gathering designed for recognition,
-          collaboration and professional presence.
-        </p>
-        <a class="btn btn-primary" href="#registration">Reserve Your Place</a>
+        <div class="section-title">
+          <div class="eyebrow">Congress Speakers</div>
+          <h2>Invited speakers and international delegates.</h2>
+          <p>
+            Add confirmed speakers, medical specialists and participating delegates here once
+            the official list is approved.
+          </p>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <strong>4th IAMS World Congress 2026</strong>
-    <p>Campeche, Mexico · International Academy of Medical Specialists</p>
+  <footer id="contact">
+    <div class="footer-grid">
+      <div>
+        <h3>4th IAMS World Congress 2026</h3>
+        <p>Campeche, Mexico · International Academy of Medical Specialists</p>
+      </div>
+
+      <div>
+        <h3>Sections</h3>
+        <div class="footer-links">
+          <a href="#">Home</a>
+          <a href="#past-events">Past Events</a>
+          <a href="#faq">FAQ</a>
+          <a href="#about">About Us</a>
+          <a href="#speakers">Ponentes</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Access</h3>
+        <div class="footer-links">
+          <a href="#access">Buy Tickets</a>
+          <a href="#digital-access">Congress Digital Access</a>
+          <a href="#campeche">Campeche City</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <div class="sticky-cta">
-    <a href="#registration">Reserve Your Place</a>
+    <a href="#access">Buy Tickets</a>
   </div>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+      menuToggle.textContent = mobileMenu.classList.contains("open") ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".mobile-menu a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    /*
+      Change this date when the official congress date is confirmed.
+      Format: YYYY-MM-DDTHH:MM:SS-06:00
+      Campeche uses Mexico local time.
+    */
+    const congressDate = new Date("2026-10-01T09:00:00-06:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = congressDate - now;
+
+      if (distance <= 0) {
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      document.getElementById("days").textContent = String(days).padStart(2, "0");
+      document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
 </body>
 </html>
