@@ -8,7 +8,6 @@
   <style>
     :root {
       --navy: #1d1458;
-      --royal: #3424b8;
       --violet: #4b2ee8;
       --pink: #f04d8b;
       --gold: #c9a24a;
@@ -60,13 +59,13 @@
       white-space: nowrap;
     }
 
-    .brand-mark {
-      width: 46px;
-      height: 46px;
+    .brand-logo {
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
-      background: radial-gradient(circle, #65d6ff 0 3px, transparent 4px);
-      background-size: 12px 12px;
-      border: 2px solid rgba(255,255,255,0.18);
+      object-fit: cover;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
     }
 
     .nav-links {
@@ -127,7 +126,12 @@
     .hero {
       min-height: calc(100vh - 86px);
       background:
-        linear-gradient(90deg, rgba(20, 15, 100, 0.98) 0%, rgba(36, 24, 160, 0.92) 48%, rgba(74, 46, 232, 0.88) 100%);
+        linear-gradient(
+          90deg,
+          rgba(20, 15, 100, 0.98) 0%,
+          rgba(36, 24, 160, 0.92) 48%,
+          rgba(74, 46, 232, 0.88) 100%
+        );
       color: white;
       position: relative;
       overflow: hidden;
@@ -151,23 +155,26 @@
           transparent 18px 30px
         );
       opacity: 0.9;
+      z-index: 1;
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      right: -120px;
-      top: 90px;
-      width: 430px;
-      height: 430px;
+      right: -95px;
+      top: 80px;
+      width: 455px;
+      height: 455px;
       border-radius: 50%;
       background:
-      rgba(255, 255, 255, 0.92)
-      url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047563/Logo_hppm16.webp");
-    background-size: 72%;
-    background-repeat: no-repeat;
-    background-position: center;
-    box-shadow: 0 30px 90px rgba(0,0,0,0.22);
+        radial-gradient(circle, rgba(255,255,255,0.30) 0%, rgba(255,255,255,0.16) 46%, rgba(255,255,255,0.05) 68%, rgba(255,255,255,0) 70%),
+        url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047563/Logo_hppm16.webp");
+      background-size: 86%;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.92;
+      filter: drop-shadow(0 30px 70px rgba(0,0,0,0.32));
+      z-index: 1;
     }
 
     .hero-content {
@@ -204,104 +211,121 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      font-size: clamp(22px, 3vw, 34px);
+      font-weight: 900;
     }
 
     .mexico {
-      color: var(--gold);
-    }
-
-    .hero-cta {
-      margin-top: 34px;
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .primary-cta {
-      background: linear-gradient(135deg, var(--pink), #ff6b4a);
-      color: white;
-      padding: 16px 26px;
+      color: var(--white);
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.22);
+      padding: 4px 13px;
       border-radius: 999px;
-      font-weight: 900;
-      box-shadow: 0 16px 34px rgba(240, 77, 139, 0.32);
     }
 
-    .secondary-cta {
-      border: 1px solid rgba(255,255,255,0.36);
-      color: white;
-      padding: 16px 26px;
-      border-radius: 999px;
-      font-weight: 900;
-      background: rgba(255,255,255,0.08);
-    }
-
-      @media (max-width: 980px) {
-        .hero::after {
-          width: 250px;
-          height: 250px;
-          right: 22px;
-          top: auto;
-          bottom: 32px;
-          background-size: 74%;
-        }
+    @media (max-width: 980px) {
+      .navbar {
+        min-height: 78px;
+        padding: 0 28px;
+        gap: 20px;
+        overflow-x: auto;
       }
-    
+
+      .brand-logo {
+        width: 50px;
+        height: 50px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 24px;
+        font-size: 23px;
+        white-space: nowrap;
+      }
+
+      .nav-links a:nth-child(n+5) {
+        display: none;
+      }
+
+      .buy-btn {
+        display: none;
+      }
+
       .menu-btn {
         display: grid;
         place-items: center;
+        flex: 0 0 auto;
       }
 
       .hero {
-        min-height: 78vh;
-        padding: 54px 22px 260px;
+        min-height: calc(100vh - 78px);
+        padding: 92px 40px 430px;
         align-items: flex-start;
       }
 
+      .hero-label {
+        font-size: 22px;
+        line-height: 1.45;
+        letter-spacing: 0.16em;
+        max-width: 620px;
+      }
+
+      h1 {
+        font-size: clamp(64px, 14vw, 92px);
+        line-height: 0.96;
+      }
+
+      .location {
+        font-size: 26px;
+      }
+
       .hero::after {
-        width: 270px;
-        height: 270px;
-        right: 22px;
+        width: 360px;
+        height: 360px;
+        right: 50%;
+        transform: translateX(50%);
         top: auto;
-        bottom: 28px;
+        bottom: 72px;
+        background-size: 88%;
+        opacity: 0.94;
       }
 
       .hero::before {
-        width: 210px;
-        height: 120px;
+        width: 260px;
+        height: 150px;
+        left: -40px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .navbar {
+        padding: 0 28px;
       }
 
-      .event-meta {
-        font-size: 23px;
+      .brand span {
+        font-size: 24px;
       }
 
-      .hero-cta {
-        display: grid;
-        grid-template-columns: 1fr;
+      .hero {
+        padding: 92px 40px 405px;
       }
 
-      .mexico-flag {
-        display: inline-flex;
-        font-weight: 950;
-        background: rgba(255,255,255,0.10);
-        border-radius: 12px;
-        overflow: hidden;
+      .hero-label {
+        font-size: 19px;
       }
-      
-      .mx-green {
-        color: #0b7a3b;
-        background: rgba(255,255,255,0.92);
-        padding-left: 8px;
+
+      h1 {
+        font-size: 72px;
       }
-      
-      .mx-white {
-        color: #111827;
-        background: rgba(255,255,255,0.92);
+
+      .location {
+        font-size: 24px;
       }
-      
-      .mx-red {
-        color: #c1272d;
-        background: rgba(255,255,255,0.92);
-        padding-right: 8px;
+
+      .hero::after {
+        width: 335px;
+        height: 335px;
+        bottom: 70px;
       }
     }
   </style>
@@ -311,7 +335,11 @@
   <header>
     <nav class="navbar">
       <a href="#" class="brand">
-        <div class="brand-mark"></div>
+        <img
+          class="brand-logo"
+          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047563/Logo_hppm16.webp"
+          alt="IAMS Logo"
+        />
         <span>IAMS</span>
       </a>
 
@@ -349,13 +377,10 @@
 
         <h1>IAMS 4th<br>World Congress</h1>
 
-        <div class="location">
-          📍 Campeche,
-          <span class="mexico-flag">
-            <span class="mx-green">Mex</span><span class="mx-white">i</span><span class="mx-red">co</span>
-          </span>
+        <div class="event-meta">
+          <div>October 24 – 25, 2026</div>
+          <div class="location">📍 Campeche, <span class="mexico">Mexico</span></div>
         </div>
-
       </div>
     </section>
   </main>
