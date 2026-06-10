@@ -153,9 +153,9 @@
     }
 
     .hero h1 {
-      font-size: clamp(64px, 12vw, 160px);
+      font-size: clamp(55px, 12vw, 160px);
       line-height: 0.88;
-      letter-spacing: -0.07em;
+      letter-spacing: 0.08em;
       font-weight: 950;
       margin-bottom: 28px;
     }
@@ -214,6 +214,19 @@
     .philanthropy {
       background: var(--light);
     }
+
+    .origin-photo {
+        margin-top: 50px;
+      }
+        
+      .origin-photo img {
+        width: 100%;
+        max-width: 1180px;
+        height: 500px;
+        object-fit: cover;
+        border-radius: 32px;
+        box-shadow: 0 18px 45px rgba(7, 23, 49, 0.08);
+      }
 
     .photo-grid-two {
       margin-top: 50px;
@@ -374,19 +387,7 @@
         font-size: clamp(38px, 12vw, 58px);
       }
 
-      .origin-photo {
-          margin-top: 50px;
-        }
-        
-        .origin-photo img {
-          width: 100%;
-          max-width: 1180px;
-          height: 500px;
-          object-fit: cover;
-          border-radius: 32px;
-          box-shadow: 0 18px 45px rgba(7, 23, 49, 0.08);
-        }
-
+  
       .photo-grid-two,
       .photo-grid-six {
         grid-template-columns: 1fr;
