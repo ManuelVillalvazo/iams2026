@@ -374,6 +374,19 @@
         font-size: clamp(38px, 12vw, 58px);
       }
 
+      .origin-photo {
+          margin-top: 50px;
+        }
+        
+        .origin-photo img {
+          width: 100%;
+          max-width: 1180px;
+          height: 500px;
+          object-fit: cover;
+          border-radius: 32px;
+          box-shadow: 0 18px 45px rgba(7, 23, 49, 0.08);
+        }
+
       .photo-grid-two,
       .photo-grid-six {
         grid-template-columns: 1fr;
@@ -437,37 +450,36 @@
   <main>
     <section class="hero">
       <div class="hero-inner">
-        <div class="hero-label">Acerca de IAMS</div>
-        <h1>About IAMS</h1>
+        <h1>¿Qué es IAMS?</h1>
         <p>International Academy of Medical Specialists, Inc.</p>
       </div>
     </section>
 
     <section class="section origin" id="origen">
       <div class="section-inner">
-        <div class="section-label">Origen</div>
-        <h2 class="section-title">Una academia médica fundada con propósito humanitario.</h2>
+        <h2 class="section-title">Fundada con propósito humanitario.</h2>
 
         <div class="section-text">
           <p>
-            IAMS fue fundada en 2006 por médicos en Filipinas que creían que el conocimiento
-            médico debía servir tanto a la excelencia profesional como al bien público.
+            IAMS es una asociación fundada en 2006 por médicos en Filipinas que creían que el conocimiento
+            médico debía servir por igual a la excelencia profesional y al bienestar de las comunidades.
           </p>
 
           <p>
-            El objetivo fue reunir a médicos especialistas, defensores de la salud pública y
-            líderes profesionales que compartieran un compromiso con una mejor atención médica,
-            la educación continua y el servicio humanitario.
+           Desde sus inicios, la organización ha buscado reunir a médicos especialistas, defensores de la
+          salud pública y líderes profesionales comprometidos con la educación continua, la colaboración
+          internacional y el fortalecimiento de los sistemas de salud.
           </p>
         </div>
 
-        <div class="values-row">
-          <div class="value-pill">Excelencia médica</div>
-          <div class="value-pill">Educación continua</div>
-          <div class="value-pill">Servicio humanitario</div>
-          <div class="value-pill">Salud pública</div>
-          <div class="value-pill">Colaboración internacional</div>
+        <div class="origin-photo">
+          <img
+            src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047586/407175188_1336334890584227_3622101827879852177_n-768x512_pdhtam.jpg"
+            alt="IAMS medical mission"
+          />
         </div>
+
+      
       </div>
     </section>
 
