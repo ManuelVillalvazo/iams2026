@@ -7,14 +7,15 @@
 
   <style>
     :root {
-      --navy: #1d1458;
-      --royal: #3424b8;
-      --violet: #4b2ee8;
+      --navy: #191052;
+      --purple: #3320a8;
+      --violet: #5638f0;
       --pink: #f04d8b;
       --gold: #c9a24a;
       --white: #ffffff;
+      --soft-white: #eef1ff;
+      --muted: #b9c7ff;
       --light: #f7f7fb;
-      --text: #111827;
     }
 
     * {
@@ -26,91 +27,100 @@
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: var(--light);
-      color: var(--text);
+      color: var(--white);
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
     header {
-      background: var(--navy);
-      color: var(--white);
       position: sticky;
       top: 0;
       z-index: 100;
+      background: var(--navy);
+      color: var(--white);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .navbar {
-      min-height: 86px;
-      padding: 0 5vw;
+      min-height: 78px;
+      padding: 0 clamp(22px, 5vw, 80px);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 28px;
+      gap: 24px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
-      font-weight: 900;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
+      gap: 12px;
+      min-width: 0;
     }
 
-    .brand-mark {
-      width: 46px;
-      height: 46px;
+    .brand-logo {
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      background: radial-gradient(circle, #65d6ff 0 3px, transparent 4px);
-      background-size: 12px 12px;
-      border: 2px solid rgba(255,255,255,0.18);
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .brand-name {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.25;
+      color: rgba(255,255,255,0.86);
+      max-width: 280px;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 26px;
+      gap: clamp(14px, 1.6vw, 26px);
       font-size: 14px;
       font-weight: 800;
-    }
-
-    .nav-links a {
-      opacity: 0.92;
+      color: rgba(255,255,255,0.92);
+      white-space: nowrap;
     }
 
     .nav-links a:hover {
-      opacity: 1;
       color: var(--gold);
     }
 
     .buy-btn {
       background: linear-gradient(135deg, var(--pink), #ff6b4a);
       color: white;
-      padding: 14px 22px;
+      padding: 13px 21px;
       border-radius: 999px;
       font-weight: 900;
       box-shadow: 0 12px 28px rgba(240, 77, 139, 0.35);
+      white-space: nowrap;
     }
 
     .menu-btn {
       display: none;
-      border: 1px solid rgba(255,255,255,0.25);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.24);
       background: rgba(255,255,255,0.08);
       color: white;
-      border-radius: 999px;
-      width: 46px;
-      height: 46px;
       font-size: 24px;
       cursor: pointer;
+      flex-shrink: 0;
     }
 
     .mobile-menu {
       display: none;
-      padding: 0 5vw 22px;
       background: var(--navy);
+      padding: 0 24px 22px;
     }
 
     .mobile-menu.open {
@@ -120,124 +130,96 @@
     .mobile-menu a {
       display: block;
       padding: 15px 0;
-      border-top: 1px solid rgba(255,255,255,0.14);
+      border-top: 1px solid rgba(255,255,255,0.13);
       font-weight: 800;
     }
 
     .hero {
-      min-height: calc(100vh - 86px);
+      min-height: calc(100vh - 78px);
       background:
-        linear-gradient(90deg, rgba(20, 15, 100, 0.98) 0%, rgba(36, 24, 160, 0.92) 48%, rgba(74, 46, 232, 0.88) 100%);
-      color: white;
-      position: relative;
-      overflow: hidden;
+        radial-gradient(circle at 82% 28%, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.06) 18%, transparent 34%),
+        linear-gradient(120deg, #170f50 0%, #2417a0 48%, #5638f0 100%);
       display: flex;
       align-items: center;
-      padding: 80px 5vw;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      left: -60px;
-      bottom: -20px;
-      width: 260px;
-      height: 160px;
-      background:
-        repeating-linear-gradient(
-          135deg,
-          transparent 0 13px,
-          rgba(255, 183, 77, 0.9) 14px 17px,
-          transparent 18px 30px
-        );
-      opacity: 0.9;
+      justify-content: center;
+      padding: clamp(56px, 8vw, 96px) clamp(24px, 6vw, 96px);
+      overflow: hidden;
+      position: relative;
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      right: -120px;
-      top: 90px;
-      width: 430px;
-      height: 430px;
+      width: min(62vw, 760px);
+      height: min(62vw, 760px);
+      right: -20vw;
+      bottom: -28vw;
       border-radius: 50%;
-      background:
-        rgba(255, 255, 255, 0.92)
-        url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047563/Logo_hppm16.webp");
-      background-size: 72%;
-      background-repeat: no-repeat;
-      background-position: center;
-      box-shadow: 0 30px 90px rgba(0,0,0,0.22);
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.09);
+      pointer-events: none;
     }
 
     .hero-content {
+      width: 100%;
+      max-width: 1180px;
       position: relative;
       z-index: 2;
-      max-width: 780px;
     }
 
-    .hero-label {
-      font-size: 15px;
-      font-weight: 900;
-      color: #b9c7ff;
+    .hero-kicker {
+      color: var(--gold);
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      margin-bottom: 22px;
-    }
-
-    h1 {
-      font-size: clamp(52px, 8vw, 108px);
-      line-height: 0.92;
-      letter-spacing: -0.055em;
-      margin-bottom: 28px;
-      font-weight: 950;
-    }
-
-    .event-meta {
-      display: grid;
-      gap: 12px;
-      font-size: clamp(22px, 3vw, 36px);
+      letter-spacing: 0.26em;
+      font-size: clamp(12px, 1.3vw, 16px);
       font-weight: 900;
+      margin-bottom: clamp(26px, 4vw, 44px);
+    }
+
+    .hero-title-main {
+      font-size: clamp(76px, 13vw, 190px);
+      line-height: 0.82;
+      letter-spacing: -0.085em;
+      font-weight: 950;
+      color: var(--white);
+    }
+
+    .hero-title-sub {
+      margin-top: clamp(22px, 3vw, 38px);
+      font-size: clamp(34px, 5.7vw, 86px);
+      line-height: 1;
+      letter-spacing: 0.18em;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.86);
+    }
+
+    .hero-meta {
+      margin-top: clamp(38px, 5vw, 62px);
+      display: grid;
+      gap: 14px;
+      font-size: clamp(22px, 2.6vw, 34px);
+      font-weight: 900;
+      color: var(--soft-white);
     }
 
     .location {
       display: flex;
       align-items: center;
       gap: 10px;
-    }
-
-    .mexico {
-      color: var(--gold);
-    }
-
-    .hero-cta {
-      margin-top: 34px;
-      display: flex;
-      gap: 14px;
       flex-wrap: wrap;
     }
 
-    .primary-cta {
-      background: linear-gradient(135deg, var(--pink), #ff6b4a);
-      color: white;
-      padding: 16px 26px;
+    .place {
+      color: var(--white);
+      background: rgba(255,255,255,0.11);
+      border: 1px solid rgba(255,255,255,0.20);
+      padding: 5px 14px;
       border-radius: 999px;
-      font-weight: 900;
-      box-shadow: 0 16px 34px rgba(240, 77, 139, 0.32);
     }
 
-    .secondary-cta {
-      border: 1px solid rgba(255,255,255,0.36);
-      color: white;
-      padding: 16px 26px;
-      border-radius: 999px;
-      font-weight: 900;
-      background: rgba(255,255,255,0.08);
-    }
-
-    @media (max-width: 980px) {
-      .nav-links,
-      .buy-btn {
+    @media (max-width: 1120px) {
+      .nav-links {
         display: none;
       }
 
@@ -245,33 +227,79 @@
         display: grid;
         place-items: center;
       }
+    }
+
+    @media (max-width: 760px) {
+      .navbar {
+        min-height: 74px;
+        padding: 0 20px;
+      }
+
+      .brand-logo {
+        width: 42px;
+        height: 42px;
+      }
+
+      .brand-name {
+        font-size: 10px;
+        max-width: 210px;
+      }
+
+      .buy-btn {
+        display: none;
+      }
 
       .hero {
-        min-height: 78vh;
-        padding: 54px 22px 260px;
+        min-height: calc(100vh - 74px);
         align-items: flex-start;
+        padding: 82px 28px 72px;
       }
 
-      .hero::after {
-        width: 270px;
-        height: 270px;
-        right: 22px;
-        top: auto;
-        bottom: 28px;
+      .hero-kicker {
+        font-size: 11px;
+        letter-spacing: 0.19em;
+        margin-bottom: 34px;
       }
 
-      .hero::before {
-        width: 210px;
-        height: 120px;
+      .hero-title-main {
+        font-size: clamp(68px, 21vw, 104px);
+        line-height: 0.86;
+        letter-spacing: -0.075em;
       }
 
-      .event-meta {
+      .hero-title-sub {
+        font-size: clamp(28px, 8.5vw, 46px);
+        letter-spacing: 0.13em;
+        margin-top: 26px;
+      }
+
+      .hero-meta {
+        margin-top: 44px;
         font-size: 23px;
       }
+    }
 
-      .hero-cta {
-        display: grid;
-        grid-template-columns: 1fr;
+    @media (max-width: 420px) {
+      .brand-name {
+        max-width: 185px;
+        font-size: 9px;
+      }
+
+      .hero {
+        padding: 76px 24px 64px;
+      }
+
+      .hero-title-main {
+        font-size: 70px;
+      }
+
+      .hero-title-sub {
+        font-size: 28px;
+        letter-spacing: 0.11em;
+      }
+
+      .hero-meta {
+        font-size: 21px;
       }
     }
   </style>
@@ -281,8 +309,12 @@
   <header>
     <nav class="navbar">
       <a href="#" class="brand">
-        <div class="brand-mark"></div>
-        <span>IAMS</span>
+        <img
+          class="brand-logo"
+          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047563/Logo_hppm16.webp"
+          alt="International Academy of Medical Specialists Logo"
+        />
+        <span class="brand-name">International Academy of Medical Specialists, Inc.</span>
       </a>
 
       <div class="nav-links">
@@ -315,14 +347,15 @@
   <main>
     <section class="hero">
       <div class="hero-content">
+        <div class="hero-kicker">Campeche, Mexico · 2026</div>
 
-        <h1>IAMS 4th<br>World Congress</h1>
+        <div class="hero-title-main">IAMS 4th</div>
+        <div class="hero-title-sub">World Congress</div>
 
-        <div class="event-meta">
+        <div class="hero-meta">
           <div>October 24 – 25, 2026</div>
-          <div class="location">📍 Campeche, <span class="mexico">Mexico</span></div>
+          <div class="location">📍 <span class="place">Campeche, Mexico</span></div>
         </div>
-
       </div>
     </section>
   </main>
