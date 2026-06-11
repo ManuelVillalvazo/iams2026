@@ -405,10 +405,46 @@
     .footer-inner {
       max-width: 1180px;
       margin: 0 auto;
+    
       display: flex;
       justify-content: space-between;
-      gap: 24px;
+      align-items: center;
+      gap: 40px;
       flex-wrap: wrap;
+    }
+
+    .footer-main p {
+      margin-bottom: 6px;
+    }
+    
+    .footer-representative {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .footer-representative img {
+      width: 70px;
+      height: auto;
+    }
+    
+    .footer-buttons {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .footer-btn {
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: white;
+      color: #17104a;
+      font-weight: 800;
+    }
+    
+    .footer-btn-secondary {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.25);
     }
 
     @media (max-width: 1120px) {
@@ -423,6 +459,25 @@
     }
 
     @media (max-width: 820px) {
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    
+      .footer-buttons {
+        width: 100%;
+      }
+    
+      .footer-btn {
+        flex: 1;
+        text-align: center;
+      }
+    
+      .footer-representative img {
+        width: 56px;
+      }
+      
       .navbar {
         min-height: 74px;
         padding: 0 20px;
@@ -742,44 +797,41 @@
       </div>
     </section>
 
-    <section class="section representatives" id="representantes">
-      <div class="section-inner">
-        <div class="representatives-card">
-          <div class="representatives-logo">
-            <img
-              src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781136129/Amas_HighRes_1_1_1_ad1nle.webp"
-              alt="Asistencia Médica y Apoyo Social AC Logo"
-            />
-          </div>
-
-          <div class="representatives-content">
-            <div class="section-label">Representación internacional</div>
-
-            <h2>Representantes de IAMS en América y Europa</h2>
-
-            <p>
-              Asistencia Médica y Apoyo Social A.C. representa a IAMS en América y Europa,
-              fortaleciendo los vínculos institucionales, la colaboración médica internacional
-              y el desarrollo de nuevas alianzas para el Congreso Mundial IAMS 2026.
-            </p>
-
-            <div class="representatives-actions">
-              <a class="buy-btn" href="#">Contacto</a>
-              <a class="secondary-btn" href="#">Cambiar idioma</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  
   </main>
 
-  <footer id="contacto">
-    <div class="footer-inner">
-      <p>International Academy of Medical Specialists, Inc.</p>
+
+  
+  <footer>
+  <div class="footer-inner">
+
+    <div class="footer-main">
+      <p><strong>International Academy of Medical Specialists, Inc.</strong></p>
       <p>4th IAMS World Congress 2026 · Campeche, México</p>
     </div>
-  </footer>
 
+    <div class="footer-representative">
+      <img
+        src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781136129/Amas_HighRes_1_1_1_ad1nle.webp"
+        alt="AMAS Logo"
+      >
+
+      <div>
+        <p><strong>Representación en América y Europa</strong></p>
+        <p>Asistencia Médica y Apoyo Social A.C.</p>
+      </div>
+    </div>
+
+    <div class="footer-buttons">
+      <a href="#" class="footer-btn">Contacto</a>
+      <a href="#" class="footer-btn footer-btn-secondary">English</a>
+    </div>
+
+  </div>
+</footer>
+
+
+  
   <script>
     const menuBtn = document.getElementById("menuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
