@@ -33,7 +33,7 @@
       justify-content: center;
     
       height: 44px;
-      min-width: 65px;
+      min-width: 80px;
     
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,0.20);
@@ -77,13 +77,26 @@
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .navbar {
+   .navbar {
       min-height: 78px;
-      padding: 0 clamp(22px, 5vw, 80px);
-      display: flex;
+      padding: 0 clamp(28px, 5vw, 96px);
+      display: grid;
+      grid-template-columns: auto 1fr auto auto;
       align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+      gap: 28px;
+    }
+    
+    .nav-links {
+      justify-self: center;
+    }
+    
+    .buy-btn,
+    .language-btn {
+      justify-self: end;
+    }
+    
+    .language-btn {
+      margin-left: 0;
     }
 
     .brand {
