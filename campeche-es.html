@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Campeche | IAMS 4th World Congress 2026</title>
+
+  <style>
+    :root {
+      --navy: #191052;
+      --purple: #3320a8;
+      --violet: #5638f0;
+      --pink: #f04d8b;
+      --gold: #c9a24a;
+      --white: #ffffff;
+      --light: #f7f7fb;
+      --dark-text: #111827;
+      --gray-text: #4b5563;
+      --border: #d8dee8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--dark-text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      color: var(--white);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .navbar {
+      min-height: 78px;
+      padding: 0 clamp(28px, 5vw, 96px);
+      display: grid;
+      grid-template-columns: auto 1fr auto auto;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.25;
+      color: rgba(255,255,255,0.86);
+      max-width: 280px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-self: center;
+      gap: clamp(14px, 1.6vw, 26px);
+      font-size: 14px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.92);
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .buy-btn {
+      background: linear-gradient(135deg, var(--pink), #ff6b4a);
+      color: white;
+      padding: 13px 21px;
+      border-radius: 999px;
+      font-weight: 900;
+      box-shadow: 0 12px 28px rgba(240, 77, 139, 0.35);
+      white-space: nowrap;
+      justify-self: end;
+    }
+
+    .language-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 44px;
+      min-width: 80px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.20);
+      color: white;
+      font-size: 13px;
+      font-weight: 900;
+      background: rgba(255,255,255,0.08);
+      transition: 0.2s ease;
+      justify-self: end;
+    }
+
+    .language-btn:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.24);
+      background: rgba(255,255,255,0.08);
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .mobile-menu {
+      display: none;
+      background: var(--navy);
+      padding: 0 24px 22px;
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 15px 0;
+      border-top: 1px solid rgba(255,255,255,0.13);
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    .mobile-menu .mobile-buy {
+      margin-top: 14px;
+      padding: 14px 20px;
+      text-align: center;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--pink), #ff6b4a);
+      border-top: none;
+      box-shadow: 0 12px 28px rgba(240, 77, 139, 0.25);
+    }
+
+    .host-hero {
+      background:
+        radial-gradient(circle at 12% 20%, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 24%, transparent 42%),
+        radial-gradient(circle at 90% 86%, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 20%, transparent 38%),
+        linear-gradient(135deg, #17104a 0%, #2417a0 58%, #5638f0 100%);
+      color: var(--white);
+      padding: clamp(90px, 12vw, 160px) clamp(24px, 6vw, 96px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .host-hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-label {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 24px;
+    }
+
+    .host-hero h1 {
+      max-width: 980px;
+      font-size: clamp(70px, 13vw, 170px);
+      line-height: 0.86;
+      letter-spacing: -0.075em;
+      font-weight: 950;
+      margin-bottom: 32px;
+    }
+
+    .host-hero p {
+      max-width: 760px;
+      font-size: clamp(20px, 2.3vw, 32px);
+      line-height: 1.28;
+      color: #dbe7ff;
+      font-weight: 750;
+    }
+
+    .section {
+      padding: clamp(72px, 9vw, 120px) clamp(24px, 6vw, 96px);
+    }
+
+    .section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 22px;
+    }
+
+    .section-title {
+      max-width: 960px;
+      font-size: clamp(40px, 6vw, 84px);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      font-weight: 950;
+      color: #17104a;
+      margin-bottom: 30px;
+    }
+
+    .section-text {
+      max-width: 880px;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.58;
+      color: var(--gray-text);
+    }
+
+    .section-text p + p {
+      margin-top: 22px;
+    }
+
+    .white-section {
+      background: var(--white);
+    }
+
+    .light-section {
+      background: var(--light);
+    }
+
+    .venue-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(34px, 6vw, 80px);
+      align-items: center;
+      margin-top: 48px;
+    }
+
+    .main-photo-frame {
+      border-radius: 34px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #e5e7eb;
+      box-shadow: 0 24px 70px rgba(7, 23, 49, 0.10);
+    }
+
+    .main-photo-frame .placeholder {
+      min-height: 500px;
+    }
+
+    .photo-grid-two {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .photo-card {
+      border-radius: 24px;
+      overflow: hidden;
+      background: #e5e7eb;
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 45px rgba(7, 23, 49, 0.08);
+    }
+
+    .photo-card .placeholder {
+      min-height: 260px;
+    }
+
+    .map-grid {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .map-card {
+      border-radius: 30px;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 45px rgba(7, 23, 49, 0.08);
+    }
+
+    .map-card .placeholder {
+      min-height: 360px;
+    }
+
+    .placeholder {
+      width: 100%;
+      min-height: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      text-align: center;
+      color: #667085;
+      font-weight: 900;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background:
+        linear-gradient(135deg, rgba(25,16,82,0.08), rgba(86,56,240,0.08));
+    }
+
+    .cultural-grid {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .culture-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 30px;
+      min-height: 250px;
+      box-shadow: 0 18px 45px rgba(7, 23, 49, 0.07);
+    }
+
+    .culture-card span {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(201, 162, 74, 0.16);
+      color: #17104a;
+      align-items: center;
+      justify-content: center;
+      font-weight: 950;
+      margin-bottom: 22px;
+    }
+
+    .culture-card h3 {
+      color: #17104a;
+      font-size: 26px;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .culture-card p {
+      color: #667085;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .history-highlight {
+      margin-top: 48px;
+      background:
+        linear-gradient(135deg, rgba(25,16,82,0.98), rgba(51,32,168,0.94));
+      color: var(--white);
+      border-radius: 36px;
+      padding: clamp(32px, 5vw, 64px);
+      box-shadow: 0 24px 70px rgba(25, 16, 82, 0.18);
+    }
+
+    .history-highlight h3 {
+      max-width: 920px;
+      font-size: clamp(34px, 5vw, 72px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      margin-bottom: 24px;
+    }
+
+    .history-highlight p {
+      max-width: 820px;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.55;
+      color: #dbe7ff;
+    }
+
+    footer {
+      background: #09051f;
+      color: #cbd5e1;
+      padding: 42px clamp(24px, 6vw, 96px);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .footer-main p {
+      margin-bottom: 6px;
+    }
+
+    .footer-representative {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-representative img {
+      width: 70px;
+      height: auto;
+    }
+
+    @media (max-width: 1120px) {
+      .nav-links {
+        display: none;
+      }
+
+      .menu-btn {
+        display: grid;
+        place-items: center;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .navbar {
+        min-height: 74px;
+        padding: 0 20px;
+      }
+
+      .brand-logo {
+        width: 42px;
+        height: 42px;
+      }
+
+      .brand-name {
+        font-size: 10px;
+        max-width: 210px;
+      }
+
+      .buy-btn,
+      .language-btn {
+        display: none;
+      }
+
+      .host-hero {
+        padding: 78px 24px 82px;
+      }
+
+      .host-hero h1 {
+        font-size: clamp(58px, 19vw, 88px);
+        letter-spacing: -0.055em;
+        margin-bottom: 26px;
+      }
+
+      .host-hero p {
+        font-size: 20px;
+      }
+
+      .section {
+        padding: 70px 24px;
+      }
+
+      .section-title {
+        font-size: clamp(38px, 12vw, 58px);
+      }
+
+      .venue-layout,
+      .photo-grid-two,
+      .map-grid,
+      .cultural-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .main-photo-frame {
+        border-radius: 24px;
+      }
+
+      .main-photo-frame .placeholder {
+        min-height: 300px;
+      }
+
+      .photo-card,
+      .map-card,
+      .culture-card {
+        border-radius: 20px;
+      }
+
+      .photo-card .placeholder {
+        min-height: 220px;
+      }
+
+      .map-card .placeholder {
+        min-height: 280px;
+      }
+
+      .culture-card {
+        min-height: auto;
+        padding: 24px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-representative img {
+        width: 56px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .brand-name {
+        max-width: 185px;
+        font-size: 9px;
+      }
+
+      .host-hero h1 {
+        font-size: 62px;
+      }
+
+      .section-title {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="es.html" class="brand">
+        <img
+          class="brand-logo"
+          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047563/Logo_hppm16.webp"
+          alt="International Academy of Medical Specialists Logo"
+        />
+        <span class="brand-name">
+          International Academy of Medical Specialists, Inc.
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="es.html">Inicio</a>
+        <a href="campeche-es.html">Ciudad anfitriona</a>
+      </div>
+
+      <a class="buy-btn" href="waitlist-es.html">
+        Comprar entradas
+      </a>
+
+      <a class="language-btn" href="campeche-en.html">
+        English
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="es.html">Inicio</a>
+      <a href="campeche-es.html">Ciudad anfitriona</a>
+      <a href="waitlist-es.html" class="mobile-buy">Comprar entradas</a>
+      <a href="campeche-en.html">English</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="host-hero">
+      <div class="host-hero-inner">
+        <div class="hero-label">Ciudad anfitriona</div>
+
+        <h1>Campeche, México</h1>
+
+        <p>
+          Sede del IAMS 4th World Congress 2026: una ciudad histórica, costera y culturalmente única en el sureste mexicano.
+        </p>
+      </div>
+    </section>
+
+    <section class="section white-section">
+      <div class="section-inner">
+        <div class="section-label">Sede del Congreso</div>
+
+        <h2 class="section-title">Centro de Convenciones Campeche XXI</h2>
+
+        <div class="section-text">
+          <p>
+            El IAMS 4th World Congress 2026 se celebrará en el Centro de Convenciones Campeche XXI, uno de los principales recintos para eventos académicos, institucionales y profesionales del sureste de México.
+          </p>
+
+          <p>
+            Ubicado frente al malecón de la ciudad y a pocos minutos del centro histórico, el recinto ofrece instalaciones adecuadas para conferencias, ceremonias, sesiones académicas y actividades de networking internacional.
+          </p>
+        </div>
+
+        <div class="venue-layout">
+          <div class="main-photo-frame">
+            <div class="placeholder">Foto principal del Centro de Convenciones</div>
+          </div>
+
+          <div>
+            <div class="photo-card">
+              <div class="placeholder">Foto interior del recinto</div>
+            </div>
+
+            <div class="photo-card" style="margin-top:18px;">
+              <div class="placeholder">Segunda foto interior del recinto</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section">
+      <div class="section-inner">
+        <div class="section-label">Ubicación</div>
+
+        <h2 class="section-title">¿Dónde está Campeche?</h2>
+
+        <div class="section-text">
+          <p>
+            Campeche se encuentra en la Península de Yucatán, al sureste de México, a orillas del Golfo de México.
+          </p>
+
+          <p>
+            Su ubicación conecta la experiencia del congreso con una de las regiones históricas y culturales más importantes del país, cerca de otros destinos del mundo maya y del sureste mexicano.
+          </p>
+        </div>
+
+        <div class="map-grid">
+          <div class="map-card">
+            <div class="placeholder">Mapa de México con Campeche señalado</div>
+          </div>
+
+          <div class="map-card">
+            <div class="placeholder">Mapa regional de la Península de Yucatán</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white-section">
+      <div class="section-inner">
+        <div class="section-label">Experiencia cultural</div>
+
+        <h2 class="section-title">Una sede con historia, costa y cultura mexicana.</h2>
+
+        <div class="section-text">
+          <p>
+            Campeche es una ciudad costera reconocida por su centro histórico amurallado, su arquitectura colonial y su relación histórica con el Golfo de México.
+          </p>
+
+          <p>
+            Para los asistentes internacionales, la ciudad ofrece una experiencia distinta a los destinos turísticos masivos: un entorno más tranquilo, caminable y auténtico, con gastronomía regional, tradición marítima y una fuerte identidad local.
+          </p>
+        </div>
+
+        <div class="cultural-grid">
+          <article class="culture-card">
+            <span>01</span>
+            <h3>Patrimonio histórico</h3>
+            <p>
+              Campeche conserva murallas, baluartes, calles coloniales y espacios históricos que reflejan siglos de intercambio cultural.
+            </p>
+          </article>
+
+          <article class="culture-card">
+            <span>02</span>
+            <h3>Ciudad costera</h3>
+            <p>
+              Su ubicación frente al Golfo de México permite combinar actividades académicas con una experiencia visual y cultural junto al mar.
+            </p>
+          </article>
+
+          <article class="culture-card">
+            <span>03</span>
+            <h3>Experiencia tranquila</h3>
+            <p>
+              La ciudad ofrece un ambiente más sereno y accesible para asistentes que buscan una experiencia internacional con identidad local.
+            </p>
+          </article>
+        </div>
+
+        <div class="photo-grid-two">
+          <div class="photo-card">
+            <div class="placeholder">Foto del centro histórico</div>
+          </div>
+
+          <div class="photo-card">
+            <div class="placeholder">Foto del malecón o ciudad costera</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section">
+      <div class="section-inner">
+        <div class="section-label">Historia compartida</div>
+
+        <h2 class="section-title">Campeche, México y Filipinas</h2>
+
+        <div class="section-text">
+          <p>
+            México y Filipinas comparten una relación histórica profunda construida durante siglos de intercambio entre Asia y América.
+          </p>
+
+          <p>
+            A través del Galeón de Manila, personas, productos, conocimientos y tradiciones circularon entre Filipinas y la Nueva España, creando vínculos culturales que aún forman parte de la historia compartida entre ambos países.
+          </p>
+
+          <p>
+            Celebrar el IAMS World Congress en Campeche permite reunir nuevamente a médicos y especialistas de Filipinas, México y otras regiones del mundo en una ciudad que representa historia, intercambio y conexión internacional.
+          </p>
+        </div>
+
+        <div class="history-highlight">
+          <h3>Una sede simbólica para una comunidad médica internacional.</h3>
+
+          <p>
+            Campeche no solo ofrece instalaciones para un congreso. También ofrece un contexto cultural e histórico que conecta naturalmente con el espíritu internacional de IAMS: colaboración médica, intercambio profesional y construcción de lazos entre países.
+          </p>
+        </div>
+
+        <div class="photo-grid-two">
+          <div class="photo-card">
+            <div class="placeholder">Imagen o ilustración del Galeón de Manila</div>
+          </div>
+
+          <div class="photo-card">
+            <div class="placeholder">Mapa histórico de la relación México-Filipinas</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-main">
+        <p><strong>International Academy of Medical Specialists, Inc.</strong></p>
+        <p>4th IAMS World Congress 2026 · Campeche, México</p>
+      </div>
+
+      <div class="footer-representative">
+        <img
+          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781136129/Amas_HighRes_1_1_1_ad1nle.webp"
+          alt="AMAS Logo"
+        />
+
+        <div>
+          <p><strong>Representación en América y Europa</strong></p>
+          <p>Asistencia Médica y Apoyo Social A.C.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+      menuBtn.textContent = mobileMenu.classList.contains("open") ? "×" : "☰";
+    });
+  </script>
+</body>
+</html>
