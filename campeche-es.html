@@ -547,339 +547,867 @@
 
         <div class="eyebrow">International Academy of Medical Specialists</div>
 
-        <h1>Bienvenidos a Campeche.</h1>
+        <!DOCTYPE html>
 
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Campeche | Ciudad Anfitriona IAMS 2026</title>
+
+  <style>
+    :root {
+      --navy: #191052;
+      --deep: #09051f;
+      --purple: #3320a8;
+      --violet: #5638f0;
+      --pink: #f04d8b;
+      --gold: #c9a24a;
+      --white: #ffffff;
+      --cream: #fbf7ef;
+      --sand: #efe1c5;
+      --light: #f7f7fb;
+      --dark-text: #111827;
+      --gray-text: #4b5563;
+      --border: #d8dee8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--dark-text);
+      line-height: 1.55;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    main {
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(9,5,31,0.92) 0%, rgba(25,16,82,0.78) 42%, rgba(25,16,82,0.25) 100%),
+        url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1780953766/iStock-1486790456__1__1_bzcdvu.webp");
+      background-size: cover;
+      background-position: center;
+      padding: clamp(84px, 9vw, 132px) clamp(24px, 6vw, 96px);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 34px;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      width: min(100%, 1180px);
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 13px;
+      font-weight: 950;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      max-width: 920px;
+      font-size: clamp(58px, 10vw, 132px);
+      line-height: 0.88;
+      letter-spacing: -0.08em;
+      font-weight: 950;
+      margin-bottom: 30px;
+    }
+
+    .hero-text {
+      max-width: 720px;
+      color: #dbe7ff;
+      font-size: clamp(20px, 2.3vw, 30px);
+      line-height: 1.35;
+      font-weight: 750;
+    }
+
+    .hero-details {
+      margin-top: 38px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-details span {
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.10);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 900;
+      backdrop-filter: blur(6px);
+    }
+
+    .section {
+      padding: clamp(56px, 7vw, 92px) clamp(20px, 5vw, 72px);
+    }
+
+    .section.white {
+      background: var(--white);
+    }
+
+    .section.cream {
+      background: var(--cream);
+    }
+
+    .section.sand {
+      background: var(--sand);
+    }
+
+    .section.dark {
+      background: var(--deep);
+      color: var(--white);
+    }
+
+    .section-inner {
+      width: min(100%, 1120px);
+      margin: 0 auto;
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 13px;
+      font-weight: 950;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      max-width: 900px;
+      color: var(--navy);
+      font-size: clamp(40px, 6vw, 82px);
+      line-height: 0.96;
+      letter-spacing: -0.065em;
+      font-weight: 950;
+      margin-bottom: 26px;
+    }
+
+    .section.dark .section-title {
+      color: var(--white);
+    }
+
+    .section-lead {
+      max-width: 850px;
+      color: var(--gray-text);
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.58;
+      margin-bottom: 26px;
+    }
+
+    .section.dark .section-lead {
+      color: #cbd5e1;
+    }
+
+    .text-block {
+      max-width: 860px;
+      color: var(--gray-text);
+      font-size: clamp(17px, 1.7vw, 21px);
+      line-height: 1.68;
+    }
+
+    .text-block p + p {
+      margin-top: 18px;
+    }
+
+    .section.dark .text-block {
+      color: #cbd5e1;
+    }
+
+    .image-wide {
+      margin-top: 34px;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(25,16,82,0.10);
+      box-shadow: 0 24px 72px rgba(7,23,49,0.12);
+      background: #e5e7eb;
+    }
+
+    .image-wide img {
+      height: clamp(300px, 46vw, 560px);
+      object-fit: cover;
+    }
+
+    .intro-panel {
+      background: var(--white);
+      border-radius: 34px;
+      padding: clamp(28px, 5vw, 56px);
+      border: 1px solid rgba(25,16,82,0.10);
+      box-shadow: 0 20px 60px rgba(7,23,49,0.08);
+    }
+
+    .intro-panel h2 {
+      color: var(--navy);
+      max-width: 840px;
+      font-size: clamp(34px, 5vw, 68px);
+      line-height: 1;
+      letter-spacing: -0.06em;
+      font-weight: 950;
+      margin-bottom: 22px;
+    }
+
+    .intro-panel p {
+      max-width: 840px;
+      color: var(--gray-text);
+      font-size: clamp(18px, 2vw, 23px);
+      line-height: 1.58;
+    }
+
+    .safety-note {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 22px;
+      align-items: start;
+      padding-top: 26px;
+      border-top: 1px solid rgba(25,16,82,0.12);
+    }
+
+    .safety-note strong {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 13px;
+      font-weight: 950;
+    }
+
+    .safety-note span {
+      color: var(--navy);
+      font-size: clamp(17px, 1.8vw, 22px);
+      line-height: 1.46;
+      font-weight: 800;
+    }
+
+    .venue-points {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .venue-point {
+      border-radius: 22px;
+      background: var(--white);
+      border: 1px solid rgba(25,16,82,0.10);
+      padding: 22px;
+      box-shadow: 0 16px 44px rgba(7,23,49,0.07);
+    }
+
+    .venue-point span {
+      display: block;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 950;
+      margin-bottom: 14px;
+    }
+
+    .venue-point h3 {
+      color: var(--navy);
+      font-size: 22px;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin-bottom: 12px;
+    }
+
+    .venue-point p {
+      color: var(--gray-text);
+      font-size: 15px;
+      line-height: 1.48;
+    }
+
+    .route-module {
+      margin-top: 34px;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(201,162,74,0.16), transparent 34%),
+        linear-gradient(135deg, #17104a 0%, #2417a0 58%, #5638f0 100%);
+      padding: clamp(24px, 4vw, 42px);
+      box-shadow: 0 24px 72px rgba(0,0,0,0.24);
+      overflow: hidden;
+    }
+
+    .route-line {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .route-stop {
+      min-width: 0;
+      border-radius: 22px;
+      padding: 24px;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.13);
+    }
+
+    .route-stop strong {
+      display: block;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 950;
+      margin-bottom: 20px;
+    }
+
+    .route-stop h3 {
+      color: var(--white);
+      font-size: clamp(25px, 3vw, 38px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      margin-bottom: 14px;
+    }
+
+    .route-stop p {
+      color: #dbe7ff;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .route-arrow {
+      color: var(--gold);
+      font-size: 34px;
+      font-weight: 950;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .route-note {
+      max-width: 850px;
+      margin-top: 28px;
+      color: #dbe7ff;
+      font-size: clamp(16px, 1.7vw, 20px);
+      line-height: 1.58;
+    }
+
+    .map-stack {
+      margin-top: 32px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .map-frame {
+      border-radius: 24px;
+      overflow: hidden;
+      background: #e5e7eb;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 20px 58px rgba(0,0,0,0.18);
+    }
+
+    .map-frame img {
+      aspect-ratio: 1920 / 800;
+      object-fit: cover;
+    }
+
+    .culture-gallery {
+      margin-top: 34px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .culture-main {
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(25,16,82,0.10);
+      box-shadow: 0 24px 72px rgba(7,23,49,0.12);
+    }
+
+    .culture-main img {
+      height: clamp(320px, 46vw, 560px);
+      object-fit: cover;
+    }
+
+    .culture-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .culture-small {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(25,16,82,0.10);
+      background: #e5e7eb;
+    }
+
+    .culture-small img {
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .fact-lines {
+      margin-top: 30px;
+      max-width: 920px;
+      border-top: 1px solid rgba(25,16,82,0.12);
+    }
+
+    .fact-line {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 22px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(25,16,82,0.12);
+    }
+
+    .fact-line strong {
+      color: var(--gold);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 950;
+    }
+
+    .fact-line span {
+      color: var(--navy);
+      font-size: clamp(17px, 1.8vw, 21px);
+      line-height: 1.45;
+      font-weight: 800;
+    }
+
+    .history-box {
+      margin-top: 34px;
+      border-radius: 30px;
+      background: var(--white);
+      border: 1px solid rgba(25,16,82,0.10);
+      padding: clamp(28px, 5vw, 56px);
+      box-shadow: 0 20px 60px rgba(7,23,49,0.08);
+    }
+
+    .history-box p {
+      max-width: 860px;
+      color: var(--gray-text);
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.62;
+    }
+
+    .history-box p + p {
+      margin-top: 18px;
+    }
+
+    .closing {
+      padding: clamp(68px, 8vw, 108px) clamp(20px, 5vw, 72px);
+      background:
+        linear-gradient(90deg, rgba(9,5,31,0.90), rgba(25,16,82,0.72)),
+        url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291196/campeche-5_1200-900x1035_h5zeav.webp");
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .closing-inner {
+      width: min(100%, 900px);
+      margin: 0 auto;
+    }
+
+    .closing h2 {
+      font-size: clamp(40px, 6vw, 80px);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+      font-weight: 950;
+      margin-bottom: 22px;
+    }
+
+    .closing p {
+      max-width: 740px;
+      margin: 0 auto;
+      color: #dbe7ff;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.56;
+    }
+
+    @media (max-width: 980px) {
+      .venue-points {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .route-line {
+        grid-template-columns: 1fr;
+      }
+
+      .route-arrow {
+        transform: rotate(90deg);
+        padding: 4px 0;
+      }
+
+      .culture-row {
+        grid-template-columns: 1fr;
+      }
+
+      .culture-small img {
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .hero {
+        min-height: 82vh;
+        padding: 88px 20px 60px;
+        background:
+          linear-gradient(180deg, rgba(9,5,31,0.28) 0%, rgba(9,5,31,0.88) 72%),
+          url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1780953766/iStock-1486790456__1__1_bzcdvu.webp");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero::after {
+        inset: 12px;
+        border-radius: 24px;
+      }
+
+      .hero h1 {
+        font-size: clamp(52px, 17vw, 76px);
+      }
+
+      .hero-details span {
+        width: 100%;
+        text-align: center;
+      }
+
+      .section {
+        padding: 52px 20px;
+      }
+
+      .section-title {
+        font-size: clamp(38px, 13vw, 58px);
+      }
+
+      .intro-panel,
+      .history-box,
+      .route-module {
+        border-radius: 24px;
+      }
+
+      .safety-note,
+      .fact-line {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .venue-points {
+        grid-template-columns: 1fr;
+      }
+
+      .image-wide,
+      .culture-main {
+        border-radius: 22px;
+      }
+
+      .image-wide img,
+      .culture-main img {
+        height: 300px;
+      }
+
+      .map-frame,
+      .culture-small {
+        border-radius: 20px;
+      }
+
+      .map-frame img {
+        aspect-ratio: 16 / 9;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Ciudad anfitriona</div>
+
+```
+    <h1>Bienvenidos a Campeche.</h1>
+
+    <p class="hero-text">
+      El IAMS 4th World Congress 2026 se celebrará en una ciudad histórica, costera y culturalmente única del sureste mexicano.
+    </p>
+
+    <div class="hero-details">
+      <span>Octubre 24–25, 2026</span>
+      <span>Campeche, México</span>
+      <span>Centro de Convenciones Campeche Siglo XXI</span>
+    </div>
+  </div>
+</section>
+
+<section class="section cream">
+  <div class="section-inner">
+    <div class="intro-panel">
+      <div class="section-kicker">Campeche 2026</div>
+
+      <h2>Ven al congreso en una ciudad interesante.</h2>
+
+      <p>
+        Campeche combina una sede formal para el encuentro médico, una ciudad tranquila frente al Golfo de México y una experiencia cultural distinta a los destinos turísticos masivos.
+      </p>
+
+      <div class="safety-note">
+        <strong>Seguridad</strong>
+        <span>
+          Campeche es reconocido como uno de los estados más tranquilos del país. Actualmente, el Departamento de Estado de Estados Unidos mantiene al estado en Nivel 1: “Exercise normal precautions”, la categoría más baja de alerta de viaje.
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section white">
+  <div class="section-inner">
+    <div class="section-kicker">Sede oficial</div>
+
+    <h2 class="section-title">Centro de Convenciones Campeche Siglo XXI</h2>
+
+    <p class="section-lead">
+      El IAMS 4th World Congress 2026 se realizará en el Centro de Convenciones Campeche Siglo XXI, un recinto preparado para recibir eventos académicos, institucionales y profesionales en el sureste de México.
+    </p>
+
+    <div class="image-wide">
+      <img
+        src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1780953830/Centro-de-Convenciones-Campeche-Siglo-XXI-1_1_xrpf5t.webp"
+        alt="Centro de Convenciones Campeche Siglo XXI"
+      />
+    </div>
+
+    <div class="venue-points">
+      <div class="venue-point">
+        <span>01</span>
+        <h3>Equipo audiovisual</h3>
         <p>
-          El IAMS 4th World Congress 2026 reunirá a médicos y especialistas en una ciudad histórica, costera y culturalmente única del sureste mexicano.
+          Pantalla, micrófonos, sonorización parcial o total, iluminación programable y equipo audiovisual para sesiones académicas.
         </p>
-
-        <div class="invitation-details">
-          <span>Octubre 24–25, 2026</span>
-          <span>Campeche, México</span>
-          <span>Centro de Convenciones Campeche Siglo XXI</span>
-        </div>
       </div>
-    </section>
 
-    <section class="postcard-section">
-      <div class="postcard-card featured">
-        <div class="postcard-image">
-          <img
-            src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1780953766/iStock-1486790456__1__1_bzcdvu.webp"
-            alt="Vista de Campeche"
-          />
-        </div>
-
-        <div class="postcard-body">
-          <div class="postcard-title">
-            <div class="eyebrow">Host City</div>
-
-            <h2>Una ciudad tranquila frente al Golfo de México.</h2>
-
-            <p>
-              Campeche será la ciudad anfitriona del IAMS 4th World Congress 2026.
-            </p>
-          </div>
-
-          <div class="postcard-copy">
-            <p>
-              Campeche ofrece una experiencia distinta a los destinos turísticos masivos: una ciudad costera, caminable, histórica y con un ritmo más tranquilo para recibir a una comunidad médica internacional.
-            </p>
-
-            <p>
-              Además de su valor cultural, Campeche es reconocido como uno de los estados más tranquilos de México. El Departamento de Estado de Estados Unidos mantiene al estado de Campeche en el Nivel 1 de alerta de viaje: “Exercise normal precautions”, la categoría más baja posible.
-            </p>
-
-            <div class="detail-list">
-              <div class="detail-row">
-                <strong>Ubicación</strong>
-                <span>Sureste de México, frente al Golfo de México.</span>
-              </div>
-
-              <div class="detail-row">
-                <strong>Ambiente</strong>
-                <span>Ciudad tranquila, caminable y con identidad local.</span>
-              </div>
-
-              <div class="detail-row">
-                <strong>Seguridad</strong>
-                <span>Estado con alerta de viaje Nivel 1 por parte de Estados Unidos.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="postcard-section alt">
-      <div class="postcard-card">
-        <div class="postcard-image">
-          <img
-            src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1780953830/Centro-de-Convenciones-Campeche-Siglo-XXI-1_1_xrpf5t.webp"
-            alt="Centro de Convenciones Campeche Siglo XXI"
-          />
-        </div>
-
-        <div class="postcard-body">
-          <div class="postcard-title">
-            <div class="eyebrow">Sede oficial</div>
-
-            <h2>Centro de Convenciones Campeche Siglo XXI</h2>
-
-            <p>
-              Un recinto preparado para actividades académicas, institucionales y profesionales.
-            </p>
-          </div>
-
-          <div class="postcard-copy">
-            <p>
-              El IAMS 4th World Congress 2026 se realizará en el Centro de Convenciones Campeche Siglo XXI, un espacio diseñado para recibir eventos formales en el sureste mexicano.
-            </p>
-
-            <p>
-              Su infraestructura permite desarrollar sesiones académicas, ceremonias, actividades de networking y operación profesional para un encuentro médico internacional.
-            </p>
-
-            <div class="venue-points">
-              <div class="venue-point">
-                <h3>Equipo audiovisual</h3>
-                <p>
-                  Pantalla, micrófonos, sonorización parcial o total, iluminación programable y equipo audiovisual para sesiones académicas.
-                </p>
-              </div>
-
-              <div class="venue-point">
-                <h3>Operación profesional</h3>
-                <p>
-                  Áreas para prensa o traducción simultánea, redes de comunicación digital y facilidades de oficina.
-                </p>
-              </div>
-
-              <div class="venue-point">
-                <h3>Soporte logístico</h3>
-                <p>
-                  Energía eléctrica de 110 a 220 volts, planta eléctrica auxiliar, seguridad, limpieza y rampas de carga.
-                </p>
-              </div>
-
-              <div class="venue-point">
-                <h3>Accesibilidad y servicios</h3>
-                <p>
-                  Estacionamiento con 355 espacios, facilidades para personas con discapacidad y opciones de alimentos para eventos.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="postcard-section">
-      <div class="postcard-card">
-        <div class="postcard-image contain">
-          <img
-            src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781293992/Red_Yellow_Modern_Food_Journal_Presentation_wsdzux.jpg"
-            alt="Mapa de México con Campeche señalado"
-          />
-        </div>
-
-        <div class="postcard-body">
-          <div class="postcard-title">
-            <div class="eyebrow">Fácil acceso</div>
-
-            <h2>La ruta práctica hacia Campeche.</h2>
-
-            <p>
-              Campeche está conectado con el sureste mexicano a través de Mérida, una de las principales puertas de entrada regionales.
-            </p>
-          </div>
-
-          <div class="postcard-copy">
-            <p>
-              Para asistentes provenientes de Filipinas, el sur de Asia u otros destinos con conexiones largas, una ruta práctica puede ser ingresar a México por Ciudad de México y conectar hacia Mérida.
-            </p>
-
-            <p>
-              Para visitantes desde Estados Unidos, Latinoamérica o el Caribe, Mérida puede funcionar como punto de llegada regional. Desde Mérida, Campeche se encuentra aproximadamente a dos horas por carretera en un trayecto directo.
-            </p>
-
-            <div class="route-strip">
-              <div class="route-line">
-                <div class="route-stop">
-                  <strong>01</strong>
-                  <div>
-                    <h3>Ciudad de México</h3>
-                    <p>Entrada internacional para rutas de conexión larga.</p>
-                  </div>
-                </div>
-
-                <div class="route-arrow">→</div>
-
-                <div class="route-stop">
-                  <strong>02</strong>
-                  <div>
-                    <h3>Mérida</h3>
-                    <p>Puerta regional hacia el sureste mexicano.</p>
-                  </div>
-                </div>
-
-                <div class="route-arrow">→</div>
-
-                <div class="route-stop">
-                  <strong>03</strong>
-                  <div>
-                    <h3>Campeche</h3>
-                    <p>Trayecto terrestre directo de aproximadamente dos horas.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="map-grid">
-              <div class="map-frame">
-                <img
-                  src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781293992/Red_Yellow_Modern_Food_Journal_Presentation_wsdzux.jpg"
-                  alt="Mapa de México con Campeche señalado"
-                />
-              </div>
-
-              <div class="map-frame">
-                <img
-                  src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781293992/Red_Yellow_Modern_Food_Journal_Presentation_1_xmalcc.jpg"
-                  alt="Mapa de la Península de Yucatán con Campeche señalado"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="postcard-section alt">
-      <div class="postcard-card">
-        <div class="postcard-image">
-          <img
-            src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291197/caption_xgcrwd.webp"
-            alt="Calles de Campeche"
-          />
-        </div>
-
-        <div class="postcard-body">
-          <div class="postcard-title">
-            <div class="eyebrow">Experiencia cultural</div>
-
-            <h2>Una ciudad Patrimonio Mundial.</h2>
-
-            <p>
-              Campeche no es solo el lugar del congreso. Es parte de la experiencia.
-            </p>
-          </div>
-
-          <div class="postcard-copy">
-            <p>
-              La Ciudad Histórica Fortificada de Campeche está inscrita en la Lista del Patrimonio Mundial de la UNESCO. Su centro histórico conserva murallas, baluartes y un sistema de fortificaciones construido para proteger la ciudad de ataques navales.
-            </p>
-
-            <p>
-              Para los asistentes internacionales, Campeche ofrece una experiencia auténticamente mexicana: arquitectura colonial, gastronomía regional, tradición costera y una ciudad con fuerte identidad cultural.
-            </p>
-
-            <div class="gallery-grid">
-              <div class="gallery-main">
-                <img
-                  src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291196/images_mncte1.webp"
-                  alt="Muralla de Campeche"
-                />
-              </div>
-
-              <div class="gallery-side">
-                <div class="gallery-side-item">
-                  <img
-                    src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291196/campeche-5_1200-900x1035_h5zeav.webp"
-                    alt="Letras de Campeche"
-                  />
-                </div>
-
-                <div class="gallery-side-item">
-                  <img
-                    src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291197/Portada_ms0yfl.webp"
-                    alt="Traje típico de Campeche"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div class="detail-list">
-              <div class="detail-row">
-                <strong>UNESCO</strong>
-                <span>Ciudad Histórica Fortificada de Campeche.</span>
-              </div>
-
-              <div class="detail-row">
-                <strong>Cultura</strong>
-                <span>Murallas, baluartes, arquitectura colonial y tradición regional.</span>
-              </div>
-
-              <div class="detail-row">
-                <strong>Experiencia</strong>
-                <span>Una ciudad tranquila, costera y distinta a los destinos turísticos masivos.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="postcard-section">
-      <div class="postcard-card">
-        <div class="postcard-image">
-          <img
-            src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1780953766/iStock-1486790456__1__1_bzcdvu.webp"
-            alt="Campeche"
-          />
-        </div>
-
-        <div class="postcard-body">
-          <div class="postcard-title">
-            <div class="eyebrow">Hermandad Filipina</div>
-
-            <h2>Una historia compartida entre México y Filipinas.</h2>
-
-            <p>
-              Una sección breve, simbólica y conectada con el espíritu internacional de IAMS.
-            </p>
-          </div>
-
-          <div class="postcard-copy">
-            <p>
-              México y Filipinas comparten una historia de intercambio cultural que se remonta a la ruta del Galeón de Manila, una conexión que durante siglos unió Asia y América.
-            </p>
-
-            <p>
-              Celebrar el IAMS World Congress en Campeche permite reunir nuevamente a médicos de Filipinas, México y otros países en una ciudad marcada por la historia marítima, el intercambio cultural y la vocación internacional.
-            </p>
-
-            <div class="history-box">
-              <h3>Una sede con sentido para una comunidad médica internacional.</h3>
-
-              <p>
-                Campeche ofrece un marco simbólico para el encuentro: una ciudad histórica, portuaria y culturalmente conectada con la idea de intercambio entre regiones del mundo.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="closing-section">
-      <div class="closing-inner">
-        <h2>Ven al congreso en una ciudad con historia.</h2>
-
+      <div class="venue-point">
+        <span>02</span>
+        <h3>Operación profesional</h3>
         <p>
-          Campeche combina una sede formal para el encuentro, una experiencia cultural memorable y una narrativa histórica que conecta con la misión internacional de IAMS.
+          Áreas para prensa o traducción simultánea, redes de comunicación digital y facilidades de oficina.
         </p>
       </div>
-    </section>
+
+      <div class="venue-point">
+        <span>03</span>
+        <h3>Soporte logístico</h3>
+        <p>
+          Energía eléctrica de 110 a 220 volts, planta eléctrica auxiliar, seguridad, limpieza y rampas de carga.
+        </p>
+      </div>
+
+      <div class="venue-point">
+        <span>04</span>
+        <h3>Accesibilidad y servicios</h3>
+        <p>
+          Estacionamiento con 355 espacios, facilidades para personas con discapacidad y opciones de alimentos para eventos.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="section-inner">
+    <div class="section-kicker">Fácil acceso</div>
+
+    <h2 class="section-title">La ruta práctica hacia Campeche.</h2>
+
+    <p class="section-lead">
+      La ruta más conveniente dependerá del país de origen. Para visitantes de Filipinas, el sur de Asia u otros destinos con conexiones largas, Ciudad de México puede funcionar como punto de entrada internacional. Para asistentes desde Estados Unidos, Latinoamérica o el Caribe, Mérida puede ser la puerta regional más conveniente.
+    </p>
+
+    <div class="route-module">
+      <div class="route-line">
+        <div class="route-stop">
+          <strong>01</strong>
+          <h3>Ciudad de México</h3>
+          <p>Entrada internacional para rutas de conexión larga.</p>
+        </div>
+
+        <div class="route-arrow">→</div>
+
+        <div class="route-stop">
+          <strong>02</strong>
+          <h3>Mérida</h3>
+          <p>Puerta regional hacia el sureste mexicano.</p>
+        </div>
+
+        <div class="route-arrow">→</div>
+
+        <div class="route-stop">
+          <strong>03</strong>
+          <h3>Campeche</h3>
+          <p>Trayecto terrestre directo de aproximadamente dos horas desde Mérida.</p>
+        </div>
+      </div>
+
+      <p class="route-note">
+        Campeche cuenta con aeropuerto local, pero para muchos asistentes internacionales Mérida puede ofrecer mayor disponibilidad de conexiones. Desde Mérida, el traslado a Campeche es directo y sencillo.
+      </p>
+    </div>
+
+    <div class="map-stack">
+      <div class="map-frame">
+        <img
+          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781293992/Red_Yellow_Modern_Food_Journal_Presentation_wsdzux.jpg"
+          alt="Mapa de México con Campeche señalado"
+        />
+      </div>
+
+      <div class="map-frame">
+        <img
+          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781293992/Red_Yellow_Modern_Food_Journal_Presentation_1_xmalcc.jpg"
+          alt="Mapa de la Península de Yucatán con Campeche señalado"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section white">
+  <div class="section-inner">
+    <div class="section-kicker">Experiencia cultural</div>
+
+    <h2 class="section-title">Una ciudad Patrimonio Mundial frente al Golfo de México.</h2>
+
+    <p class="section-lead">
+      Campeche no es solo el lugar del congreso. Es parte de la experiencia: una ciudad costera, tranquila y caminable, con centro histórico amurallado, arquitectura colonial y una identidad profundamente mexicana.
+    </p>
+
+    <div class="text-block">
+      <p>
+        La Ciudad Histórica Fortificada de Campeche está inscrita en la Lista del Patrimonio Mundial de la UNESCO. Su centro histórico conserva murallas, baluartes y un sistema de fortificaciones construido para proteger la ciudad de ataques navales.
+      </p>
+
+      <p>
+        Para los asistentes internacionales, Campeche ofrece un entorno distinto a los destinos turísticos masivos: una ciudad con ritmo local, gastronomía regional, tradición costera y espacios históricos que permiten extender la experiencia del congreso más allá del recinto.
+      </p>
+    </div>
+
+    <div class="culture-gallery">
+      <div class="culture-main">
+        <img
+          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291197/caption_xgcrwd.webp"
+          alt="Calles de Campeche"
+        />
+      </div>
+
+      <div class="culture-row">
+        <div class="culture-small">
+          <img
+            src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291196/images_mncte1.webp"
+            alt="Murallas de Campeche"
+          />
+        </div>
+
+        <div class="culture-small">
+          <img
+            src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291196/campeche-5_1200-900x1035_h5zeav.webp"
+            alt="Letras de Campeche"
+          />
+        </div>
+
+        <div class="culture-small">
+          <img
+            src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291197/Portada_ms0yfl.webp"
+            alt="Traje típico de Campeche"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="fact-lines">
+      <div class="fact-line">
+        <strong>UNESCO</strong>
+        <span>Ciudad Histórica Fortificada de Campeche.</span>
+      </div>
+
+      <div class="fact-line">
+        <strong>Cultura</strong>
+        <span>Murallas, baluartes, arquitectura colonial y tradición regional.</span>
+      </div>
+
+      <div class="fact-line">
+        <strong>Experiencia</strong>
+        <span>Una ciudad tranquila, costera y distinta a los destinos turísticos masivos.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section sand">
+  <div class="section-inner">
+    <div class="section-kicker">Hermandad Filipina</div>
+
+    <h2 class="section-title">Una historia compartida entre México y Filipinas.</h2>
+
+    <p class="section-lead">
+      Esta sección funciona como cierre narrativo: breve, simbólico y conectado con el espíritu internacional de IAMS.
+    </p>
+
+    <div class="history-box">
+      <p>
+        México y Filipinas comparten una historia de intercambio cultural que se remonta a la ruta del Galeón de Manila, una conexión que durante siglos unió Asia y América.
+      </p>
+
+      <p>
+        Celebrar el IAMS World Congress en Campeche permite reunir nuevamente a médicos de Filipinas, México y otros países en una ciudad marcada por la historia marítima, el intercambio cultural y la vocación internacional.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="closing-inner">
+    <h2>Campeche le da contexto al encuentro.</h2>
+
+    <p>
+      Una sede formal, una ciudad tranquila, una experiencia cultural memorable y una historia que conecta con la misión internacional de IAMS.
+    </p>
+  </div>
+</section>
+```
+
+  </main>
+</body>
+</html>
+
   </main>
 </body>
 </html>
