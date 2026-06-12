@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -57,7 +58,7 @@
       position: relative;
       color: var(--white);
       background:
-        linear-gradient(90deg, rgba(9,5,31,0.92) 0%, rgba(25,16,82,0.78) 42%, rgba(25,16,82,0.25) 100%),
+        linear-gradient(90deg, rgba(9,5,31,0.92) 0%, rgba(25,16,82,0.74) 45%, rgba(25,16,82,0.18) 100%),
         url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1781295548/5f33f12c1fd4ac34e715c02c_cq9tlc.jpg");
       background-size: cover;
       background-position: center;
@@ -80,12 +81,17 @@
       z-index: 2;
     }
 
-    .eyebrow {
+    .eyebrow,
+    .section-kicker {
       color: var(--gold);
       text-transform: uppercase;
-      letter-spacing: 0.24em;
+      letter-spacing: 0.22em;
       font-size: 13px;
       font-weight: 950;
+      margin-bottom: 18px;
+    }
+
+    .hero .eyebrow {
       margin-bottom: 22px;
     }
 
@@ -104,24 +110,6 @@
       font-size: clamp(20px, 2.3vw, 30px);
       line-height: 1.35;
       font-weight: 750;
-    }
-
-    .hero-details {
-      margin-top: 38px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .hero-details span {
-      padding: 12px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.10);
-      color: var(--white);
-      font-size: 13px;
-      font-weight: 900;
-      backdrop-filter: blur(6px);
     }
 
     .section {
@@ -148,15 +136,6 @@
     .section-inner {
       width: min(100%, 1120px);
       margin: 0 auto;
-    }
-
-    .section-kicker {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      font-size: 13px;
-      font-weight: 950;
-      margin-bottom: 18px;
     }
 
     .section-title {
@@ -196,60 +175,6 @@
       margin-top: 18px;
     }
 
-    .section.dark .text-block {
-      color: #cbd5e1;
-    }
-
-    .intro-panel {
-      background: var(--white);
-      border-radius: 34px;
-      padding: clamp(28px, 5vw, 56px);
-      border: 1px solid rgba(25,16,82,0.10);
-      box-shadow: 0 20px 60px rgba(7,23,49,0.08);
-    }
-
-    .intro-panel h2 {
-      color: var(--navy);
-      max-width: 840px;
-      font-size: clamp(34px, 5vw, 68px);
-      line-height: 1;
-      letter-spacing: -0.06em;
-      font-weight: 950;
-      margin-bottom: 22px;
-    }
-
-    .intro-panel p {
-      max-width: 840px;
-      color: var(--gray-text);
-      font-size: clamp(18px, 2vw, 23px);
-      line-height: 1.58;
-    }
-
-    .safety-note {
-      margin-top: 28px;
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 22px;
-      align-items: start;
-      padding-top: 26px;
-      border-top: 1px solid rgba(25,16,82,0.12);
-    }
-
-    .safety-note strong {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 13px;
-      font-weight: 950;
-    }
-
-    .safety-note span {
-      color: var(--navy);
-      font-size: clamp(17px, 1.8vw, 22px);
-      line-height: 1.46;
-      font-weight: 800;
-    }
-
     .image-wide {
       margin-top: 34px;
       border-radius: 30px;
@@ -260,12 +185,12 @@
     }
 
     .image-wide img {
-      height: clamp(300px, 46vw, 560px);
+      height: min(500px, 48vw);
       object-fit: cover;
     }
 
     .venue-points {
-      margin-top: 32px;
+      margin-top: 30px;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 14px;
@@ -303,14 +228,126 @@
       line-height: 1.48;
     }
 
+    .city-intro {
+      max-width: 900px;
+      color: var(--gray-text);
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.6;
+    }
+
+    .city-intro p + p {
+      margin-top: 18px;
+    }
+
+    .city-gallery {
+      margin-top: 38px;
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .city-gallery-vertical {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .city-gallery-horizontal {
+      display: grid;
+      gap: 18px;
+    }
+
+    .city-photo {
+      overflow: hidden;
+      border-radius: 28px;
+      border: 1px solid rgba(25,16,82,0.10);
+      background: #e5e7eb;
+      box-shadow: 0 20px 60px rgba(7,23,49,0.10);
+    }
+
+    .city-photo.vertical img {
+      height: 650px;
+      object-fit: cover;
+    }
+
+    .city-photo.horizontal img {
+      height: 310px;
+      object-fit: cover;
+    }
+
+    .city-photo.wide img {
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .city-notes {
+      margin-top: 30px;
+      max-width: 920px;
+      border-top: 1px solid rgba(25,16,82,0.12);
+    }
+
+    .city-note {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 22px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(25,16,82,0.12);
+    }
+
+    .city-note strong {
+      color: var(--gold);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 950;
+    }
+
+    .city-note span {
+      color: var(--navy);
+      font-size: clamp(17px, 1.8vw, 21px);
+      line-height: 1.45;
+      font-weight: 800;
+    }
+
+    .safety-panel {
+      background:
+        radial-gradient(circle at 12% 18%, rgba(201,162,74,0.16), transparent 34%),
+        linear-gradient(135deg, #17104a 0%, #2417a0 58%, #5638f0 100%);
+      color: var(--white);
+      border-radius: 34px;
+      padding: clamp(30px, 5vw, 58px);
+      box-shadow: 0 24px 72px rgba(25,16,82,0.22);
+    }
+
+    .safety-panel h2 {
+      max-width: 860px;
+      font-size: clamp(38px, 6vw, 76px);
+      line-height: 0.96;
+      letter-spacing: -0.065em;
+      font-weight: 950;
+      margin-bottom: 22px;
+    }
+
+    .safety-panel p {
+      max-width: 820px;
+      color: #dbe7ff;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.58;
+    }
+
+    .access-layout {
+      display: grid;
+      gap: 34px;
+    }
+
     .route-module {
-      margin-top: 34px;
       border-radius: 30px;
       background:
         radial-gradient(circle at 12% 18%, rgba(201,162,74,0.16), transparent 34%),
         linear-gradient(135deg, #17104a 0%, #2417a0 58%, #5638f0 100%);
       padding: clamp(24px, 4vw, 42px);
-      box-shadow: 0 24px 72px rgba(0,0,0,0.24);
+      box-shadow: 0 24px 72px rgba(0,0,0,0.20);
       overflow: hidden;
     }
 
@@ -362,26 +399,12 @@
       justify-content: center;
     }
 
-    .route-note {
-      max-width: 850px;
-      margin-top: 28px;
-      color: #dbe7ff;
-      font-size: clamp(16px, 1.7vw, 20px);
-      line-height: 1.58;
-    }
-
-    .map-stack {
-      margin-top: 32px;
-      display: grid;
-      gap: 18px;
-    }
-
     .map-frame {
-      border-radius: 24px;
+      border-radius: 26px;
       overflow: hidden;
       background: #e5e7eb;
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: 0 20px 58px rgba(0,0,0,0.18);
+      border: 1px solid rgba(25,16,82,0.10);
+      box-shadow: 0 20px 58px rgba(7,23,49,0.12);
     }
 
     .map-frame img {
@@ -389,126 +412,13 @@
       object-fit: cover;
     }
 
-    .culture-gallery {
-      margin-top: 34px;
-      display: grid;
-      gap: 18px;
-    }
-
-    .culture-main {
-      border-radius: 30px;
-      overflow: hidden;
-      border: 1px solid rgba(25,16,82,0.10);
-      box-shadow: 0 24px 72px rgba(7,23,49,0.12);
-    }
-
-    .culture-main img {
-      height: clamp(320px, 46vw, 560px);
-      object-fit: cover;
-    }
-
-    .culture-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .culture-small {
-      border-radius: 24px;
-      overflow: hidden;
-      border: 1px solid rgba(25,16,82,0.10);
-      background: #e5e7eb;
-    }
-
-    .culture-small img {
-      height: 260px;
-      object-fit: cover;
-    }
-
-    .fact-lines {
-      margin-top: 30px;
-      max-width: 920px;
-      border-top: 1px solid rgba(25,16,82,0.12);
-    }
-
-    .fact-line {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 22px;
-      padding: 20px 0;
-      border-bottom: 1px solid rgba(25,16,82,0.12);
-    }
-
-    .fact-line strong {
-      color: var(--gold);
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-weight: 950;
-    }
-
-    .fact-line span {
-      color: var(--navy);
-      font-size: clamp(17px, 1.8vw, 21px);
-      line-height: 1.45;
-      font-weight: 800;
-    }
-
-    .history-box {
-      margin-top: 34px;
-      border-radius: 30px;
-      background: var(--white);
-      border: 1px solid rgba(25,16,82,0.10);
-      padding: clamp(28px, 5vw, 56px);
-      box-shadow: 0 20px 60px rgba(7,23,49,0.08);
-    }
-
-    .history-box p {
-      max-width: 860px;
-      color: var(--gray-text);
-      font-size: clamp(18px, 2vw, 24px);
-      line-height: 1.62;
-    }
-
-    .history-box p + p {
-      margin-top: 18px;
-    }
-
-    .closing {
-      padding: clamp(68px, 8vw, 108px) clamp(20px, 5vw, 72px);
-      background:
-        linear-gradient(90deg, rgba(9,5,31,0.90), rgba(25,16,82,0.72)),
-        url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291196/campeche-5_1200-900x1035_h5zeav.webp");
-      background-size: cover;
-      background-position: center;
-      color: var(--white);
-      text-align: center;
-    }
-
-    .closing-inner {
-      width: min(100%, 900px);
-      margin: 0 auto;
-    }
-
-    .closing h2 {
-      font-size: clamp(40px, 6vw, 80px);
-      line-height: 0.98;
-      letter-spacing: -0.065em;
-      font-weight: 950;
-      margin-bottom: 22px;
-    }
-
-    .closing p {
-      max-width: 740px;
-      margin: 0 auto;
-      color: #dbe7ff;
-      font-size: clamp(18px, 2vw, 24px);
-      line-height: 1.56;
-    }
-
     @media (max-width: 980px) {
       .venue-points {
         grid-template-columns: 1fr 1fr;
+      }
+
+      .city-gallery {
+        grid-template-columns: 1fr;
       }
 
       .route-line {
@@ -519,14 +429,6 @@
         transform: rotate(90deg);
         padding: 4px 0;
       }
-
-      .culture-row {
-        grid-template-columns: 1fr;
-      }
-
-      .culture-small img {
-        height: 300px;
-      }
     }
 
     @media (max-width: 720px) {
@@ -534,8 +436,8 @@
         min-height: 82vh;
         padding: 88px 20px 60px;
         background:
-          linear-gradient(180deg, rgba(9,5,31,0.28) 0%, rgba(9,5,31,0.88) 72%),
-          url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1780953766/iStock-1486790456__1__1_bzcdvu.webp");
+          linear-gradient(180deg, rgba(9,5,31,0.20) 0%, rgba(9,5,31,0.88) 72%),
+          url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1781295548/5f33f12c1fd4ac34e715c02c_cq9tlc.jpg");
         background-size: cover;
         background-position: center;
       }
@@ -549,11 +451,6 @@
         font-size: clamp(52px, 17vw, 76px);
       }
 
-      .hero-details span {
-        width: 100%;
-        text-align: center;
-      }
-
       .section {
         padding: 52px 20px;
       }
@@ -562,35 +459,32 @@
         font-size: clamp(38px, 13vw, 58px);
       }
 
-      .intro-panel,
-      .history-box,
-      .route-module {
-        border-radius: 24px;
-      }
-
-      .safety-note,
-      .fact-line {
-        grid-template-columns: 1fr;
-        gap: 6px;
-      }
-
-      .venue-points {
-        grid-template-columns: 1fr;
-      }
-
       .image-wide,
-      .culture-main {
+      .city-photo,
+      .map-frame,
+      .safety-panel,
+      .route-module {
         border-radius: 22px;
       }
 
-      .image-wide img,
-      .culture-main img {
+      .image-wide img {
         height: 300px;
       }
 
-      .map-frame,
-      .culture-small {
-        border-radius: 20px;
+      .venue-points,
+      .city-gallery-vertical {
+        grid-template-columns: 1fr;
+      }
+
+      .city-photo.vertical img,
+      .city-photo.horizontal img,
+      .city-photo.wide img {
+        height: 300px;
+      }
+
+      .city-note {
+        grid-template-columns: 1fr;
+        gap: 6px;
       }
 
       .map-frame img {
@@ -611,33 +505,6 @@
         <p class="hero-text">
           El IAMS 4th World Congress 2026 se celebrará en una ciudad histórica, costera y culturalmente única del sureste mexicano.
         </p>
-
-        <div class="hero-details">
-          <span>Octubre 24–25, 2026</span>
-          <span>Campeche, México</span>
-          <span>Centro de Convenciones Campeche Siglo XXI</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section cream">
-      <div class="section-inner">
-        <div class="intro-panel">
-          <div class="section-kicker">Campeche 2026</div>
-
-          <h2>Ven al congreso en una ciudad interesante.</h2>
-
-          <p>
-            Campeche combina una sede formal para el encuentro médico, una ciudad tranquila frente al Golfo de México y una experiencia cultural distinta a los destinos turísticos masivos.
-          </p>
-
-          <div class="safety-note">
-            <strong>Seguridad</strong>
-            <span>
-              Campeche es reconocido como una de las sedes más tranquilas de México. Actualmente, el Departamento de Estado de Estados Unidos mantiene al estado en Nivel 1: “Exercise normal precautions”, la categoría más baja de alerta de viaje.
-            </span>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -694,108 +561,55 @@
       </div>
     </section>
 
-    <section class="section dark">
+    <section class="section cream">
       <div class="section-inner">
-        <div class="section-kicker">Fácil acceso</div>
+        <div class="section-kicker">Conoce la ciudad</div>
 
-        <h2 class="section-title">La ruta práctica hacia Campeche.</h2>
+        <h2 class="section-title">Una ciudad patrimonio frente al Golfo de México.</h2>
 
-        <p class="section-lead">
-          La ruta más conveniente dependerá del país de origen. Para visitantes de Filipinas, el sur de Asia u otros destinos con conexiones largas, Ciudad de México puede funcionar como punto de entrada internacional. Para asistentes desde Estados Unidos, Latinoamérica o el Caribe, Mérida puede ser la puerta regional más conveniente.
-        </p>
-
-        <div class="route-module">
-          <div class="route-line">
-            <div class="route-stop">
-              <strong>01</strong>
-              <h3>Ciudad de México</h3>
-              <p>Entrada internacional para rutas de conexión larga.</p>
-            </div>
-
-            <div class="route-arrow">→</div>
-
-            <div class="route-stop">
-              <strong>02</strong>
-              <h3>Mérida</h3>
-              <p>Puerta regional hacia el sureste mexicano.</p>
-            </div>
-
-            <div class="route-arrow">→</div>
-
-            <div class="route-stop">
-              <strong>03</strong>
-              <h3>Campeche</h3>
-              <p>Trayecto terrestre directo de aproximadamente dos horas desde Mérida.</p>
-            </div>
-          </div>
-
-          <p class="route-note">
-            Campeche cuenta con aeropuerto local, pero para muchos asistentes internacionales Mérida puede ofrecer mayor disponibilidad de conexiones. Desde Mérida, el traslado a Campeche es directo y sencillo.
-          </p>
-        </div>
-
-        <div class="map-stack">
-          <div class="map-frame">
-            <img
-              src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781293992/Red_Yellow_Modern_Food_Journal_Presentation_wsdzux.jpg"
-              alt="Mapa de México con Campeche señalado"
-            />
-          </div>
-
-          <div class="map-frame">
-            <img
-              src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781293992/Red_Yellow_Modern_Food_Journal_Presentation_1_xmalcc.jpg"
-              alt="Mapa de la Península de Yucatán con Campeche señalado"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section white">
-      <div class="section-inner">
-        <div class="section-kicker">Experiencia cultural</div>
-
-        <h2 class="section-title">Una ciudad Patrimonio Mundial frente al Golfo de México.</h2>
-
-        <p class="section-lead">
-          Campeche no es solo el lugar del congreso. Es parte de la experiencia: una ciudad costera, tranquila y caminable, con centro histórico amurallado, arquitectura colonial y una identidad profundamente mexicana.
-        </p>
-
-        <div class="text-block">
+        <div class="city-intro">
           <p>
-            La Ciudad Histórica Fortificada de Campeche está inscrita en la Lista del Patrimonio Mundial de la UNESCO. Su centro histórico conserva murallas, baluartes y un sistema de fortificaciones construido para proteger la ciudad de ataques navales.
+            Campeche combina herencia maya, historia colonial y vida costera en una ciudad tranquila y caminable. Durante la estancia del congreso, los asistentes podrán descubrir su centro histórico amurallado, caminar por sus calles de colores, visitar sus murallas y baluartes, recorrer el malecón y disfrutar la gastronomía regional.
           </p>
 
           <p>
-            Para los asistentes internacionales, Campeche ofrece un entorno distinto a los destinos turísticos masivos: una ciudad con ritmo local, gastronomía regional, tradición costera y espacios históricos que permiten extender la experiencia del congreso más allá del recinto.
+            La ciudad también permite extender la experiencia más allá del recinto: desde su arquitectura colonial y plazas históricas hasta excursiones cercanas a zonas arqueológicas y espacios naturales del sureste mexicano.
           </p>
         </div>
 
-        <div class="culture-gallery">
-          <div class="culture-main">
-            <img
-              src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291197/caption_xgcrwd.webp"
-              alt="Calles de Campeche"
-            />
-          </div>
-
-          <div class="culture-row">
-            <div class="culture-small">
+        <div class="city-gallery">
+          <div class="city-gallery-vertical">
+            <div class="city-photo vertical">
               <img
                 src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291196/images_mncte1.webp"
                 alt="Murallas de Campeche"
               />
             </div>
 
-            <div class="culture-small">
+            <div class="city-photo vertical">
               <img
                 src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291196/campeche-5_1200-900x1035_h5zeav.webp"
                 alt="Letras de Campeche"
               />
             </div>
+          </div>
 
-            <div class="culture-small">
+          <div class="city-gallery-horizontal">
+            <div class="city-photo wide">
+              <img
+                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1780953766/iStock-1486790456__1__1_bzcdvu.webp"
+                alt="Vista de Campeche"
+              />
+            </div>
+
+            <div class="city-photo horizontal">
+              <img
+                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291197/caption_xgcrwd.webp"
+                alt="Calles de Campeche"
+              />
+            </div>
+
+            <div class="city-photo horizontal">
               <img
                 src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291197/Portada_ms0yfl.webp"
                 alt="Traje típico de Campeche"
@@ -804,56 +618,86 @@
           </div>
         </div>
 
-        <div class="fact-lines">
-          <div class="fact-line">
+        <div class="city-notes">
+          <div class="city-note">
             <strong>UNESCO</strong>
-            <span>Ciudad Histórica Fortificada de Campeche.</span>
+            <span>La Ciudad Histórica Fortificada de Campeche forma parte de la Lista del Patrimonio Mundial.</span>
           </div>
 
-          <div class="fact-line">
+          <div class="city-note">
+            <strong>Costa</strong>
+            <span>Una ciudad frente al Golfo de México, con malecón, tradición marítima y ritmo local.</span>
+          </div>
+
+          <div class="city-note">
             <strong>Cultura</strong>
-            <span>Murallas, baluartes, arquitectura colonial y tradición regional.</span>
+            <span>Calles coloniales, murallas, baluartes, gastronomía regional y una identidad profundamente mexicana.</span>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="fact-line">
-            <strong>Experiencia</strong>
-            <span>Una ciudad tranquila, costera y distinta a los destinos turísticos masivos.</span>
-          </div>
+    <section class="section white">
+      <div class="section-inner">
+        <div class="safety-panel">
+          <div class="section-kicker">Seguridad</div>
+
+          <h2>Una de las ciudades más tranquilas de México.</h2>
+
+          <p>
+            Campeche es reconocido como una de las sedes más tranquilas del país. Actualmente, el Departamento de Estado de Estados Unidos mantiene al estado de Campeche en Nivel 1: “Exercise normal precautions”, la categoría más baja de alerta de viaje.
+          </p>
         </div>
       </div>
     </section>
 
     <section class="section sand">
       <div class="section-inner">
-        <div class="section-kicker">Hermandad Filipina</div>
+        <div class="section-kicker">Cómo llegar</div>
 
-        <h2 class="section-title">Una historia compartida entre México y Filipinas.</h2>
+        <h2 class="section-title">Campeche está conectado con el sureste mexicano.</h2>
 
         <p class="section-lead">
-          Esta sección funciona como cierre narrativo: breve, simbólico y conectado con el espíritu internacional de IAMS.
+          La ruta más conveniente dependerá del país de origen. Para visitantes de Filipinas, el sur de Asia u otros destinos con conexiones largas, Ciudad de México puede funcionar como punto de entrada internacional. Para asistentes desde Estados Unidos, Latinoamérica o el Caribe, Mérida puede ser la puerta regional más conveniente. Desde Mérida, Campeche se encuentra aproximadamente a dos horas por carretera.
         </p>
 
-        <div class="history-box">
-          <p>
-            México y Filipinas comparten una historia de intercambio cultural que se remonta a la ruta del Galeón de Manila, una conexión que durante siglos unió Asia y América.
-          </p>
+        <div class="access-layout">
+          <div class="route-module">
+            <div class="route-line">
+              <div class="route-stop">
+                <strong>01</strong>
+                <h3>Ciudad de México</h3>
+                <p>Entrada internacional para rutas de conexión larga.</p>
+              </div>
 
-          <p>
-            Celebrar el IAMS World Congress en Campeche permite reunir nuevamente a médicos de Filipinas, México y otros países en una ciudad marcada por la historia marítima, el intercambio cultural y la vocación internacional.
-          </p>
+              <div class="route-arrow">→</div>
+
+              <div class="route-stop">
+                <strong>02</strong>
+                <h3>Mérida</h3>
+                <p>Puerta regional hacia el sureste mexicano.</p>
+              </div>
+
+              <div class="route-arrow">→</div>
+
+              <div class="route-stop">
+                <strong>03</strong>
+                <h3>Campeche</h3>
+                <p>Trayecto terrestre directo de aproximadamente dos horas desde Mérida.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-frame">
+            <img
+              src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781293992/Red_Yellow_Modern_Food_Journal_Presentation_wsdzux.jpg"
+              alt="Mapa de México con Campeche señalado"
+            />
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section class="closing">
-      <div class="closing-inner">
-        <h2>Campeche le da contexto al encuentro.</h2>
-
-        <p>
-          Una sede formal, una ciudad tranquila, una experiencia cultural memorable y una historia que conecta con la misión internacional de IAMS.
-        </p>
       </div>
     </section>
   </main>
 </body>
 </html>
+```
