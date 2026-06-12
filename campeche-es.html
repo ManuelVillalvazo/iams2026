@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -133,6 +132,10 @@
       color: var(--white);
     }
 
+    .access-section {
+      background: var(--white);
+    }
+
     .section-inner {
       width: min(100%, 1120px);
       margin: 0 auto;
@@ -242,19 +245,8 @@
     .city-gallery {
       margin-top: 38px;
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .city-gallery-vertical {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .city-gallery-horizontal {
-      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 220px;
       gap: 18px;
     }
 
@@ -266,19 +258,23 @@
       box-shadow: 0 20px 60px rgba(7,23,49,0.10);
     }
 
-    .city-photo.vertical img {
-      height: 650px;
+    .city-photo img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
     }
 
-    .city-photo.horizontal img {
-      height: 310px;
-      object-fit: cover;
+    .city-photo.vertical {
+      grid-row: span 2;
     }
 
-    .city-photo.wide img {
-      height: 350px;
-      object-fit: cover;
+    .city-photo.wide {
+      grid-column: span 2;
+    }
+
+    .city-photo.large {
+      grid-column: span 2;
+      grid-row: span 2;
     }
 
     .city-notes {
@@ -343,11 +339,10 @@
 
     .route-module {
       border-radius: 30px;
-      background:
-        radial-gradient(circle at 12% 18%, rgba(201,162,74,0.16), transparent 34%),
-        linear-gradient(135deg, #17104a 0%, #2417a0 58%, #5638f0 100%);
+      background: var(--cream);
+      border: 1px solid rgba(25,16,82,0.10);
       padding: clamp(24px, 4vw, 42px);
-      box-shadow: 0 24px 72px rgba(0,0,0,0.20);
+      box-shadow: 0 18px 52px rgba(7,23,49,0.08);
       overflow: hidden;
     }
 
@@ -362,8 +357,9 @@
       min-width: 0;
       border-radius: 22px;
       padding: 24px;
-      background: rgba(255,255,255,0.09);
-      border: 1px solid rgba(255,255,255,0.13);
+      background: var(--white);
+      border: 1px solid rgba(25,16,82,0.10);
+      box-shadow: 0 12px 34px rgba(7,23,49,0.06);
     }
 
     .route-stop strong {
@@ -377,7 +373,7 @@
     }
 
     .route-stop h3 {
-      color: var(--white);
+      color: var(--navy);
       font-size: clamp(25px, 3vw, 38px);
       line-height: 1;
       letter-spacing: -0.055em;
@@ -385,7 +381,7 @@
     }
 
     .route-stop p {
-      color: #dbe7ff;
+      color: var(--gray-text);
       font-size: 15px;
       line-height: 1.45;
     }
@@ -404,7 +400,7 @@
       overflow: hidden;
       background: #e5e7eb;
       border: 1px solid rgba(25,16,82,0.10);
-      box-shadow: 0 20px 58px rgba(7,23,49,0.12);
+      box-shadow: 0 18px 52px rgba(7,23,49,0.08);
     }
 
     .map-frame img {
@@ -418,7 +414,15 @@
       }
 
       .city-gallery {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 220px;
+      }
+
+      .city-photo.vertical,
+      .city-photo.wide,
+      .city-photo.large {
+        grid-column: auto;
+        grid-row: span 2;
       }
 
       .route-line {
@@ -471,14 +475,24 @@
         height: 300px;
       }
 
-      .venue-points,
-      .city-gallery-vertical {
+      .venue-points {
         grid-template-columns: 1fr;
       }
 
-      .city-photo.vertical img,
-      .city-photo.horizontal img,
-      .city-photo.wide img {
+      .city-gallery {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+      }
+
+      .city-photo,
+      .city-photo.vertical,
+      .city-photo.wide,
+      .city-photo.large {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .city-photo img {
         height: 300px;
       }
 
@@ -578,43 +592,39 @@
         </div>
 
         <div class="city-gallery">
-          <div class="city-gallery-vertical">
-            <div class="city-photo vertical">
-              <img
-                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291196/images_mncte1.webp"
-                alt="Murallas de Campeche"
-              />
-            </div>
-
-            <div class="city-photo vertical">
-              <img
-                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291196/campeche-5_1200-900x1035_h5zeav.webp"
-                alt="Letras de Campeche"
-              />
-            </div>
+          <div class="city-photo vertical">
+            <img
+              src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291196/images_mncte1.webp"
+              alt="Murallas de Campeche"
+            />
           </div>
 
-          <div class="city-gallery-horizontal">
-            <div class="city-photo wide">
-              <img
-                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1780953766/iStock-1486790456__1__1_bzcdvu.webp"
-                alt="Vista de Campeche"
-              />
-            </div>
+          <div class="city-photo vertical">
+            <img
+              src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291196/campeche-5_1200-900x1035_h5zeav.webp"
+              alt="Letras de Campeche"
+            />
+          </div>
 
-            <div class="city-photo horizontal">
-              <img
-                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291197/caption_xgcrwd.webp"
-                alt="Calles de Campeche"
-              />
-            </div>
+          <div class="city-photo wide">
+            <img
+              src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1780953766/iStock-1486790456__1__1_bzcdvu.webp"
+              alt="Vista de Campeche"
+            />
+          </div>
 
-            <div class="city-photo horizontal">
-              <img
-                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291197/Portada_ms0yfl.webp"
-                alt="Traje típico de Campeche"
-              />
-            </div>
+          <div class="city-photo wide">
+            <img
+              src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291197/caption_xgcrwd.webp"
+              alt="Calles de Campeche"
+            />
+          </div>
+
+          <div class="city-photo wide">
+            <img
+              src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781291197/Portada_ms0yfl.webp"
+              alt="Traje típico de Campeche"
+            />
           </div>
         </div>
 
@@ -651,7 +661,7 @@
       </div>
     </section>
 
-    <section class="section sand">
+    <section class="section access-section">
       <div class="section-inner">
         <div class="section-kicker">Cómo llegar</div>
 
@@ -700,4 +710,3 @@
   </main>
 </body>
 </html>
-```
