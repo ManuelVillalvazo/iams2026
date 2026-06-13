@@ -505,6 +505,64 @@
         aspect-ratio: 16 / 9;
       }
     }
+
+
+      
+    .final-cta {
+      padding: clamp(72px, 9vw, 120px) clamp(20px, 5vw, 72px);
+      background:
+        linear-gradient(90deg, rgba(9,5,31,0.92), rgba(25,16,82,0.78)),
+        url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1781295548/5f33f12c1fd4ac34e715c02c_cq9tlc.jpg");
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      text-align: center;
+    }
+    
+    .final-cta-inner {
+      width: min(100%, 860px);
+      margin: 0 auto;
+    }
+    
+    .final-cta h2 {
+      font-size: clamp(42px, 7vw, 88px);
+      line-height: 0.96;
+      letter-spacing: -0.065em;
+      font-weight: 950;
+      margin-bottom: 24px;
+    }
+    
+    .final-cta p {
+      max-width: 720px;
+      margin: 0 auto 34px;
+      color: #dbe7ff;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.56;
+    }
+    
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 26px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--deep);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 950;
+      letter-spacing: 0.02em;
+      box-shadow: 0 16px 42px rgba(0,0,0,0.24);
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 52px rgba(0,0,0,0.30);
+      background: #d8b65c;
+
+
   </style>
 </head>
 
@@ -631,8 +689,8 @@
 
         <div class="city-notes">
           <div class="city-note">
-          <strong>Patrimonio Mundial</strong>
-          <span>La Ciudad Histórica Fortificada de Campeche forma parte de la Lista del <strong>Patrimonio Mundial de la UNESCO.</strong></span>
+          <strong>Ciudad Amurallada</strong>
+          <span>La Ciudad Histórica Fortificada de Campeche forma parte de la Lista del Patrimonio Mundial de la UNESCO.</span>
           </div>
 
           <div class="city-note">
@@ -709,6 +767,26 @@
           </div>
         </div>
       </div>
+
+
+      <section class="final-cta">
+        <div class="final-cta-inner">
+          <div class="section-kicker">IAMS World Congress 2026</div>
+      
+          <h2>Reserva tu lugar en Campeche.</h2>
+      
+          <p>
+            Forma parte del IAMS 4th World Congress 2026: dos días de encuentro médico internacional, networking profesional y experiencia cultural en una de las ciudades más históricas de México.
+          </p>
+      
+          <a href="tickets-es.html" class="cta-button">
+            Reservar mi lugar
+          </a>
+        </div>
+      </section>
+
+
+      
     </section>
   </main>
 </body>
