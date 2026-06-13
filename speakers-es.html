@@ -1,19 +1,22 @@
+```html id="vbhyru"
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Acerca de IAMS | International Academy of Medical Specialists</title>
+  <title>Ponentes | IAMS World Congress 2026</title>
 
   <style>
     :root {
       --navy: #191052;
+      --deep: #09051f;
       --purple: #3320a8;
       --violet: #5638f0;
       --pink: #f04d8b;
       --gold: #c9a24a;
       --white: #ffffff;
+      --cream: #fbf7ef;
       --light: #f7f7fb;
       --dark-text: #111827;
       --gray-text: #4b5563;
@@ -26,29 +29,8 @@
       padding: 0;
     }
 
-
-    .language-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    
-      height: 44px;
-      min-width: 80px;
-    
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.20);
-    
-      color: white;
-      font-size: 13px;
-      font-weight: 900;
-    
-      background: rgba(255,255,255,0.08);
-    
-      transition: 0.2s ease;
-    }
-    
-    .language-btn:hover {
-      background: rgba(255,255,255,0.15);
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -85,7 +67,6 @@
       align-items: center;
       gap: 28px;
     }
-
 
     .brand {
       display: flex;
@@ -137,6 +118,25 @@
       white-space: nowrap;
     }
 
+    .language-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 44px;
+      min-width: 80px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.20);
+      color: white;
+      font-size: 13px;
+      font-weight: 900;
+      background: rgba(255,255,255,0.08);
+      transition: 0.2s ease;
+    }
+
+    .language-btn:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
     .menu-btn {
       display: none;
       width: 44px;
@@ -178,7 +178,12 @@
       box-shadow: 0 12px 28px rgba(240, 77, 139, 0.25);
     }
 
-    .hero-about {
+    main {
+      overflow: hidden;
+      background: var(--light);
+    }
+
+    .hero-speakers {
       background:
         radial-gradient(circle at 12% 18%, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.04) 22%, transparent 42%),
         radial-gradient(circle at 86% 84%, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.04) 18%, transparent 38%),
@@ -190,37 +195,28 @@
       overflow: hidden;
     }
 
-    .hero-about-content {
+    .hero-speakers-content {
       max-width: 980px;
       margin: 0 auto;
       position: relative;
       z-index: 2;
     }
 
-    .hero-about h1 {
-      font-size: clamp(48px, 8vw, 94px);
-      line-height: 0.98;
+    .hero-speakers h1 {
+      font-size: clamp(54px, 9vw, 108px);
+      line-height: 0.94;
       font-weight: 950;
-      letter-spacing: -0.055em;
-      margin-bottom: 26px;
+      letter-spacing: -0.065em;
+      margin-bottom: 24px;
     }
 
-    .hero-about h2 {
+    .hero-speakers h2 {
       max-width: 840px;
-      margin: 0 auto 14px;
-      font-size: clamp(22px, 3vw, 38px);
-      font-weight: 850;
-      line-height: 1.2;
-      color: rgba(255,255,255,0.96);
-    }
-
-    .hero-about-subtitle {
-      max-width: 780px;
       margin: 0 auto;
-      font-size: clamp(16px, 2vw, 22px);
-      color: rgba(255,255,255,0.72);
-      font-style: italic;
-      line-height: 1.45;
+      font-size: clamp(21px, 3vw, 36px);
+      font-weight: 850;
+      line-height: 1.22;
+      color: rgba(255,255,255,0.92);
     }
 
     .section {
@@ -232,7 +228,7 @@
       margin: 0 auto;
     }
 
-    .section-label {
+    .section-kicker {
       color: var(--gold);
       text-transform: uppercase;
       letter-spacing: 0.22em;
@@ -251,174 +247,125 @@
       margin-bottom: 30px;
     }
 
-    .section-text {
+    .section-lead {
       max-width: 880px;
       font-size: clamp(18px, 2vw, 24px);
       line-height: 1.58;
       color: var(--gray-text);
     }
 
-    .section-text p + p {
-      margin-top: 22px;
+    .speakers-section {
+      background: var(--cream);
     }
 
-    .origin {
+    .country-row {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .country-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 0 18px 0 12px;
+      border-radius: 999px;
       background: var(--white);
+      border: 1px solid rgba(25,16,82,0.10);
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 900;
+      box-shadow: 0 10px 28px rgba(7,23,49,0.06);
     }
 
-    .origin-photo-grid {
-      margin-top: 50px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .origin-photo-card {
-      border-radius: 24px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      box-shadow: 0 18px 45px rgba(7, 23, 49, 0.08);
-      background: #e5e7eb;
-    }
-
-    .origin-photo-card img {
-      width: 100%;
-      aspect-ratio: 3 / 2;
+    .country-chip img {
+      width: 30px;
+      height: 22px;
       object-fit: cover;
-      display: block;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(7,23,49,0.16);
     }
 
-    .philanthropy {
-      background: var(--light);
-    }
-
-    .photo-grid-two {
-      margin-top: 50px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .photo-grid-six {
-      margin-top: 24px;
+    .speakers-grid {
+      margin-top: 44px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .photo-card {
-      border-radius: 24px;
+    .speaker-card {
       overflow: hidden;
-      background: #e5e7eb;
-      border: 1px solid var(--border);
-      box-shadow: 0 18px 45px rgba(7, 23, 49, 0.08);
-    }
-
-    .photo-card img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      display: block;
-    }
-
-    .photo-card.large img {
-      aspect-ratio: 3 / 2;
-    }
-
-    .congress {
-      background: var(--white);
-    }
-
-    .congress-highlight {
-      margin-top: 48px;
-      background:
-        linear-gradient(135deg, rgba(25,16,82,0.98), rgba(51,32,168,0.94));
-      color: var(--white);
-      border-radius: 36px;
-      padding: clamp(32px, 5vw, 64px);
-      box-shadow: 0 24px 70px rgba(25, 16, 82, 0.18);
-    }
-
-    .congress-highlight h3 {
-      max-width: 920px;
-      font-size: clamp(34px, 5vw, 72px);
-      line-height: 1;
-      letter-spacing: -0.055em;
-      margin-bottom: 24px;
-    }
-
-    .congress-highlight p {
-      max-width: 820px;
-      font-size: clamp(18px, 2vw, 24px);
-      line-height: 1.55;
-      color: #dbe7ff;
-    }
-
-    .representatives {
-      background: var(--light);
-    }
-
-    .representatives-card {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: clamp(28px, 5vw, 70px);
-      align-items: center;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 36px;
-      padding: clamp(30px, 5vw, 64px);
-      box-shadow: 0 24px 70px rgba(7, 23, 49, 0.08);
-    }
-
-    .representatives-logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: var(--light);
-      border: 1px solid var(--border);
       border-radius: 28px;
-      padding: clamp(28px, 4vw, 44px);
+      background: var(--white);
+      border: 1px solid rgba(25,16,82,0.10);
+      box-shadow: 0 18px 52px rgba(7,23,49,0.08);
     }
 
-    .representatives-logo img {
-      max-width: 310px;
-      height: auto;
-      object-fit: contain;
+    .speaker-avatar {
+      height: 230px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(201,162,74,0.28), transparent 32%),
+        linear-gradient(135deg, #17104a 0%, #2417a0 58%, #5638f0 100%);
+      color: rgba(255,255,255,0.94);
     }
 
-    .representatives-content h2 {
-      font-size: clamp(36px, 5vw, 72px);
+    .speaker-avatar img {
+      width: 58px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+    }
+
+    .speaker-avatar span {
+      font-size: 54px;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .speaker-content {
+      padding: 24px;
+    }
+
+    .speaker-country {
+      display: inline-flex;
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 950;
+    }
+
+    .speaker-content h3 {
+      color: var(--navy);
+      font-size: clamp(24px, 2.5vw, 34px);
       line-height: 1;
       letter-spacing: -0.055em;
       font-weight: 950;
-      color: #17104a;
-      margin-bottom: 24px;
+      margin-bottom: 10px;
     }
 
-    .representatives-content p {
-      max-width: 760px;
-      font-size: clamp(18px, 2vw, 23px);
-      line-height: 1.58;
+    .speaker-content p {
       color: var(--gray-text);
+      font-size: 16px;
+      line-height: 1.45;
     }
 
-    .representatives-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 32px;
-    }
-
-    .secondary-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 21px;
-      border-radius: 999px;
-      font-weight: 900;
-      border: 1px solid var(--border);
-      color: #17104a;
-      background: var(--white);
+    .speaker-note {
+      margin-top: 34px;
+      max-width: 780px;
+      color: var(--gray-text);
+      font-size: 16px;
+      line-height: 1.55;
     }
 
     footer {
@@ -431,7 +378,6 @@
     .footer-inner {
       max-width: 1180px;
       margin: 0 auto;
-    
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -442,35 +388,16 @@
     .footer-main p {
       margin-bottom: 6px;
     }
-    
+
     .footer-representative {
       display: flex;
       align-items: center;
       gap: 16px;
     }
-    
+
     .footer-representative img {
       width: 70px;
       height: auto;
-    }
-    
-    .footer-buttons {
-      display: flex;
-      gap: 12px;
-    }
-    
-    .footer-btn {
-      padding: 12px 18px;
-      border-radius: 999px;
-      background: white;
-      color: #17104a;
-      font-weight: 800;
-    }
-    
-    .footer-btn-secondary {
-      background: transparent;
-      color: white;
-      border: 1px solid rgba(255,255,255,0.25);
     }
 
     @media (max-width: 1120px) {
@@ -484,29 +411,17 @@
       }
     }
 
-    @media (max-width: 820px) {
+    @media (max-width: 980px) {
+      .speakers-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    
-      .footer-buttons {
-        width: 100%;
-      }
-    
-      .footer-btn {
-        flex: 1;
-        text-align: center;
-      }
-    
-      .footer-representative img {
-        width: 56px;
-      }
-      
+    @media (max-width: 820px) {
       .navbar {
         min-height: 74px;
         padding: 0 20px;
+        gap: 14px;
       }
 
       .brand-logo {
@@ -523,24 +438,18 @@
         display: none;
       }
 
-      .hero-about {
+      .hero-speakers {
         padding: 78px 24px 76px;
       }
 
-      .hero-about h1 {
-        font-size: clamp(48px, 14vw, 64px);
-        letter-spacing: -0.04em;
-        margin-bottom: 22px;
+      .hero-speakers h1 {
+        font-size: clamp(48px, 14vw, 72px);
+        letter-spacing: -0.045em;
       }
 
-      .hero-about h2 {
+      .hero-speakers h2 {
         font-size: clamp(21px, 6vw, 30px);
         line-height: 1.25;
-      }
-
-      .hero-about-subtitle {
-        font-size: 16px;
-        max-width: 330px;
       }
 
       .section {
@@ -551,55 +460,28 @@
         font-size: clamp(38px, 12vw, 58px);
       }
 
-      .origin-photo-grid {
-        margin-top: 40px;
-        grid-template-columns: 1fr;
-        gap: 16px;
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      .origin-photo-card {
-        border-radius: 18px;
+      .footer-representative img {
+        width: 56px;
       }
+    }
 
-      .origin-photo-card img {
-        aspect-ratio: 16 / 9;
-      }
-
-      .photo-grid-two,
-      .photo-grid-six {
+    @media (max-width: 720px) {
+      .speakers-grid {
         grid-template-columns: 1fr;
       }
 
-      .photo-card {
-        border-radius: 18px;
+      .speaker-avatar {
+        height: 210px;
       }
 
-      .photo-card img,
-      .photo-card.large img {
-        aspect-ratio: 16 / 10;
-      }
-
-      .representatives-card {
-        grid-template-columns: 1fr;
-        border-radius: 28px;
-      }
-
-      .representatives-logo {
-        border-radius: 22px;
-      }
-
-      .representatives-logo img {
-        max-width: 240px;
-      }
-
-      .representatives-actions {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-
-      .secondary-btn,
-      .representatives-actions .buy-btn {
+      .country-chip {
         width: 100%;
+        justify-content: center;
       }
     }
 
@@ -609,15 +491,11 @@
         font-size: 9px;
       }
 
-      .hero-about {
-        padding: 72px 22px 70px;
-      }
-
-      .hero-about h1 {
+      .hero-speakers h1 {
         font-size: 52px;
       }
 
-      .hero-about h2 {
+      .hero-speakers h2 {
         font-size: 22px;
       }
 
@@ -625,120 +503,6 @@
         font-size: 42px;
       }
     }
-
-    .speakers-section {
-  background: var(--cream);
-}
-
-.speaker-country-row {
-  margin-top: 28px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.speaker-country-row span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 42px;
-  padding: 0 18px;
-  border-radius: 999px;
-  background: var(--white);
-  border: 1px solid rgba(25,16,82,0.10);
-  color: var(--navy);
-  font-size: 14px;
-  font-weight: 900;
-  box-shadow: 0 10px 28px rgba(7,23,49,0.06);
-}
-
-.speakers-grid {
-  margin-top: 38px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.speaker-card {
-  overflow: hidden;
-  border-radius: 28px;
-  background: var(--white);
-  border: 1px solid rgba(25,16,82,0.10);
-  box-shadow: 0 18px 52px rgba(7,23,49,0.08);
-}
-
-.speaker-avatar {
-  height: 230px;
-  display: grid;
-  place-items: center;
-  background:
-    radial-gradient(circle at 18% 20%, rgba(201,162,74,0.28), transparent 32%),
-    linear-gradient(135deg, #17104a 0%, #2417a0 58%, #5638f0 100%);
-  color: rgba(255,255,255,0.94);
-  font-size: 54px;
-  font-weight: 950;
-  letter-spacing: -0.04em;
-}
-
-.speaker-content {
-  padding: 24px;
-}
-
-.speaker-country {
-  display: inline-flex;
-  margin-bottom: 14px;
-  color: var(--gold);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-weight: 950;
-}
-
-.speaker-content h3 {
-  color: var(--navy);
-  font-size: clamp(24px, 2.5vw, 34px);
-  line-height: 1;
-  letter-spacing: -0.055em;
-  font-weight: 950;
-  margin-bottom: 10px;
-}
-
-.speaker-content p {
-  color: var(--gray-text);
-  font-size: 16px;
-  line-height: 1.45;
-}
-
-@media (max-width: 980px) {
-  .speakers-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 720px) {
-  .speakers-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .speaker-avatar {
-    height: 210px;
-  }
-
-  .speaker-country-row span {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-.speaker-photo {
-  height: 230px;
-  background: #e5e7eb;
-}
-
-.speaker-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
   </style>
 </head>
 
@@ -755,110 +519,229 @@
           International Academy of Medical Specialists, Inc.
         </span>
       </a>
-      
+
       <div class="nav-links">
         <a href="es.html">Inicio</a>
         <a href="campeche-es.html">Ciudad anfitriona</a>
         <a href="speakers-es.html">Ponentes</a>
         <a href="whatisIAMS-es.html">¿Qué es IAMS?</a>
       </div>
-      
+
       <a class="buy-btn" href="waitlist-es.html">
         Comprar entradas
       </a>
-      
-      <a class="language-btn" href="whatisIAMS-en.html">
+
+      <a class="language-btn" href="speakers-en.html">
         English
       </a>
-      
+
       <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
     </nav>
 
     <div class="mobile-menu" id="mobileMenu">
-        <a href="es.html">Inicio</a>
-        <a href="campeche-es.html">Ciudad Anfitriona</a>
-        <a href="waitlist-es" class="mobile-buy">
-          Comprar entradas
-        </a>
-      </div>
+      <a href="es.html">Inicio</a>
+      <a href="campeche-es.html">Ciudad anfitriona</a>
+      <a href="speakers-es.html">Ponentes</a>
+      <a href="whatisIAMS-es.html">¿Qué es IAMS?</a>
+      <a href="speakers-en.html">English</a>
+      <a href="waitlist-es.html" class="mobile-buy">
+        Comprar entradas
+      </a>
+    </div>
   </header>
 
-  <section class="section speakers-section">
-  <div class="section-inner">
-    <div class="section-kicker">Speakers</div>
+  <main>
+    <section class="hero-speakers">
+      <div class="hero-speakers-content">
+        <h1>Ponentes</h1>
 
-    <h2 class="section-title">Featured confirmed speakers.</h2>
+        <h2>
+          Especialistas confirmados para el IAMS 4th World Congress 2026.
+        </h2>
+      </div>
+    </section>
 
-    <p class="section-lead">
-      The IAMS 4th World Congress 2026 already includes a group of confirmed medical specialists from the Philippines and Mexico, with additional international speakers to be announced soon.
-    </p>
+    <section class="section speakers-section">
+      <div class="section-inner">
+        <div class="section-kicker">Speakers</div>
 
-    <div class="speaker-country-row">
-      <span>Philippines</span>
-      <span>Mexico</span>
-      <span>More speakers to be announced</span>
+        <h2 class="section-title">Ponentes confirmados.</h2>
+
+        <p class="section-lead">
+          El IAMS 4th World Congress 2026 ya cuenta con un grupo inicial de especialistas médicos confirmados de Filipinas y México, con participación internacional adicional por anunciarse próximamente.
+        </p>
+
+        <div class="country-row" aria-label="Países representados">
+          <div class="country-chip">
+            <img
+              src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380121/Flag_of_the_Philippines.svg_tjvedu.png"
+              alt="Bandera de Filipinas"
+            />
+            <span>Filipinas</span>
+          </div>
+
+          <div class="country-chip">
+            <img
+              src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_Mexico.svg_urzzpa.png"
+              alt="Bandera de México"
+            />
+            <span>México</span>
+          </div>
+
+          <div class="country-chip">
+            <img
+              src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_Germany.svg_zev3ny.png"
+              alt="Bandera de Alemania"
+            />
+            <span>Alemania</span>
+          </div>
+
+          <div class="country-chip">
+            <img
+              src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_the_United_States__DDD-F-416E_specifications.svg_mtnkyo.webp"
+              alt="Bandera de Estados Unidos"
+            />
+            <span>Estados Unidos</span>
+          </div>
+        </div>
+
+        <div class="speakers-grid">
+          <article class="speaker-card">
+            <div class="speaker-avatar">
+              <img
+                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380121/Flag_of_the_Philippines.svg_tjvedu.png"
+                alt="Bandera de Filipinas"
+              />
+              <span>PH</span>
+            </div>
+
+            <div class="speaker-content">
+              <span class="speaker-country">Filipinas</span>
+              <h3>Nombre del ponente</h3>
+              <p>Especialidad / Institución</p>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-avatar">
+              <img
+                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_Mexico.svg_urzzpa.png"
+                alt="Bandera de México"
+              />
+              <span>MX</span>
+            </div>
+
+            <div class="speaker-content">
+              <span class="speaker-country">México</span>
+              <h3>Nombre del ponente</h3>
+              <p>Especialidad / Institución</p>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-avatar">
+              <img
+                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380121/Flag_of_the_Philippines.svg_tjvedu.png"
+                alt="Bandera de Filipinas"
+              />
+              <span>PH</span>
+            </div>
+
+            <div class="speaker-content">
+              <span class="speaker-country">Filipinas</span>
+              <h3>Nombre del ponente</h3>
+              <p>Especialidad / Institución</p>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-avatar">
+              <img
+                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380121/Flag_of_the_Philippines.svg_tjvedu.png"
+                alt="Bandera de Filipinas"
+              />
+              <span>PH</span>
+            </div>
+
+            <div class="speaker-content">
+              <span class="speaker-country">Filipinas</span>
+              <h3>Nombre del ponente</h3>
+              <p>Especialidad / Institución</p>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-avatar">
+              <img
+                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_Mexico.svg_urzzpa.png"
+                alt="Bandera de México"
+              />
+              <span>MX</span>
+            </div>
+
+            <div class="speaker-content">
+              <span class="speaker-country">México</span>
+              <h3>Nombre del ponente</h3>
+              <p>Especialidad / Institución</p>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-avatar">
+              <img
+                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380121/Flag_of_the_Philippines.svg_tjvedu.png"
+                alt="Bandera de Filipinas"
+              />
+              <span>PH</span>
+            </div>
+
+            <div class="speaker-content">
+              <span class="speaker-country">Filipinas</span>
+              <h3>Nombre del ponente</h3>
+              <p>Especialidad / Institución</p>
+            </div>
+          </article>
+        </div>
+
+        <p class="speaker-note">
+          La lista completa de ponentes y temas será anunciada conforme avance la integración del programa académico.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+
+      <div class="footer-main">
+        <p><strong>International Academy of Medical Specialists, Inc.</strong></p>
+        <p>4th IAMS World Congress 2026 · Campeche, México</p>
+      </div>
+
+      <div class="footer-representative">
+        <img
+          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781136129/Amas_HighRes_1_1_1_ad1nle.webp"
+          alt="AMAS Logo"
+        >
+
+        <div>
+          <p><strong>Representation in America and Europe</strong></p>
+          <p>Asistencia Médica y Apoyo Social A.C.</p>
+        </div>
+      </div>
+
     </div>
+  </footer>
 
-    <div class="speakers-grid">
-      <article class="speaker-card">
-        <div class="speaker-avatar">PH</div>
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-        <div class="speaker-content">
-          <span class="speaker-country">Philippines</span>
-          <h3>Speaker Name</h3>
-          <p>Specialty / Institution</p>
-        </div>
-      </article>
-
-      <article class="speaker-card">
-        <div class="speaker-avatar">MX</div>
-
-        <div class="speaker-content">
-          <span class="speaker-country">Mexico</span>
-          <h3>Speaker Name</h3>
-          <p>Specialty / Institution</p>
-        </div>
-      </article>
-
-      <article class="speaker-card">
-        <div class="speaker-avatar">PH</div>
-
-        <div class="speaker-content">
-          <span class="speaker-country">Philippines</span>
-          <h3>Speaker Name</h3>
-          <p>Specialty / Institution</p>
-        </div>
-      </article>
-
-      <article class="speaker-card">
-        <div class="speaker-avatar">PH</div>
-
-        <div class="speaker-content">
-          <span class="speaker-country">Philippines</span>
-          <h3>Speaker Name</h3>
-          <p>Specialty / Institution</p>
-        </div>
-      </article>
-
-      <article class="speaker-card">
-        <div class="speaker-avatar">MX</div>
-
-        <div class="speaker-content">
-          <span class="speaker-country">Mexico</span>
-          <h3>Speaker Name</h3>
-          <p>Specialty / Institution</p>
-        </div>
-      </article>
-
-      <article class="speaker-card">
-        <div class="speaker-avatar">PH</div>
-
-        <div class="speaker-content">
-          <span class="speaker-country">Philippines</span>
-          <h3>Speaker Name</h3>
-          <p>Specialty / Institution</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+      menuBtn.textContent = mobileMenu.classList.contains("open") ? "×" : "☰";
+    });
+  </script>
+</body>
+</html>
+```
