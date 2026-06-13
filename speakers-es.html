@@ -412,13 +412,13 @@
       line-height: 1.58;
     }
 
-    .featured-doctors {
+    .preview-pill {
       margin-top: 52px;
       border-top: 1px solid rgba(25,16,82,0.12);
       padding-top: 34px;
     }
 
-    .featured-doctors-header {
+    .preview-pill-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -426,7 +426,7 @@
       margin-bottom: 22px;
     }
 
-    .featured-doctors-header h3 {
+    .preview-pill-header h3 {
       color: var(--navy);
       font-size: clamp(26px, 3vw, 42px);
       line-height: 1;
@@ -434,7 +434,7 @@
       font-weight: 950;
     }
 
-    .featured-doctors-header p {
+    .preview-pill-header p {
       max-width: 520px;
       color: var(--gray-text);
       font-size: 15px;
@@ -594,7 +594,7 @@
         min-height: 430px;
       }
 
-      .featured-doctors-header {
+      .preview-pill-header {
         display: grid;
       }
     }
@@ -737,21 +737,21 @@
         line-height: 1.22;
       }
 
-      .featured-doctors {
+      .preview-pill {
         margin-top: 36px;
         padding-top: 26px;
       }
 
-      .featured-doctors-header {
+      .preview-pill-header {
         margin-bottom: 14px;
         gap: 10px;
       }
 
-      .featured-doctors-header h3 {
+      .preview-pill-header h3 {
         font-size: 28px;
       }
 
-      .featured-doctors-header p {
+      .preview-pill-header p {
         font-size: 13px;
       }
 
@@ -886,9 +886,15 @@
           </div>
         </div>
 
-        <div class="featured-doctors">
-          <div class="featured-doctors-header">
-            <h3>Médicos participantes.</h3>
+        <div class="featured-doctors-header">
+          <div>
+            <span class="preview-pill">Lista preliminar</span>
+            <h3>Primeros médicos confirmados.</h3>
+          </div>
+        
+          <p>
+            La lista completa de ponentes será publicada próximamente.
+          </p>
 
           
           </div>
