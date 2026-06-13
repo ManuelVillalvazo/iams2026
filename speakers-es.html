@@ -1,3 +1,4 @@
+```html id="w2gq7t"
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -180,42 +181,6 @@
     main {
       overflow: hidden;
       background: var(--light);
-    }
-
-    .hero-speakers {
-      background:
-        radial-gradient(circle at 12% 18%, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.04) 22%, transparent 42%),
-        radial-gradient(circle at 86% 84%, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.04) 18%, transparent 38%),
-        linear-gradient(135deg, #17104a 0%, #2417a0 56%, #5638f0 100%);
-      color: white;
-      padding: clamp(84px, 11vw, 145px) clamp(24px, 6vw, 96px);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-speakers-content {
-      max-width: 980px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-speakers h1 {
-      font-size: clamp(54px, 9vw, 108px);
-      line-height: 0.94;
-      font-weight: 950;
-      letter-spacing: -0.065em;
-      margin-bottom: 24px;
-    }
-
-    .hero-speakers h2 {
-      max-width: 840px;
-      margin: 0 auto;
-      font-size: clamp(21px, 3vw, 36px);
-      font-weight: 850;
-      line-height: 1.22;
-      color: rgba(255,255,255,0.92);
     }
 
     .section {
@@ -412,13 +377,13 @@
       line-height: 1.58;
     }
 
-    .preview-pill {
+    .featured-doctors {
       margin-top: 52px;
       border-top: 1px solid rgba(25,16,82,0.12);
       padding-top: 34px;
     }
 
-    .preview-pill-header {
+    .featured-doctors-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -426,7 +391,7 @@
       margin-bottom: 22px;
     }
 
-    .preview-pill-header h3 {
+    .featured-doctors-header h3 {
       color: var(--navy);
       font-size: clamp(26px, 3vw, 42px);
       line-height: 1;
@@ -434,11 +399,27 @@
       font-weight: 950;
     }
 
-    .preview-pill-header p {
+    .featured-doctors-header p {
       max-width: 520px;
       color: var(--gray-text);
       font-size: 15px;
       line-height: 1.5;
+    }
+
+    .preview-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 12px;
+      margin-bottom: 12px;
+      border-radius: 999px;
+      background: rgba(201,162,74,0.14);
+      color: var(--gold);
+      border: 1px solid rgba(201,162,74,0.28);
+      font-size: 11px;
+      font-weight: 950;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
 
     .doctors-grid {
@@ -594,7 +575,7 @@
         min-height: 430px;
       }
 
-      .preview-pill-header {
+      .featured-doctors-header {
         display: grid;
       }
     }
@@ -618,20 +599,6 @@
 
       .buy-btn {
         display: none;
-      }
-
-      .hero-speakers {
-        padding: 78px 24px 76px;
-      }
-
-      .hero-speakers h1 {
-        font-size: clamp(48px, 14vw, 72px);
-        letter-spacing: -0.045em;
-      }
-
-      .hero-speakers h2 {
-        font-size: clamp(21px, 6vw, 30px);
-        line-height: 1.25;
       }
 
       .section {
@@ -737,21 +704,21 @@
         line-height: 1.22;
       }
 
-      .preview-pill {
+      .featured-doctors {
         margin-top: 36px;
         padding-top: 26px;
       }
 
-      .preview-pill-header {
+      .featured-doctors-header {
         margin-bottom: 14px;
         gap: 10px;
       }
 
-      .preview-pill-header h3 {
+      .featured-doctors-header h3 {
         font-size: 28px;
       }
 
-      .preview-pill-header p {
+      .featured-doctors-header p {
         font-size: 13px;
       }
 
@@ -764,14 +731,6 @@
       .brand-name {
         max-width: 185px;
         font-size: 9px;
-      }
-
-      .hero-speakers h1 {
-        font-size: 52px;
-      }
-
-      .hero-speakers h2 {
-        font-size: 22px;
       }
 
       .section-title {
@@ -816,7 +775,9 @@
     <div class="mobile-menu" id="mobileMenu">
       <a href="es.html">Inicio</a>
       <a href="campeche-es.html">Ciudad anfitriona</a>
+      <a href="speakers-es.html">Ponentes</a>
       <a href="whatisIAMS-es.html">¿Qué es IAMS?</a>
+      <a href="speakers-en.html">English</a>
       <a href="waitlist-es.html" class="mobile-buy">
         Comprar entradas
       </a>
@@ -824,7 +785,6 @@
   </header>
 
   <main>
-
     <section class="section speakers-section">
       <div class="section-inner">
 
@@ -881,17 +841,16 @@
           </div>
         </div>
 
-        <div class="featured-doctors-header">
-          <div>
-            <span class="preview-pill">Lista preliminar</span>
-            <h3>Primeros médicos confirmados.</h3>
-          </div>
-        
-          <p>
-            La lista completa de ponentes será publicada próximamente.
-          </p>
+        <div class="featured-doctors">
+          <div class="featured-doctors-header">
+            <div>
+              <span class="preview-pill">Lista preliminar</span>
+              <h3>Primeros médicos confirmados.</h3>
+            </div>
 
-          
+            <p>
+              La lista completa de ponentes será publicada próximamente.
+            </p>
           </div>
 
           <div class="doctors-grid">
@@ -992,3 +951,4 @@
   </script>
 </body>
 </html>
+```
