@@ -419,81 +419,100 @@
       line-height: 1.58;
     }
 
-    .featured-doctors {
-      margin-top: 40px;
-    }
+   .featured-doctors {
+  margin-top: 40px;
+}
 
-    .featured-doctors-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 24px;
-      margin-bottom: 22px;
-    }
+.featured-doctors-header {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 18px;
+}
 
-    .featured-doctors-header h3 {
-      color: var(--navy);
-      font-size: clamp(26px, 3vw, 42px);
-      line-height: 1;
-      letter-spacing: -0.055em;
-      font-weight: 950;
-    }
+.featured-doctors-header h3 {
+  color: var(--navy);
+  font-size: clamp(26px, 3vw, 42px);
+  line-height: 1;
+  letter-spacing: -0.055em;
+  font-weight: 950;
+}
 
-    .featured-doctors-header p {
-      max-width: 520px;
-      color: var(--gray-text);
-      font-size: 15px;
-      line-height: 1.5;
-    }
+.featured-doctors-header p {
+  max-width: 560px;
+  color: var(--gray-text);
+  font-size: 15px;
+  line-height: 1.5;
+}
 
-    .doctors-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      max-width: 920px;
-    }
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  max-width: 980px;
+}
 
-    .doctor-card {
-      border-radius: 22px;
-      background: rgba(255,255,255,0.82);
-      border: 1px solid rgba(25,16,82,0.10);
-      box-shadow: 0 14px 38px rgba(7,23,49,0.07);
-      padding: 12px;
-    }
+.doctor-card {
+  border-radius: 22px;
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(25,16,82,0.10);
+  box-shadow: 0 12px 34px rgba(7,23,49,0.06);
+  padding: 10px;
+}
 
-    .doctor-photo {
-      overflow: hidden;
-      border-radius: 16px;
-      background:
-        linear-gradient(135deg, rgba(25,16,82,0.16), rgba(86,56,240,0.10)),
-        #e5e7eb;
-      aspect-ratio: 4 / 3.15;
-    }
+.doctor-photo {
+  overflow: hidden;
+  border-radius: 16px;
+  background: #e5e7eb;
+  aspect-ratio: 16 / 10;
+}
 
-    .doctor-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.doctor-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
 
-    .doctor-content {
-      padding: 14px 4px 2px;
-    }
+.doctor-content {
+  padding: 12px 4px 2px;
+}
 
-    .doctor-content h4 {
-      color: var(--navy);
-      font-size: clamp(17px, 1.6vw, 23px);
-      line-height: 1.04;
-      letter-spacing: -0.04em;
-      font-weight: 950;
-      margin-bottom: 6px;
-    }
+.doctor-country {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  color: var(--gold);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 950;
+}
 
-    .doctor-content p {
-      color: var(--gray-text);
-      font-size: 13px;
-      line-height: 1.35;
-    }
+.doctor-country img {
+  width: 18px;
+  height: 13px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(7,23,49,0.14);
+}
+
+.doctor-content h4 {
+  color: var(--navy);
+  font-size: clamp(17px, 1.5vw, 22px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  font-weight: 950;
+  margin-bottom: 5px;
+}
+
+.doctor-content p {
+  color: var(--gray-text);
+  font-size: 13px;
+  line-height: 1.3;
+}
 
     .expected-section {
       background: var(--white);
@@ -757,53 +776,74 @@
         border-radius: 28px;
       }
 
-      .doctors-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-      }
+     .featured-doctors {
+    margin-top: 32px;
+  }
 
-      .doctor-card {
-        border-radius: 16px;
-        padding: 7px;
-      }
+  .featured-doctors-header {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
 
-      .doctor-photo {
-        border-radius: 11px;
-        aspect-ratio: 1 / 1;
-      }
+  .featured-doctors-header h3 {
+    font-size: 30px;
+  }
 
-      .doctor-content {
-        padding: 8px 2px 0;
-      }
+  .featured-doctors-header p {
+    font-size: 13px;
+    line-height: 1.45;
+  }
 
-      .doctor-content h4 {
-        font-size: 11px;
-        line-height: 1.05;
-        letter-spacing: -0.035em;
-        margin-bottom: 4px;
-      }
+  .doctors-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: none;
+  }
 
-      .doctor-content p {
-        font-size: 9.5px;
-        line-height: 1.22;
-      }
+  .doctor-card {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 12px;
+    align-items: center;
+    border-radius: 18px;
+    padding: 9px;
+  }
 
-      .featured-doctors {
-        margin-top: 32px;
-      }
+  .doctor-photo {
+    width: 92px;
+    height: 92px;
+    aspect-ratio: auto;
+    border-radius: 14px;
+  }
 
-      .featured-doctors-header {
-        margin-bottom: 14px;
-        gap: 10px;
-      }
+  .doctor-content {
+    padding: 0;
+    min-width: 0;
+  }
 
-      .featured-doctors-header h3 {
-        font-size: 28px;
-      }
+  .doctor-country {
+    margin-bottom: 6px;
+    font-size: 9px;
+    letter-spacing: 0.09em;
+  }
 
-      .featured-doctors-header p {
-        font-size: 13px;
-      }
+  .doctor-country img {
+    width: 16px;
+    height: 11px;
+  }
+
+  .doctor-content h4 {
+    font-size: 15px;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    margin-bottom: 4px;
+  }
+
+  .doctor-content p {
+    font-size: 11px;
+    line-height: 1.2;
+  }
 
       .expected-number {
         font-size: 118px;
@@ -875,8 +915,6 @@
     <section class="section speakers-section">
       <div class="section-inner">
 
-        <h2 class="section-title">Programa académico con alcance internacional.</h2>
-
         <div class="international-panel">
           <div class="flag-panel" aria-label="Participación internacional">
             <div class="flag-core">
@@ -920,7 +958,7 @@
           </div>
 
           <div class="international-copy-card">
-            <h3>Especialistas de distintas regiones.</h3>
+            <h3>Ponentes internacionales</h3>
 
             <p>
               El IAMS 4th World Congress 2026 reunirá médicos y especialistas con trayectorias profesionales en distintos países, sistemas de salud y áreas de práctica médica.
@@ -950,48 +988,73 @@
           </div>
 
           <div class="doctors-grid">
-            <article class="doctor-card">
-              <div class="doctor-photo">
-                <img
-                  src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781392890/Antonio_ydjzqq.webp"
-                  alt="Fotografía del médico"
-                />
-              </div>
+  <article class="doctor-card">
+    <div class="doctor-photo">
+      <img
+        src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781392890/Antonio_ydjzqq.webp"
+        alt="Fotografía del médico"
+      />
+    </div>
 
-              <div class="doctor-content">
-                <h4>Nombre del médico</h4>
-                <p>Especialidad médica</p>
-              </div>
-            </article>
+    <div class="doctor-content">
+      <span class="doctor-country">
+        <img
+          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_Mexico.svg_urzzpa.png"
+          alt="Bandera de México"
+        />
+        México
+      </span>
 
-            <article class="doctor-card">
-              <div class="doctor-photo">
-                <img
-                  src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781393560/Untitled-design-5.png_snsb36.webp"
-                  alt="Fotografía del médico"
-                />
-              </div>
+      <h4>Nombre del médico</h4>
+      <p>Especialidad médica</p>
+    </div>
+  </article>
 
-              <div class="doctor-content">
-                <h4>Nombre del médico</h4>
-                <p>Especialidad médica</p>
-              </div>
-            </article>
+  <article class="doctor-card">
+    <div class="doctor-photo">
+      <img
+        src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781393560/Untitled-design-5.png_snsb36.webp"
+        alt="Fotografía del médico"
+      />
+    </div>
 
-            <article class="doctor-card">
-              <div class="doctor-photo">
-                <img
-                  src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1778275773/Captura_de_pantalla_2026-05-08_131340_m5lpls.jpg"
-                  alt="Fotografía del médico"
-                />
-              </div>
+    <div class="doctor-content">
+      <span class="doctor-country">
+        <img
+          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380121/Flag_of_the_Philippines.svg_tjvedu.png"
+          alt="Bandera de Filipinas"
+        />
+        Filipinas
+      </span>
 
-              <div class="doctor-content">
-                <h4>Nombre del médico</h4>
-                <p>Especialidad médica</p>
-              </div>
-            </article>
-          </div>
+      <h4>Nombre del médico</h4>
+      <p>Especialidad médica</p>
+    </div>
+  </article>
+
+  <article class="doctor-card">
+    <div class="doctor-photo">
+      <img
+        src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1778275773/Captura_de_pantalla_2026-05-08_131340_m5lpls.jpg"
+        alt="Fotografía del médico"
+      />
+    </div>
+
+    <div class="doctor-content">
+      <span class="doctor-country">
+        <img
+          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_Mexico.svg_urzzpa.png"
+          alt="Bandera de México"
+        />
+        México
+      </span>
+
+      <h4>Nombre del médico</h4>
+      <p>Especialidad médica</p>
+    </div>
+  </article>
+</div>
+          
         </div>
       </div>
     </section>
