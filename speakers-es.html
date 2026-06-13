@@ -113,7 +113,7 @@
       padding: 13px 21px;
       border-radius: 999px;
       font-weight: 900;
-      box-shadow: 0 12px 28px rgba(240, 77, 139, 0.35);
+      box-shadow: 0 12px 28px rgba(240,77,139,0.35);
       white-space: nowrap;
     }
 
@@ -174,7 +174,7 @@
       border-radius: 999px;
       background: linear-gradient(135deg, var(--pink), #ff6b4a);
       border-top: none;
-      box-shadow: 0 12px 28px rgba(240, 77, 139, 0.25);
+      box-shadow: 0 12px 28px rgba(240,77,139,0.25);
     }
 
     main {
@@ -253,118 +253,293 @@
       color: var(--gray-text);
     }
 
+    .section-lead + .section-lead {
+      margin-top: 18px;
+    }
+
     .speakers-section {
       background: var(--cream);
     }
 
-    .country-row {
-      margin-top: 32px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .country-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      min-height: 46px;
-      padding: 0 18px 0 12px;
-      border-radius: 999px;
-      background: var(--white);
-      border: 1px solid rgba(25,16,82,0.10);
-      color: var(--navy);
-      font-size: 14px;
-      font-weight: 900;
-      box-shadow: 0 10px 28px rgba(7,23,49,0.06);
-    }
-
-    .country-chip img {
-      width: 30px;
-      height: 22px;
-      object-fit: cover;
-      border-radius: 4px;
-      box-shadow: 0 2px 6px rgba(7,23,49,0.16);
-    }
-
-    .speakers-grid {
+    .international-panel {
       margin-top: 44px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 18px;
+      align-items: stretch;
     }
 
-    .speaker-card {
+    .flag-panel {
+      position: relative;
+      min-height: 390px;
+      border-radius: 38px;
       overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 22%, rgba(201,162,74,0.24), transparent 32%),
+        radial-gradient(circle at 82% 78%, rgba(86,56,240,0.24), transparent 36%),
+        linear-gradient(135deg, #17104a 0%, #2417a0 58%, #5638f0 100%);
+      box-shadow: 0 28px 80px rgba(7,23,49,0.16);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .flag-panel::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(255,255,255,0.14);
       border-radius: 28px;
+      pointer-events: none;
+    }
+
+    .flag-panel::after {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.12);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .flag-core {
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      left: 50%;
+      width: 170px;
+      height: 170px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.22);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.18);
+      color: white;
+    }
+
+    .flag-core span {
+      display: block;
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 950;
+      margin-bottom: 8px;
+    }
+
+    .flag-core strong {
+      display: block;
+      font-size: 34px;
+      line-height: 0.92;
+      letter-spacing: -0.06em;
+      font-weight: 950;
+    }
+
+    .flag-card {
+      position: absolute;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 9px 16px 9px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(255,255,255,0.36);
+      box-shadow: 0 18px 48px rgba(0,0,0,0.18);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 950;
+    }
+
+    .flag-card img {
+      width: 38px;
+      height: 27px;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(7,23,49,0.18);
+    }
+
+    .flag-card-mexico {
+      top: 52px;
+      left: 38px;
+    }
+
+    .flag-card-philippines {
+      top: 68px;
+      right: 34px;
+    }
+
+    .flag-card-germany {
+      bottom: 72px;
+      left: 34px;
+    }
+
+    .flag-card-usa {
+      bottom: 52px;
+      right: 38px;
+    }
+
+    .international-copy-card {
+      border-radius: 38px;
       background: var(--white);
       border: 1px solid rgba(25,16,82,0.10);
       box-shadow: 0 18px 52px rgba(7,23,49,0.08);
-    }
-
-    .speaker-avatar {
-      height: 230px;
+      padding: clamp(28px, 4vw, 48px);
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      background:
-        radial-gradient(circle at 18% 20%, rgba(201,162,74,0.28), transparent 32%),
-        linear-gradient(135deg, #17104a 0%, #2417a0 58%, #5638f0 100%);
-      color: rgba(255,255,255,0.94);
     }
 
-    .speaker-avatar img {
-      width: 58px;
-      height: 40px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 16px;
-      box-shadow: 0 10px 26px rgba(0,0,0,0.22);
-    }
-
-    .speaker-avatar span {
-      font-size: 54px;
-      font-weight: 950;
-      letter-spacing: -0.04em;
-      line-height: 1;
-    }
-
-    .speaker-content {
-      padding: 24px;
-    }
-
-    .speaker-country {
-      display: inline-flex;
-      margin-bottom: 14px;
-      color: var(--gold);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-weight: 950;
-    }
-
-    .speaker-content h3 {
+    .international-copy-card h3 {
+      max-width: 560px;
       color: var(--navy);
-      font-size: clamp(24px, 2.5vw, 34px);
+      font-size: clamp(32px, 4vw, 58px);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      font-weight: 950;
+      margin-bottom: 20px;
+    }
+
+    .international-copy-card p {
+      color: var(--gray-text);
+      font-size: clamp(17px, 1.8vw, 22px);
+      line-height: 1.58;
+    }
+
+    .featured-doctors {
+      margin-top: 52px;
+      border-top: 1px solid rgba(25,16,82,0.12);
+      padding-top: 34px;
+    }
+
+    .featured-doctors-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    .featured-doctors-header h3 {
+      color: var(--navy);
+      font-size: clamp(26px, 3vw, 42px);
       line-height: 1;
       letter-spacing: -0.055em;
       font-weight: 950;
-      margin-bottom: 10px;
     }
 
-    .speaker-content p {
+    .featured-doctors-header p {
+      max-width: 520px;
       color: var(--gray-text);
-      font-size: 16px;
-      line-height: 1.45;
+      font-size: 15px;
+      line-height: 1.5;
     }
 
-    .speaker-note {
-      margin-top: 34px;
-      max-width: 780px;
+    .doctors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .doctor-card {
+      border-radius: 22px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(25,16,82,0.10);
+      box-shadow: 0 14px 38px rgba(7,23,49,0.07);
+      padding: 12px;
+    }
+
+    .doctor-photo {
+      overflow: hidden;
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(25,16,82,0.16), rgba(86,56,240,0.10)),
+        #e5e7eb;
+      aspect-ratio: 4 / 3.15;
+    }
+
+    .doctor-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .doctor-content {
+      padding: 14px 4px 2px;
+    }
+
+    .doctor-content h4 {
+      color: var(--navy);
+      font-size: clamp(17px, 1.6vw, 23px);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+      font-weight: 950;
+      margin-bottom: 6px;
+    }
+
+    .doctor-content p {
       color: var(--gray-text);
-      font-size: 16px;
-      line-height: 1.55;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .register-section {
+      background:
+        linear-gradient(90deg, rgba(9,5,31,0.94), rgba(25,16,82,0.82)),
+        linear-gradient(135deg, #17104a 0%, #2417a0 58%, #5638f0 100%);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .register-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .register-section h2 {
+      font-size: clamp(40px, 6vw, 82px);
+      line-height: 0.96;
+      letter-spacing: -0.065em;
+      font-weight: 950;
+      margin-bottom: 24px;
+    }
+
+    .register-section p {
+      max-width: 720px;
+      margin: 0 auto 34px;
+      color: #dbe7ff;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.56;
+    }
+
+    .register-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 26px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--deep);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 950;
+      letter-spacing: 0.02em;
+      box-shadow: 0 16px 42px rgba(0,0,0,0.24);
+      white-space: nowrap;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .register-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 52px rgba(0,0,0,0.30);
+      background: #d8b65c;
     }
 
     footer {
@@ -411,8 +586,16 @@
     }
 
     @media (max-width: 980px) {
-      .speakers-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .international-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .flag-panel {
+        min-height: 430px;
+      }
+
+      .featured-doctors-header {
+        display: grid;
       }
     }
 
@@ -470,17 +653,110 @@
     }
 
     @media (max-width: 720px) {
-      .speakers-grid {
-        grid-template-columns: 1fr;
+      .flag-panel {
+        min-height: auto;
+        padding: 24px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
       }
 
-      .speaker-avatar {
-        height: 210px;
+      .flag-panel::before,
+      .flag-panel::after {
+        display: none;
       }
 
-      .country-chip {
+      .flag-core,
+      .flag-card {
+        position: relative;
+        inset: auto;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        transform: none;
+      }
+
+      .flag-core {
         width: 100%;
-        justify-content: center;
+        height: auto;
+        min-height: 118px;
+        grid-column: span 2;
+        border-radius: 22px;
+      }
+
+      .flag-core strong {
+        font-size: 34px;
+      }
+
+      .flag-card {
+        width: 100%;
+        min-height: 48px;
+        justify-content: flex-start;
+        font-size: 12px;
+        padding: 8px 10px;
+      }
+
+      .flag-card img {
+        width: 34px;
+        height: 24px;
+      }
+
+      .international-copy-card {
+        border-radius: 28px;
+      }
+
+      .doctors-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+
+      .doctor-card {
+        border-radius: 16px;
+        padding: 7px;
+      }
+
+      .doctor-photo {
+        border-radius: 11px;
+        aspect-ratio: 1 / 1;
+      }
+
+      .doctor-content {
+        padding: 8px 2px 0;
+      }
+
+      .doctor-content h4 {
+        font-size: 11px;
+        line-height: 1.05;
+        letter-spacing: -0.035em;
+        margin-bottom: 4px;
+      }
+
+      .doctor-content p {
+        font-size: 9.5px;
+        line-height: 1.22;
+      }
+
+      .featured-doctors {
+        margin-top: 36px;
+        padding-top: 26px;
+      }
+
+      .featured-doctors-header {
+        margin-bottom: 14px;
+        gap: 10px;
+      }
+
+      .featured-doctors-header h3 {
+        font-size: 28px;
+      }
+
+      .featured-doctors-header p {
+        font-size: 13px;
+      }
+
+      .register-btn {
+        width: 100%;
       }
     }
 
@@ -502,200 +778,6 @@
         font-size: 42px;
       }
     }
-
-.speakers-section {
-  background: var(--cream);
-}
-
-.speakers-layout {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: clamp(36px, 6vw, 84px);
-  align-items: center;
-}
-
-.speakers-copy .section-lead + .section-lead {
-  margin-top: 18px;
-}
-
-.flag-constellation {
-  min-height: 520px;
-  position: relative;
-  border-radius: 42px;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 22% 18%, rgba(201,162,74,0.22), transparent 34%),
-    radial-gradient(circle at 82% 78%, rgba(86,56,240,0.22), transparent 38%),
-    linear-gradient(135deg, #17104a 0%, #2417a0 58%, #5638f0 100%);
-  box-shadow: 0 28px 80px rgba(7,23,49,0.16);
-  border: 1px solid rgba(255,255,255,0.18);
-}
-
-.flag-constellation::before {
-  content: "";
-  position: absolute;
-  inset: 28px;
-  border: 1px solid rgba(255,255,255,0.16);
-  border-radius: 32px;
-  pointer-events: none;
-}
-
-.flag-constellation::after {
-  content: "";
-  position: absolute;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.12);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.flag-core {
-  position: absolute;
-  z-index: 3;
-  top: 50%;
-  left: 50%;
-  width: 210px;
-  height: 210px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.22);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 24px 70px rgba(0,0,0,0.18);
-  color: white;
-}
-
-.flag-core span {
-  display: block;
-  color: var(--gold);
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-weight: 950;
-  margin-bottom: 8px;
-}
-
-.flag-core strong {
-  display: block;
-  font-size: 42px;
-  line-height: 0.92;
-  letter-spacing: -0.06em;
-  font-weight: 950;
-}
-
-.flag-card {
-  position: absolute;
-  z-index: 4;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-height: 58px;
-  padding: 10px 18px 10px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.92);
-  border: 1px solid rgba(255,255,255,0.36);
-  box-shadow: 0 18px 48px rgba(0,0,0,0.18);
-  color: var(--navy);
-  font-size: 14px;
-  font-weight: 950;
-  transition: transform 180ms ease, box-shadow 180ms ease;
-}
-
-.flag-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 24px 58px rgba(0,0,0,0.24);
-}
-
-.flag-card img {
-  width: 42px;
-  height: 30px;
-  object-fit: cover;
-  border-radius: 7px;
-  box-shadow: 0 4px 10px rgba(7,23,49,0.18);
-}
-
-.flag-card-mexico {
-  top: 70px;
-  left: 56px;
-}
-
-.flag-card-philippines {
-  top: 92px;
-  right: 44px;
-}
-
-.flag-card-germany {
-  bottom: 86px;
-  left: 42px;
-}
-
-.flag-card-usa {
-  bottom: 66px;
-  right: 54px;
-}
-
-@media (max-width: 980px) {
-  .speakers-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .flag-constellation {
-    min-height: 480px;
-  }
-}
-
-@media (max-width: 720px) {
-  .flag-constellation {
-    min-height: auto;
-    padding: 28px;
-    display: grid;
-    gap: 14px;
-  }
-
-  .flag-constellation::before,
-  .flag-constellation::after {
-    display: none;
-  }
-
-  .flag-core,
-  .flag-card {
-    position: relative;
-    inset: auto;
-    top: auto;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    transform: none;
-  }
-
-  .flag-core {
-    width: 100%;
-    height: auto;
-    min-height: 150px;
-    border-radius: 26px;
-    margin-bottom: 4px;
-  }
-
-  .flag-core strong {
-    font-size: 38px;
-  }
-
-  .flag-card {
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .flag-card:hover {
-    transform: none;
-  }
-}
-
   </style>
 </head>
 
@@ -744,60 +826,152 @@
   </header>
 
   <main>
-<section class="section speakers-section">
-  <div class="section-inner speakers-layout">
-    <div class="speakers-copy">
-      <div class="section-kicker">Ponentes</div>
+    <section class="hero-speakers">
+      <div class="hero-speakers-content">
+        <h1>Ponentes</h1>
 
-      <h2 class="section-title">Participación médica internacional.</h2>
-
-      <p class="section-lead">
-        El IAMS 4th World Congress 2026 reunirá especialistas médicos de distintos países para un programa académico internacional en Campeche.
-      </p>
-
-      <p class="section-lead">
-        La lista final de ponentes, temas y sesiones será publicada próximamente conforme avance la integración del programa académico.
-      </p>
-    </div>
-
-    <div class="flag-constellation" aria-label="Participación internacional">
-      <div class="flag-core">
+        <h2>
+          Participación médica internacional para el IAMS 4th World Congress 2026.
+        </h2>
       </div>
+    </section>
 
-      <div class="flag-card flag-card-mexico">
-        <img
-          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_Mexico.svg_urzzpa.png"
-          alt="Bandera de México"
-        />
-        <span>México</span>
-      </div>
+    <section class="section speakers-section">
+      <div class="section-inner">
+        <div class="section-kicker">Speakers</div>
 
-      <div class="flag-card flag-card-philippines">
-        <img
-          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380121/Flag_of_the_Philippines.svg_tjvedu.png"
-          alt="Bandera de Filipinas"
-        />
-        <span>Filipinas</span>
-      </div>
+        <h2 class="section-title">Un programa académico con alcance internacional.</h2>
 
-      <div class="flag-card flag-card-germany">
-        <img
-          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_Germany.svg_zev3ny.png"
-          alt="Bandera de Alemania"
-        />
-        <span>Alemania</span>
-      </div>
+        <p class="section-lead">
+          El IAMS 4th World Congress 2026 reunirá médicos y especialistas con trayectorias profesionales en distintos países, sistemas de salud y áreas de práctica médica.
+        </p>
 
-      <div class="flag-card flag-card-usa">
-        <img
-          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_the_United_States__DDD-F-416E_specifications.svg_mtnkyo.webp"
-          alt="Bandera de Estados Unidos"
-        />
-        <span>Estados Unidos</span>
+        <p class="section-lead">
+          La lista final de ponentes, temas y sesiones será publicada próximamente conforme avance la integración del programa académico.
+        </p>
+
+        <div class="international-panel">
+          <div class="flag-panel" aria-label="Participación internacional">
+            <div class="flag-core">
+              <div>
+                <span>International</span>
+                <strong>Faculty</strong>
+              </div>
+            </div>
+
+            <div class="flag-card flag-card-mexico">
+              <img
+                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_Mexico.svg_urzzpa.png"
+                alt="Bandera de México"
+              />
+              <span>México</span>
+            </div>
+
+            <div class="flag-card flag-card-philippines">
+              <img
+                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380121/Flag_of_the_Philippines.svg_tjvedu.png"
+                alt="Bandera de Filipinas"
+              />
+              <span>Filipinas</span>
+            </div>
+
+            <div class="flag-card flag-card-germany">
+              <img
+                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_Germany.svg_zev3ny.png"
+                alt="Bandera de Alemania"
+              />
+              <span>Alemania</span>
+            </div>
+
+            <div class="flag-card flag-card-usa">
+              <img
+                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_the_United_States__DDD-F-416E_specifications.svg_mtnkyo.webp"
+                alt="Bandera de Estados Unidos"
+              />
+              <span>Estados Unidos</span>
+            </div>
+          </div>
+
+          <div class="international-copy-card">
+            <h3>Especialistas de distintas regiones.</h3>
+
+            <p>
+              La participación internacional del congreso refleja el propósito de IAMS: crear un espacio de intercambio académico entre médicos, especialistas e instituciones vinculadas a la práctica médica global.
+            </p>
+          </div>
+        </div>
+
+        <div class="featured-doctors">
+          <div class="featured-doctors-header">
+            <h3>Médicos destacados.</h3>
+
+            <p>
+              Una primera selección de médicos confirmados. La lista completa será anunciada próximamente.
+            </p>
+          </div>
+
+          <div class="doctors-grid">
+            <article class="doctor-card">
+              <div class="doctor-photo">
+                <img
+                  src="URL-FOTO-MEDICO-1"
+                  alt="Fotografía del médico"
+                />
+              </div>
+
+              <div class="doctor-content">
+                <h4>Nombre del médico</h4>
+                <p>Especialidad médica</p>
+              </div>
+            </article>
+
+            <article class="doctor-card">
+              <div class="doctor-photo">
+                <img
+                  src="URL-FOTO-MEDICO-2"
+                  alt="Fotografía del médico"
+                />
+              </div>
+
+              <div class="doctor-content">
+                <h4>Nombre del médico</h4>
+                <p>Especialidad médica</p>
+              </div>
+            </article>
+
+            <article class="doctor-card">
+              <div class="doctor-photo">
+                <img
+                  src="URL-FOTO-MEDICO-3"
+                  alt="Fotografía del médico"
+                />
+              </div>
+
+              <div class="doctor-content">
+                <h4>Nombre del médico</h4>
+                <p>Especialidad médica</p>
+              </div>
+            </article>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+
+    <section class="section register-section">
+      <div class="register-inner">
+        <div class="section-kicker">Actualizaciones</div>
+
+        <h2>Regístrate para recibir la lista completa de ponentes.</h2>
+
+        <p>
+          Recibe actualizaciones sobre los ponentes confirmados, temas académicos y anuncios del IAMS 4th World Congress 2026.
+        </p>
+
+        <a href="waitlist-es.html" class="register-btn">
+          Recibir actualizaciones
+        </a>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -834,4 +1008,3 @@
   </script>
 </body>
 </html>
-
