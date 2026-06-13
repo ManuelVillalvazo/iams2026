@@ -1,4 +1,3 @@
-```html id="vbhyru"
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -503,6 +502,200 @@
         font-size: 42px;
       }
     }
+
+.speakers-section {
+  background: var(--cream);
+}
+
+.speakers-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(36px, 6vw, 84px);
+  align-items: center;
+}
+
+.speakers-copy .section-lead + .section-lead {
+  margin-top: 18px;
+}
+
+.flag-constellation {
+  min-height: 520px;
+  position: relative;
+  border-radius: 42px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(201,162,74,0.22), transparent 34%),
+    radial-gradient(circle at 82% 78%, rgba(86,56,240,0.22), transparent 38%),
+    linear-gradient(135deg, #17104a 0%, #2417a0 58%, #5638f0 100%);
+  box-shadow: 0 28px 80px rgba(7,23,49,0.16);
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.flag-constellation::before {
+  content: "";
+  position: absolute;
+  inset: 28px;
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 32px;
+  pointer-events: none;
+}
+
+.flag-constellation::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.12);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.flag-core {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  width: 210px;
+  height: 210px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.22);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.18);
+  color: white;
+}
+
+.flag-core span {
+  display: block;
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 950;
+  margin-bottom: 8px;
+}
+
+.flag-core strong {
+  display: block;
+  font-size: 42px;
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+  font-weight: 950;
+}
+
+.flag-card {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 58px;
+  padding: 10px 18px 10px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(255,255,255,0.36);
+  box-shadow: 0 18px 48px rgba(0,0,0,0.18);
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 950;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.flag-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 58px rgba(0,0,0,0.24);
+}
+
+.flag-card img {
+  width: 42px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 7px;
+  box-shadow: 0 4px 10px rgba(7,23,49,0.18);
+}
+
+.flag-card-mexico {
+  top: 70px;
+  left: 56px;
+}
+
+.flag-card-philippines {
+  top: 92px;
+  right: 44px;
+}
+
+.flag-card-germany {
+  bottom: 86px;
+  left: 42px;
+}
+
+.flag-card-usa {
+  bottom: 66px;
+  right: 54px;
+}
+
+@media (max-width: 980px) {
+  .speakers-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .flag-constellation {
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 720px) {
+  .flag-constellation {
+    min-height: auto;
+    padding: 28px;
+    display: grid;
+    gap: 14px;
+  }
+
+  .flag-constellation::before,
+  .flag-constellation::after {
+    display: none;
+  }
+
+  .flag-core,
+  .flag-card {
+    position: relative;
+    inset: auto;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    transform: none;
+  }
+
+  .flag-core {
+    width: 100%;
+    height: auto;
+    min-height: 150px;
+    border-radius: 26px;
+    margin-bottom: 4px;
+  }
+
+  .flag-core strong {
+    font-size: 38px;
+  }
+
+  .flag-card {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .flag-card:hover {
+    transform: none;
+  }
+}
+
   </style>
 </head>
 
@@ -551,163 +744,65 @@
   </header>
 
   <main>
-    <section class="hero-speakers">
-      <div class="hero-speakers-content">
-        <h1>Ponentes</h1>
+    ```html id="0yxw6g"
+<section class="section speakers-section">
+  <div class="section-inner speakers-layout">
+    <div class="speakers-copy">
+      <div class="section-kicker">Ponentes</div>
 
-        <h2>
-          Especialistas confirmados para el IAMS 4th World Congress 2026.
-        </h2>
+      <h2 class="section-title">Participación médica internacional.</h2>
+
+      <p class="section-lead">
+        El IAMS 4th World Congress 2026 reunirá especialistas médicos de distintos países para un programa académico internacional en Campeche.
+      </p>
+
+      <p class="section-lead">
+        La lista final de ponentes, temas y sesiones será publicada próximamente conforme avance la integración del programa académico.
+      </p>
+    </div>
+
+    <div class="flag-constellation" aria-label="Participación internacional">
+      <div class="flag-core">
+        <span>International</span>
+        <strong>Faculty</strong>
       </div>
-    </section>
 
-    <section class="section speakers-section">
-      <div class="section-inner">
-        <div class="section-kicker">Speakers</div>
-
-        <h2 class="section-title">Ponentes confirmados.</h2>
-
-        <p class="section-lead">
-          El IAMS 4th World Congress 2026 ya cuenta con un grupo inicial de especialistas médicos confirmados de Filipinas y México, con participación internacional adicional por anunciarse próximamente.
-        </p>
-
-        <div class="country-row" aria-label="Países representados">
-          <div class="country-chip">
-            <img
-              src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380121/Flag_of_the_Philippines.svg_tjvedu.png"
-              alt="Bandera de Filipinas"
-            />
-            <span>Filipinas</span>
-          </div>
-
-          <div class="country-chip">
-            <img
-              src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_Mexico.svg_urzzpa.png"
-              alt="Bandera de México"
-            />
-            <span>México</span>
-          </div>
-
-          <div class="country-chip">
-            <img
-              src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_Germany.svg_zev3ny.png"
-              alt="Bandera de Alemania"
-            />
-            <span>Alemania</span>
-          </div>
-
-          <div class="country-chip">
-            <img
-              src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_the_United_States__DDD-F-416E_specifications.svg_mtnkyo.webp"
-              alt="Bandera de Estados Unidos"
-            />
-            <span>Estados Unidos</span>
-          </div>
-        </div>
-
-        <div class="speakers-grid">
-          <article class="speaker-card">
-            <div class="speaker-avatar">
-              <img
-                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380121/Flag_of_the_Philippines.svg_tjvedu.png"
-                alt="Bandera de Filipinas"
-              />
-              <span>PH</span>
-            </div>
-
-            <div class="speaker-content">
-              <span class="speaker-country">Filipinas</span>
-              <h3>Nombre del ponente</h3>
-              <p>Especialidad / Institución</p>
-            </div>
-          </article>
-
-          <article class="speaker-card">
-            <div class="speaker-avatar">
-              <img
-                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_Mexico.svg_urzzpa.png"
-                alt="Bandera de México"
-              />
-              <span>MX</span>
-            </div>
-
-            <div class="speaker-content">
-              <span class="speaker-country">México</span>
-              <h3>Nombre del ponente</h3>
-              <p>Especialidad / Institución</p>
-            </div>
-          </article>
-
-          <article class="speaker-card">
-            <div class="speaker-avatar">
-              <img
-                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380121/Flag_of_the_Philippines.svg_tjvedu.png"
-                alt="Bandera de Filipinas"
-              />
-              <span>PH</span>
-            </div>
-
-            <div class="speaker-content">
-              <span class="speaker-country">Filipinas</span>
-              <h3>Nombre del ponente</h3>
-              <p>Especialidad / Institución</p>
-            </div>
-          </article>
-
-          <article class="speaker-card">
-            <div class="speaker-avatar">
-              <img
-                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380121/Flag_of_the_Philippines.svg_tjvedu.png"
-                alt="Bandera de Filipinas"
-              />
-              <span>PH</span>
-            </div>
-
-            <div class="speaker-content">
-              <span class="speaker-country">Filipinas</span>
-              <h3>Nombre del ponente</h3>
-              <p>Especialidad / Institución</p>
-            </div>
-          </article>
-
-          <article class="speaker-card">
-            <div class="speaker-avatar">
-              <img
-                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_Mexico.svg_urzzpa.png"
-                alt="Bandera de México"
-              />
-              <span>MX</span>
-            </div>
-
-            <div class="speaker-content">
-              <span class="speaker-country">México</span>
-              <h3>Nombre del ponente</h3>
-              <p>Especialidad / Institución</p>
-            </div>
-          </article>
-
-          <article class="speaker-card">
-            <div class="speaker-avatar">
-              <img
-                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380121/Flag_of_the_Philippines.svg_tjvedu.png"
-                alt="Bandera de Filipinas"
-              />
-              <span>PH</span>
-            </div>
-
-            <div class="speaker-content">
-              <span class="speaker-country">Filipinas</span>
-              <h3>Nombre del ponente</h3>
-              <p>Especialidad / Institución</p>
-            </div>
-          </article>
-        </div>
-
-        <p class="speaker-note">
-          La lista completa de ponentes y temas será anunciada conforme avance la integración del programa académico.
-        </p>
+      <div class="flag-card flag-card-mexico">
+        <img
+          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_Mexico.svg_urzzpa.png"
+          alt="Bandera de México"
+        />
+        <span>México</span>
       </div>
-    </section>
+
+      <div class="flag-card flag-card-philippines">
+        <img
+          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380121/Flag_of_the_Philippines.svg_tjvedu.png"
+          alt="Bandera de Filipinas"
+        />
+        <span>Filipinas</span>
+      </div>
+
+      <div class="flag-card flag-card-germany">
+        <img
+          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_Germany.svg_zev3ny.png"
+          alt="Bandera de Alemania"
+        />
+        <span>Alemania</span>
+      </div>
+
+      <div class="flag-card flag-card-usa">
+        <img
+          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781380094/Flag_of_the_United_States__DDD-F-416E_specifications.svg_mtnkyo.webp"
+          alt="Bandera de Estados Unidos"
+        />
+        <span>Estados Unidos</span>
+      </div>
+    </div>
+  </div>
+</section>
+```
+
   </main>
 
   <footer>
@@ -744,4 +839,4 @@
   </script>
 </body>
 </html>
-```
+
