@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hero Templates | IAMS 2026</title>
+  <title>IAMS 4th World Congress 2026</title>
 
   <style>
     :root {
       --navy: #191052;
-      --deep: #09051f;
+      --deep-navy: #120a3c;
       --purple: #3320a8;
       --violet: #5638f0;
       --pink: #f04d8b;
       --gold: #c9a24a;
+      --gold-soft: #d8b25d;
       --white: #ffffff;
-      --cream: #fbf7ef;
+      --soft-white: #eef1ff;
+      --muted: #cfd6ff;
       --light: #f7f7fb;
-      --dark-text: #111827;
-      --gray-text: #4b5563;
-      --border: #d8dee8;
+      --border: rgba(255,255,255,0.12);
     }
 
     * {
@@ -27,560 +27,440 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: var(--light);
-      color: var(--dark-text);
-    }
-
-    .preview-page {
-      display: grid;
-      gap: 64px;
-      padding: 48px 0;
-    }
-
-    .template-label {
-      width: min(100% - 40px, 1180px);
-      margin: 0 auto 14px;
-      color: var(--gray-text);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-weight: 900;
-    }
-
-    .hero {
-      width: min(100% - 40px, 1180px);
-      min-height: 460px;
-      margin: 0 auto;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: clamp(42px, 7vw, 88px);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 920px;
-    }
-
-    .event-title {
-      font-size: clamp(42px, 7vw, 92px);
-      line-height: 0.92;
-      letter-spacing: -0.075em;
-      font-weight: 950;
-      margin-bottom: 24px;
-    }
-
-    .event-date {
-      font-size: clamp(22px, 3vw, 38px);
-      line-height: 1;
-      letter-spacing: -0.035em;
-      font-weight: 950;
-      margin-bottom: 8px;
-    }
-
-    .event-place {
-      font-size: clamp(13px, 1.5vw, 17px);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-weight: 900;
-      margin-bottom: 28px;
-      opacity: 0.82;
-    }
-
-    .event-theme {
-      font-size: clamp(26px, 4vw, 56px);
-      line-height: 1.04;
-      letter-spacing: -0.055em;
-      font-weight: 950;
-    }
-
-    .gold {
-      color: var(--gold);
-    }
-
-    .white {
       color: var(--white);
     }
 
-    .navy {
-      color: var(--navy);
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .muted {
-      color: var(--gray-text);
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--navy);
+      color: var(--white);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    /* TEMPLATE 01 */
-
-    .hero-01 {
-      background:
-        radial-gradient(circle at 50% 30%, rgba(201,162,74,0.16), transparent 34%),
-        linear-gradient(135deg, #09051f 0%, #191052 55%, #3320a8 100%);
-      color: white;
-      text-align: center;
+    .navbar {
+      min-height: 78px;
+      padding: 0 clamp(20px, 4vw, 52px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
     }
 
-    .hero-01::before {
-      content: "";
-      position: absolute;
-      inset: 34px;
-      border: 1px solid rgba(255,255,255,0.16);
-      pointer-events: none;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+      flex-shrink: 0;
     }
 
-    /* TEMPLATE 02 */
-
-    .hero-02 {
-      background: var(--white);
-      color: var(--navy);
-      text-align: left;
-      border-top: 12px solid var(--navy);
-      border-bottom: 1px solid rgba(25,16,82,0.12);
-    }
-
-    .hero-02 .hero-content {
-      max-width: 980px;
-      margin-right: auto;
-    }
-
-    .hero-02 .event-date {
-      color: var(--gold);
-    }
-
-    .hero-02::after {
-      content: "";
-      position: absolute;
-      right: -140px;
-      bottom: -180px;
-      width: 520px;
-      height: 520px;
+    .brand-logo {
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      border: 60px solid rgba(25,16,82,0.06);
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+      flex-shrink: 0;
     }
 
-    /* TEMPLATE 03 */
+    .brand-name {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.2;
+      color: rgba(255,255,255,0.92);
+      max-width: 285px;
+    }
 
-    .hero-03 {
-      background:
-        linear-gradient(180deg, rgba(9,5,31,0.34), rgba(9,5,31,0.82)),
-        url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1781295548/5f33f12c1fd4ac34e715c02c_cq9tlc.jpg");
-      background-size: cover;
-      background-position: center;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(14px, 1.6vw, 28px);
+      font-size: 14px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.94);
+      white-space: nowrap;
+      margin-left: auto;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-soft);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .buy-btn {
+      background: linear-gradient(135deg, var(--pink), #ff6b4a);
       color: white;
-      text-align: center;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 900;
+      box-shadow: 0 12px 28px rgba(240, 77, 139, 0.28);
+      white-space: nowrap;
     }
 
-    .hero-03 .hero-content {
-      max-width: 980px;
+    .lang-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 102px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      font-weight: 800;
+      white-space: nowrap;
     }
 
-    .hero-03 .event-title {
-      text-shadow: 0 16px 42px rgba(0,0,0,0.38);
-    }
-
-    /* TEMPLATE 04 */
-
-    .hero-04 {
-      background:
-        radial-gradient(circle at 85% 20%, rgba(240,77,139,0.30), transparent 26%),
-        radial-gradient(circle at 20% 80%, rgba(201,162,74,0.20), transparent 28%),
-        var(--navy);
+    .menu-btn {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.08);
       color: white;
-      text-align: left;
-      align-items: flex-end;
+      font-size: 24px;
+      cursor: pointer;
+      flex-shrink: 0;
     }
 
-    .hero-04 .hero-content {
-      margin-right: auto;
-      max-width: 860px;
+    .mobile-menu {
+      display: none;
+      background: var(--navy);
+      padding: 0 22px 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
-    .hero-04::before {
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 15px 0;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      font-weight: 800;
+      color: rgba(255,255,255,0.94);
+    }
+
+    .mobile-menu .mobile-buy {
+      color: var(--gold-soft);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(255,255,255,0.14), transparent 18%),
+        radial-gradient(circle at 18% 82%, rgba(201,162,74,0.12), transparent 20%),
+        linear-gradient(135deg, #160f4b 0%, #221687 50%, #4e33e8 100%);
+      min-height: calc(100vh - 78px);
+      display: flex;
+      align-items: center;
+      padding: clamp(48px, 8vw, 90px) clamp(22px, 4vw, 56px);
+    }
+
+    .hero::before {
       content: "";
       position: absolute;
-      width: 700px;
-      height: 700px;
+      width: 640px;
+      height: 640px;
       border-radius: 50%;
-      right: -240px;
-      top: -240px;
+      right: -230px;
+      top: -170px;
       background:
         repeating-radial-gradient(
           circle,
           rgba(255,255,255,0.20) 0 1px,
-          transparent 1px 10px
+          transparent 1px 9px
         );
       opacity: 0.55;
-    }
-
-    /* TEMPLATE 05 */
-
-    .hero-05 {
-      background: var(--cream);
-      color: var(--navy);
-      text-align: center;
-      border: 1px solid rgba(25,16,82,0.10);
-    }
-
-    .hero-05 .hero-content {
-      background: var(--white);
-      padding: clamp(34px, 6vw, 70px);
-      border-radius: 34px;
-      border: 1px solid rgba(25,16,82,0.10);
-      box-shadow: 0 20px 60px rgba(7,23,49,0.08);
-    }
-
-    .hero-05 .event-date {
-      color: var(--gold);
-    }
-
-    /* TEMPLATE 06 */
-
-    .hero-06 {
-      background:
-        linear-gradient(90deg, #191052 0%, #3320a8 58%, #8d168f 100%);
-      color: white;
-      text-align: center;
-    }
-
-    .hero-06::before {
-      content: "IAMS";
-      position: absolute;
-      inset: auto 0 -26px 0;
-      text-align: center;
-      font-size: clamp(150px, 26vw, 360px);
-      line-height: 0.75;
-      letter-spacing: -0.10em;
-      font-weight: 950;
-      color: rgba(255,255,255,0.055);
       pointer-events: none;
     }
 
-    .hero-06 .hero-content {
-      max-width: 980px;
-    }
-
-    /* TEMPLATE 07 */
-
-    .hero-07 {
-      background: var(--white);
-      color: var(--navy);
-      text-align: center;
-      border-top: 1px solid rgba(25,16,82,0.12);
-      border-bottom: 1px solid rgba(25,16,82,0.12);
-    }
-
-    .hero-07::before,
-    .hero-07::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: min(84%, 920px);
-      height: 1px;
-      background: rgba(25,16,82,0.18);
-    }
-
-    .hero-07::before {
-      top: 54px;
-    }
-
-    .hero-07::after {
-      bottom: 54px;
-    }
-
-    .hero-07 .event-title {
-      font-size: clamp(38px, 6.5vw, 82px);
-    }
-
-    .hero-07 .event-theme {
-      color: var(--gold);
-    }
-
-    /* TEMPLATE 08 */
-
-    .hero-08 {
-      background:
-        radial-gradient(circle at 50% 50%, rgba(201,162,74,0.22), transparent 24%),
-        linear-gradient(135deg, #09051f 0%, #191052 54%, #5638f0 100%);
-      color: white;
-      text-align: center;
-      border-radius: 44px;
-    }
-
-    .hero-08::before {
+    .hero::after {
       content: "";
       position: absolute;
       width: 520px;
       height: 520px;
       border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.16);
+      right: -120px;
+      bottom: -180px;
+      background: radial-gradient(circle, rgba(255,255,255,0.06), rgba(255,255,255,0.01) 60%, transparent 72%);
+      border: 46px solid rgba(255,255,255,0.08);
+      pointer-events: none;
     }
 
-    .hero-08::after {
-      content: "";
-      position: absolute;
-      width: 360px;
-      height: 360px;
-      border-radius: 50%;
-      border: 42px solid rgba(201,162,74,0.16);
+    .hero-inner {
+      width: min(100%, 1180px);
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
 
-    .hero-08 .hero-content {
-      max-width: 900px;
+    .hero-content {
+      max-width: 920px;
     }
 
-    /* TEMPLATE 09 */
-
-    .hero-09 {
-      background: var(--deep);
-      color: white;
-      text-align: left;
+    .hero-title {
+      font-size: clamp(46px, 7vw, 92px);
+      line-height: 0.9;
+      letter-spacing: -0.065em;
+      font-weight: 950;
+      color: var(--white);
+      margin-bottom: 26px;
+      text-wrap: balance;
     }
 
-    .hero-09 .hero-content {
-      max-width: 900px;
-      margin-right: auto;
-      padding-left: clamp(0px, 4vw, 46px);
-      border-left: 8px solid var(--gold);
+    .hero-title .th {
+      font-size: 0.42em;
+      vertical-align: super;
+      letter-spacing: 0;
+      margin-left: 1px;
+      position: relative;
+      top: -0.08em;
     }
 
-    .hero-09 .event-title {
-      font-size: clamp(42px, 7vw, 96px);
+    .hero-date {
+      font-size: clamp(24px, 3vw, 40px);
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 8px;
     }
 
-    .hero-09::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      width: 34%;
-      background:
-        linear-gradient(180deg, rgba(201,162,74,0.24), rgba(240,77,139,0.18)),
-        repeating-linear-gradient(
-          135deg,
-          rgba(255,255,255,0.08) 0 1px,
-          transparent 1px 12px
-        );
+    .hero-place {
+      font-size: clamp(13px, 1.4vw, 17px);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 900;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 34px;
     }
 
-    /* TEMPLATE 10 */
-
-    .hero-10 {
-      background:
-        linear-gradient(180deg, rgba(251,247,239,0.92), rgba(255,255,255,0.98));
-      color: var(--navy);
-      text-align: center;
-      border: 1px solid rgba(25,16,82,0.10);
+    .theme-kicker {
+      display: block;
+      font-size: clamp(20px, 2.6vw, 34px);
+      line-height: 1.05;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--gold-soft);
+      margin-bottom: 8px;
     }
 
-    .hero-10 .event-title {
-      color: var(--navy);
+    .theme-main {
+      display: block;
+      font-size: clamp(18px, 2vw, 28px);
+      line-height: 1.08;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: rgba(255,255,255,0.92);
+      max-width: 980px;
     }
 
-    .hero-10 .event-date {
-      color: var(--gold);
+    @media (max-width: 1180px) {
+      .nav-links {
+        display: none;
+      }
+
+      .menu-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
 
-    .hero-10 .event-theme {
-      max-width: 880px;
-      margin-inline: auto;
-      color: var(--navy);
-    }
+    @media (max-width: 760px) {
+      .navbar {
+        min-height: 74px;
+        padding: 0 18px;
+      }
 
-    .hero-10::before {
-      content: "";
-      position: absolute;
-      width: 720px;
-      height: 720px;
-      border-radius: 50%;
-      background:
-        repeating-radial-gradient(
-          circle,
-          rgba(25,16,82,0.08) 0 1px,
-          transparent 1px 10px
-        );
-      right: -260px;
-      top: -320px;
-    }
+      .brand-logo {
+        width: 42px;
+        height: 42px;
+      }
 
-    @media (max-width: 720px) {
-      .preview-page {
-        gap: 42px;
-        padding: 28px 0;
+      .brand-name {
+        font-size: 10px;
+        max-width: 205px;
+      }
+
+      .buy-btn {
+        display: none;
+      }
+
+      .lang-btn {
+        min-width: 92px;
+        padding: 12px 16px;
       }
 
       .hero {
-        width: 100%;
-        min-height: 440px;
-        padding: 42px 22px;
+        min-height: calc(100vh - 74px);
+        padding: 52px 20px 56px;
+        align-items: center;
       }
 
-      .template-label {
-        width: calc(100% - 40px);
+      .hero::before {
+        width: 360px;
+        height: 360px;
+        right: -130px;
+        top: -70px;
       }
 
-      .event-title {
-        font-size: clamp(38px, 12vw, 58px);
+      .hero::after {
+        width: 280px;
+        height: 280px;
+        right: -80px;
+        bottom: -110px;
+        border-width: 22px;
       }
 
-      .event-date {
-        font-size: clamp(22px, 7vw, 34px);
+      .hero-title {
+        font-size: clamp(44px, 12vw, 62px);
+        line-height: 0.92;
+        margin-bottom: 20px;
       }
 
-      .event-theme {
-        font-size: clamp(24px, 7vw, 36px);
+      .hero-date {
+        font-size: 28px;
       }
 
-      .hero-05 .hero-content {
-        padding: 30px 22px;
-        border-radius: 24px;
+      .hero-place {
+        font-size: 12px;
+        margin-bottom: 26px;
       }
 
-      .hero-08 {
-        border-radius: 0;
+      .theme-kicker {
+        font-size: 22px;
+        margin-bottom: 6px;
       }
 
-      .hero-09 .hero-content {
-        padding-left: 22px;
-        border-left-width: 5px;
+      .theme-main {
+        font-size: 18px;
+        line-height: 1.15;
+        max-width: 320px;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .brand-name {
+        font-size: 9px;
+        max-width: 185px;
       }
 
-      .hero-09::after {
-        display: none;
+      .lang-btn {
+        min-width: 86px;
+        font-size: 14px;
+      }
+
+      .hero-title {
+        font-size: 46px;
+      }
+
+      .hero-date {
+        font-size: 25px;
+      }
+
+      .theme-kicker {
+        font-size: 20px;
+      }
+
+      .theme-main {
+        font-size: 17px;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="preview-page">
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="brand">
+        <img
+          class="brand-logo"
+          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047563/Logo_hppm16.webp"
+          alt="International Academy of Medical Specialists Logo"
+        />
+        <span class="brand-name">International Academy of Medical Specialists, Inc.</span>
+      </a>
 
-    <div>
-      <div class="template-label">Template 01 · Centrado institucional</div>
-      <section class="hero hero-01">
-        <div class="hero-content">
-          <h1 class="event-title">4th Congreso Internacional IAMS 2026</h1>
-          <div class="event-date">24 - 25 de Octubre</div>
-          <div class="event-place">Campeche, México</div>
-          <div class="event-theme">One World, One Health: Strengthening Global Medical Synergy</div>
-        </div>
-      </section>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="campeche-es.html">Ciudad anfitriona</a>
+        <a href="speakers-es.html">Ponentes</a>
+        <a href="what-is-iams-es.html">¿Qué es IAMS?</a>
+      </div>
+
+      <div class="header-actions">
+        <a class="buy-btn" href="#tickets">Comprar entradas</a>
+        <a class="lang-btn" href="index.html">English</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Inicio</a>
+      <a href="campeche-es.html">Ciudad anfitriona</a>
+      <a href="speakers-es.html">Ponentes</a>
+      <a href="what-is-iams-es.html">¿Qué es IAMS?</a>
+      <a href="#tickets" class="mobile-buy">Comprar entradas</a>
+      <a href="index.html">English</a>
     </div>
+  </header>
 
-    <div>
-      <div class="template-label">Template 02 · Editorial blanco</div>
-      <section class="hero hero-02">
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
         <div class="hero-content">
-          <h1 class="event-title">4th Congreso Internacional IAMS 2026</h1>
-          <div class="event-date">24 - 25 de Octubre</div>
-          <div class="event-place">Campeche, México</div>
-          <div class="event-theme">One World, One Health: Strengthening Global Medical Synergy</div>
-        </div>
-      </section>
-    </div>
+          <h1 class="hero-title">
+            4<span class="th">th</span> Congreso Internacional IAMS<br>2026
+          </h1>
 
-    <div>
-      <div class="template-label">Template 03 · Imagen sede</div>
-      <section class="hero hero-03">
-        <div class="hero-content">
-          <h1 class="event-title">4th Congreso Internacional IAMS 2026</h1>
-          <div class="event-date">24 - 25 de Octubre</div>
-          <div class="event-place">Campeche, México</div>
-          <div class="event-theme">One World, One Health: Strengthening Global Medical Synergy</div>
-        </div>
-      </section>
-    </div>
+          <div class="hero-date">24 - 25 de Octubre</div>
+          <div class="hero-place">Campeche, México</div>
 
-    <div>
-      <div class="template-label">Template 04 · Afiche abstracto</div>
-      <section class="hero hero-04">
-        <div class="hero-content">
-          <h1 class="event-title">4th Congreso Internacional IAMS 2026</h1>
-          <div class="event-date">24 - 25 de Octubre</div>
-          <div class="event-place">Campeche, México</div>
-          <div class="event-theme">One World, One Health: Strengthening Global Medical Synergy</div>
+          <div class="hero-theme">
+            <span class="theme-kicker">One World, One Health:</span>
+            <span class="theme-main">Strengthening Global Medical Synergy</span>
+          </div>
         </div>
-      </section>
-    </div>
-
-    <div>
-      <div class="template-label">Template 05 · Tarjeta académica</div>
-      <section class="hero hero-05">
-        <div class="hero-content">
-          <h1 class="event-title">4th Congreso Internacional IAMS 2026</h1>
-          <div class="event-date">24 - 25 de Octubre</div>
-          <div class="event-place">Campeche, México</div>
-          <div class="event-theme">One World, One Health: Strengthening Global Medical Synergy</div>
-        </div>
-      </section>
-    </div>
-
-    <div>
-      <div class="template-label">Template 06 · World Congress bold</div>
-      <section class="hero hero-06">
-        <div class="hero-content">
-          <h1 class="event-title">4th Congreso Internacional IAMS 2026</h1>
-          <div class="event-date">24 - 25 de Octubre</div>
-          <div class="event-place">Campeche, México</div>
-          <div class="event-theme">One World, One Health: Strengthening Global Medical Synergy</div>
-        </div>
-      </section>
-    </div>
-
-    <div>
-      <div class="template-label">Template 07 · Programa formal</div>
-      <section class="hero hero-07">
-        <div class="hero-content">
-          <h1 class="event-title">4th Congreso Internacional IAMS 2026</h1>
-          <div class="event-date">24 - 25 de Octubre</div>
-          <div class="event-place">Campeche, México</div>
-          <div class="event-theme">One World, One Health: Strengthening Global Medical Synergy</div>
-        </div>
-      </section>
-    </div>
-
-    <div>
-      <div class="template-label">Template 08 · Sello internacional</div>
-      <section class="hero hero-08">
-        <div class="hero-content">
-          <h1 class="event-title">4th Congreso Internacional IAMS 2026</h1>
-          <div class="event-date">24 - 25 de Octubre</div>
-          <div class="event-place">Campeche, México</div>
-          <div class="event-theme">One World, One Health: Strengthening Global Medical Synergy</div>
-        </div>
-      </section>
-    </div>
-
-    <div>
-      <div class="template-label">Template 09 · Franja dorada</div>
-      <section class="hero hero-09">
-        <div class="hero-content">
-          <h1 class="event-title">4th Congreso Internacional IAMS 2026</h1>
-          <div class="event-date">24 - 25 de Octubre</div>
-          <div class="event-place">Campeche, México</div>
-          <div class="event-theme">One World, One Health: Strengthening Global Medical Synergy</div>
-        </div>
-      </section>
-    </div>
-
-    <div>
-      <div class="template-label">Template 10 · Minimal institucional</div>
-      <section class="hero hero-10">
-        <div class="hero-content">
-          <h1 class="event-title">4th Congreso Internacional IAMS 2026</h1>
-          <div class="event-date">24 - 25 de Octubre</div>
-          <div class="event-place">Campeche, México</div>
-          <div class="event-theme">One World, One Health: Strengthening Global Medical Synergy</div>
-        </div>
-      </section>
-    </div>
-
+      </div>
+    </section>
   </main>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+      menuBtn.textContent = mobileMenu.classList.contains("open") ? "×" : "☰";
+    });
+  </script>
 </body>
 </html>
