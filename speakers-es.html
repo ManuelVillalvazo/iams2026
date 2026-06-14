@@ -539,14 +539,20 @@
       font-weight: 950;
     }
 
-    .expected-content span {
-      display: block;
+    .expected-metric span {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin-top: 22px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(201,162,74,0.14);
+      border: 1px solid rgba(201,162,74,0.28);
       color: var(--gold);
       text-transform: uppercase;
-      letter-spacing: 0.22em;
-      font-size: 13px;
-      font-weight: 900;
-      margin-bottom: 18px;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      font-weight: 950;
     }
 
     .expected-content h2 {
@@ -726,6 +732,13 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
+      }
+      
+      .expected-metric span {
+        margin-top: 14px;
+        padding: 9px 13px;
+        font-size: 10px;
+        letter-spacing: 0.14em;
       }
 
       .flag-panel::before,
