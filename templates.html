@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IAMS 4th World Congress 2026</title>
+
+  <title>Countdown Options | IAMS 2026</title>
 
   <style>
     :root {
       --navy: #191052;
-      --deep-navy: #120a3c;
+      --deep: #09051f;
       --purple: #3320a8;
       --violet: #5638f0;
       --pink: #f04d8b;
       --gold: #c9a24a;
       --gold-soft: #d8b25d;
       --white: #ffffff;
-      --soft-white: #eef1ff;
-      --muted: #cfd6ff;
+      --cream: #fbf7ef;
       --light: #f7f7fb;
-      --border: rgba(255,255,255,0.12);
+      --dark-text: #111827;
+      --gray-text: #4b5563;
+      --border: #d8dee8;
     }
 
     * {
@@ -27,440 +29,612 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: var(--light);
-      color: var(--white);
+      color: var(--dark-text);
+      padding: 48px 0;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    .preview {
+      display: grid;
+      gap: 54px;
     }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: var(--navy);
-      color: var(--white);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .navbar {
-      min-height: 78px;
-      padding: 0 clamp(20px, 4vw, 52px);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-      flex-shrink: 0;
-    }
-
-    .brand-logo {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.06);
-      flex-shrink: 0;
-    }
-
-    .brand-name {
+    .template-label {
+      width: min(100% - 40px, 1180px);
+      margin: 0 auto 12px;
+      color: var(--gray-text);
       font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.06em;
       text-transform: uppercase;
-      line-height: 1.2;
-      color: rgba(255,255,255,0.92);
-      max-width: 285px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: clamp(14px, 1.6vw, 28px);
-      font-size: 14px;
-      font-weight: 800;
-      color: rgba(255,255,255,0.94);
-      white-space: nowrap;
-      margin-left: auto;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold-soft);
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
-    }
-
-    .buy-btn {
-      background: linear-gradient(135deg, var(--pink), #ff6b4a);
-      color: white;
-      padding: 13px 22px;
-      border-radius: 999px;
+      letter-spacing: 0.18em;
       font-weight: 900;
-      box-shadow: 0 12px 28px rgba(240, 77, 139, 0.28);
-      white-space: nowrap;
     }
 
-    .lang-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 102px;
-      padding: 13px 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.08);
-      color: var(--white);
-      font-weight: 800;
-      white-space: nowrap;
+    .countdown-section {
+      width: min(100% - 40px, 1180px);
+      margin: 0 auto;
     }
 
-    .menu-btn {
-      display: none;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.22);
-      background: rgba(255,255,255,0.08);
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .time-box {
+      text-align: center;
+    }
+
+    .time-box strong {
+      display: block;
+      font-weight: 950;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+
+    .time-box span {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-weight: 900;
+    }
+
+    /* OPTION 01 */
+
+    .option-01 {
+      background: linear-gradient(135deg, #7c168f, #3320a8);
       color: white;
-      font-size: 24px;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-
-    .mobile-menu {
-      display: none;
-      background: var(--navy);
-      padding: 0 22px 20px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .mobile-menu.open {
-      display: block;
-    }
-
-    .mobile-menu a {
-      display: block;
-      padding: 15px 0;
-      border-top: 1px solid rgba(255,255,255,0.12);
-      font-weight: 800;
-      color: rgba(255,255,255,0.94);
-    }
-
-    .mobile-menu .mobile-buy {
-      color: var(--gold-soft);
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 85% 20%, rgba(255,255,255,0.14), transparent 18%),
-        radial-gradient(circle at 18% 82%, rgba(201,162,74,0.12), transparent 20%),
-        linear-gradient(135deg, #160f4b 0%, #221687 50%, #4e33e8 100%);
-      min-height: calc(100vh - 78px);
-      display: flex;
+      padding: 28px clamp(22px, 5vw, 56px);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
       align-items: center;
-      padding: clamp(48px, 8vw, 90px) clamp(22px, 4vw, 56px);
     }
 
-    .hero::before {
+    .option-01 h2 {
+      font-size: clamp(26px, 4vw, 52px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      font-weight: 950;
+    }
+
+    .option-01 p {
+      margin-top: 6px;
+      color: #dbe7ff;
+      font-size: 15px;
+    }
+
+    .option-01 .countdown-grid {
+      width: min(100%, 520px);
+    }
+
+    .option-01 .time-box {
+      background: white;
+      color: var(--navy);
+      border-radius: 8px;
+      padding: 16px 12px;
+      min-width: 110px;
+    }
+
+    .option-01 .time-box strong {
+      font-size: 38px;
+    }
+
+    .option-01 .time-box span {
+      color: var(--gray-text);
+      font-size: 10px;
+      margin-top: 6px;
+    }
+
+    /* OPTION 02 */
+
+    .option-02 {
+      background: white;
+      color: var(--navy);
+      border: 1px solid rgba(25,16,82,0.12);
+      padding: 34px clamp(22px, 5vw, 56px);
+      text-align: center;
+    }
+
+    .option-02 h2 {
+      font-size: clamp(24px, 3.5vw, 44px);
+      line-height: 1;
+      letter-spacing: -0.045em;
+      font-weight: 950;
+      margin-bottom: 24px;
+    }
+
+    .option-02 .countdown-grid {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .option-02 .time-box {
+      border-right: 1px solid rgba(25,16,82,0.14);
+      padding: 6px 10px;
+    }
+
+    .option-02 .time-box:last-child {
+      border-right: none;
+    }
+
+    .option-02 .time-box strong {
+      font-size: clamp(42px, 6vw, 74px);
+      color: var(--gold);
+    }
+
+    .option-02 .time-box span {
+      color: var(--navy);
+      font-size: 11px;
+      margin-top: 6px;
+    }
+
+    /* OPTION 03 */
+
+    .option-03 {
+      background:
+        radial-gradient(circle at 80% 20%, rgba(240,77,139,0.18), transparent 28%),
+        linear-gradient(135deg, #09051f, #191052 55%, #3320a8);
+      color: white;
+      padding: clamp(34px, 6vw, 70px);
+      border-radius: 34px;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .option-03::before {
       content: "";
       position: absolute;
-      width: 640px;
-      height: 640px;
+      width: 480px;
+      height: 480px;
       border-radius: 50%;
-      right: -230px;
-      top: -170px;
+      right: -160px;
+      top: -200px;
       background:
         repeating-radial-gradient(
           circle,
-          rgba(255,255,255,0.20) 0 1px,
+          rgba(255,255,255,0.18) 0 1px,
           transparent 1px 9px
         );
-      opacity: 0.55;
-      pointer-events: none;
+      opacity: 0.5;
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 520px;
-      height: 520px;
-      border-radius: 50%;
-      right: -120px;
-      bottom: -180px;
-      background: radial-gradient(circle, rgba(255,255,255,0.06), rgba(255,255,255,0.01) 60%, transparent 72%);
-      border: 46px solid rgba(255,255,255,0.08);
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      width: min(100%, 1180px);
-      margin: 0 auto;
+    .option-03 h2 {
       position: relative;
       z-index: 2;
-    }
-
-    .hero-content {
-      max-width: 920px;
-    }
-
-    .hero-title {
-      font-size: clamp(40px, 7vw, 92px);
-      line-height: 0.9;
-      letter-spacing: -0.065em;
+      font-size: clamp(34px, 5vw, 68px);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
       font-weight: 950;
-      color: var(--white);
-      margin-bottom: 26px;
-      text-wrap: balance;
+      margin-bottom: 28px;
     }
 
-    .hero-title .th {
-      font-size: 0.42em;
-      vertical-align: super;
-      letter-spacing: 0;
-      margin-left: 1px;
+    .option-03 .countdown-grid {
       position: relative;
-      top: -0.08em;
+      z-index: 2;
+      max-width: 760px;
+      margin: 0 auto;
     }
 
-    .hero-date {
-      font-size: clamp(24px, 3vw, 40px);
-      line-height: 1;
-      font-weight: 950;
-      letter-spacing: -0.03em;
-      color: var(--white);
-      margin-bottom: 8px;
+    .option-03 .time-box {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 22px;
+      padding: 22px 12px;
+      backdrop-filter: blur(10px);
     }
 
-    .hero-place {
-      font-size: clamp(13px, 1.4vw, 17px);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-weight: 900;
-      color: rgba(255,255,255,0.9);
-      margin-bottom: 34px;
+    .option-03 .time-box strong {
+      font-size: clamp(38px, 5vw, 64px);
+      color: white;
     }
 
-    .theme-kicker {
-      display: block;
-      font-size: clamp(20px, 2.6vw, 34px);
-      line-height: 1.05;
-      font-weight: 900;
-      letter-spacing: -0.04em;
+    .option-03 .time-box span {
       color: var(--gold-soft);
-      margin-bottom: 8px;
+      font-size: 11px;
+      margin-top: 8px;
     }
 
-    .theme-main {
-      display: block;
-      font-size: clamp(18px, 2vw, 28px);
-      line-height: 1.08;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      color: rgba(255,255,255,0.92);
-      max-width: 980px;
+    /* OPTION 04 */
+
+    .option-04 {
+      background: var(--cream);
+      color: var(--navy);
+      padding: 32px clamp(22px, 5vw, 56px);
+      border-top: 1px solid rgba(25,16,82,0.12);
+      border-bottom: 1px solid rgba(25,16,82,0.12);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: clamp(24px, 4vw, 52px);
+      align-items: center;
     }
 
-    @media (max-width: 1180px) {
-      .nav-links {
-        display: none;
+    .option-04 h2 {
+      font-size: clamp(24px, 3vw, 42px);
+      line-height: 1;
+      letter-spacing: -0.045em;
+      font-weight: 950;
+      max-width: 320px;
+    }
+
+    .option-04 .countdown-grid {
+      gap: 0;
+      border-left: 1px solid rgba(25,16,82,0.14);
+    }
+
+    .option-04 .time-box {
+      padding: 10px 20px;
+      border-right: 1px solid rgba(25,16,82,0.14);
+    }
+
+    .option-04 .time-box strong {
+      font-size: clamp(36px, 5vw, 64px);
+      color: var(--navy);
+    }
+
+    .option-04 .time-box span {
+      color: var(--gold);
+      font-size: 11px;
+      margin-top: 6px;
+    }
+
+    /* OPTION 05 */
+
+    .option-05 {
+      background: white;
+      border: 1px solid rgba(25,16,82,0.10);
+      box-shadow: 0 20px 60px rgba(7,23,49,0.08);
+      padding: clamp(28px, 5vw, 56px);
+      border-radius: 30px;
+    }
+
+    .option-05-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 26px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid rgba(25,16,82,0.12);
+    }
+
+    .option-05 h2 {
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 56px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      font-weight: 950;
+    }
+
+    .option-05 p {
+      color: var(--gray-text);
+      font-size: 15px;
+      max-width: 360px;
+      line-height: 1.45;
+    }
+
+    .option-05 .time-box {
+      background: var(--light);
+      border-radius: 18px;
+      padding: 20px 12px;
+    }
+
+    .option-05 .time-box strong {
+      font-size: clamp(34px, 5vw, 60px);
+      color: var(--navy);
+    }
+
+    .option-05 .time-box span {
+      color: var(--gray-text);
+      font-size: 10px;
+      margin-top: 7px;
+    }
+
+    /* OPTION 06 */
+
+    .option-06 {
+      background:
+        linear-gradient(90deg, rgba(9,5,31,0.88), rgba(25,16,82,0.74)),
+        url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1781295548/5f33f12c1fd4ac34e715c02c_cq9tlc.jpg");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: clamp(36px, 6vw, 72px);
+      text-align: left;
+    }
+
+    .option-06 h2 {
+      max-width: 640px;
+      font-size: clamp(34px, 5vw, 66px);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      font-weight: 950;
+      margin-bottom: 28px;
+    }
+
+    .option-06 .countdown-grid {
+      max-width: 700px;
+    }
+
+    .option-06 .time-box {
+      background: rgba(255,255,255,0.92);
+      color: var(--navy);
+      border-radius: 8px;
+      padding: 18px 12px;
+    }
+
+    .option-06 .time-box strong {
+      font-size: clamp(34px, 5vw, 60px);
+    }
+
+    .option-06 .time-box span {
+      color: var(--gray-text);
+      font-size: 10px;
+      margin-top: 7px;
+    }
+
+    @media (max-width: 860px) {
+      body {
+        padding: 28px 0;
       }
 
-      .menu-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+      .preview {
+        gap: 42px;
+      }
+
+      .countdown-section {
+        width: 100%;
+      }
+
+      .template-label {
+        width: calc(100% - 40px);
+      }
+
+      .option-01,
+      .option-04,
+      .option-05-header {
+        grid-template-columns: 1fr;
+        display: grid;
+      }
+
+      .option-01 {
+        text-align: center;
+      }
+
+      .option-01 .countdown-grid {
+        width: 100%;
+      }
+
+      .option-04 .countdown-grid {
+        border-left: none;
+      }
+
+      .option-04 .time-box {
+        border-right: none;
+        border-bottom: 1px solid rgba(25,16,82,0.12);
+      }
+
+      .option-04 .time-box:last-child {
+        border-bottom: none;
       }
     }
 
-    @media (max-width: 760px) {
-      .navbar {
-        min-height: 74px;
-        padding: 0 18px;
+    @media (max-width: 640px) {
+      .countdown-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .brand-logo {
-        width: 42px;
-        height: 42px;
+      .option-02 .time-box:nth-child(2),
+      .option-04 .time-box:nth-child(2) {
+        border-right: none;
       }
 
-      .brand-name {
-        font-size: 10px;
-        max-width: 205px;
+      .option-02 .time-box {
+        border-right: none;
+        border-bottom: 1px solid rgba(25,16,82,0.12);
+        padding: 18px 10px;
       }
 
-      .buy-btn {
-        display: none;
-      }
-
-      .lang-btn {
-        min-width: 92px;
-        padding: 12px 16px;
-      }
-
-      .hero {
-        min-height: calc(100vh - 74px);
-        padding: 52px 20px 56px;
-        align-items: center;
-      }
-
-      .hero::before {
-        width: 360px;
-        height: 360px;
-        right: -130px;
-        top: -70px;
-      }
-
-      .hero::after {
-        width: 280px;
-        height: 280px;
-        right: -80px;
-        bottom: -110px;
-        border-width: 22px;
-      }
-
-      .hero-title {
-        font-size: clamp(44px, 12vw, 62px);
-        line-height: 0.92;
-        margin-bottom: 20px;
-      }
-
-      .hero-date {
-        font-size: 28px;
-      }
-
-      .hero-place {
-        font-size: 12px;
-        margin-bottom: 26px;
-      }
-
-      .theme-kicker {
-        font-size: 22px;
-        margin-bottom: 6px;
-      }
-
-      .theme-main {
-        font-size: 18px;
-        line-height: 1.15;
-        max-width: 320px;
-      }
-    }
-
-    @media (max-width: 460px) {
-      .brand-name {
-        font-size: 9px;
-        max-width: 185px;
-      }
-
-      .lang-btn {
-        min-width: 86px;
-        font-size: 14px;
-      }
-
-      .hero-title {
-        font-size: 46px;
-      }
-
-      .hero-date {
-        font-size: 25px;
-      }
-
-      .theme-kicker {
-        font-size: 20px;
-      }
-
-      .theme-main {
-        font-size: 17px;
+      .option-02 .time-box:nth-last-child(-n+2) {
+        border-bottom: none;
       }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <nav class="navbar">
-      <a href="index.html" class="brand">
-        <img
-          class="brand-logo"
-          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047563/Logo_hppm16.webp"
-          alt="International Academy of Medical Specialists Logo"
-        />
-        <span class="brand-name">International Academy of Medical Specialists, Inc.</span>
-      </a>
+  <main class="preview">
 
-      <div class="nav-links">
-        <a href="index.html">Inicio</a>
-        <a href="campeche-es.html">Ciudad anfitriona</a>
-        <a href="speakers-es.html">Ponentes</a>
-        <a href="what-is-iams-es.html">¿Qué es IAMS?</a>
-      </div>
+    <div>
+      <div class="template-label">Countdown 01 · Barra tipo referencia</div>
+      <section class="countdown-section option-01">
+        <div>
+          <h2>Nos vemos en Campeche</h2>
+          <p>IAMS 4th World Congress 2026 · 24 de octubre</p>
+        </div>
 
-      <div class="header-actions">
-        <a class="buy-btn" href="#tickets">Comprar entradas</a>
-        <a class="lang-btn" href="index.html">English</a>
-        <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
-      </div>
-    </nav>
-
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Inicio</a>
-      <a href="campeche-es.html">Ciudad anfitriona</a>
-      <a href="speakers-es.html">Ponentes</a>
-      <a href="what-is-iams-es.html">¿Qué es IAMS?</a>
-      <a href="#tickets" class="mobile-buy">Comprar entradas</a>
-      <a href="index.html">English</a>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-content">
-          <h1 class="hero-title">
-            4<span class="th">th</span> Congreso Internacional IAMS<br>2026
-          </h1>
-
-          <div class="hero-date">24 - 25 de Octubre</div>
-          <div class="hero-place">Campeche, México</div>
-
-          <div class="hero-theme">
-            <span class="theme-kicker">One World, One Health:</span>
-            <span class="theme-main">Strengthening Global Medical Synergy</span>
+        <div class="countdown-grid countdown" data-countdown>
+          <div class="time-box">
+            <strong data-days>000</strong>
+            <span>Días</span>
+          </div>
+          <div class="time-box">
+            <strong data-hours>00</strong>
+            <span>Horas</span>
+          </div>
+          <div class="time-box">
+            <strong data-minutes>00</strong>
+            <span>Minutos</span>
+          </div>
+          <div class="time-box">
+            <strong data-seconds>00</strong>
+            <span>Segundos</span>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Countdown 02 · Institucional limpio</div>
+      <section class="countdown-section option-02">
+        <h2>Cuenta regresiva al congreso</h2>
+
+        <div class="countdown-grid countdown" data-countdown>
+          <div class="time-box">
+            <strong data-days>000</strong>
+            <span>Días</span>
+          </div>
+          <div class="time-box">
+            <strong data-hours>00</strong>
+            <span>Horas</span>
+          </div>
+          <div class="time-box">
+            <strong data-minutes>00</strong>
+            <span>Minutos</span>
+          </div>
+          <div class="time-box">
+            <strong data-seconds>00</strong>
+            <span>Segundos</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Countdown 03 · Abstracto premium</div>
+      <section class="countdown-section option-03">
+        <h2>Faltan pocos días para el IAMS 2026</h2>
+
+        <div class="countdown-grid countdown" data-countdown>
+          <div class="time-box">
+            <strong data-days>000</strong>
+            <span>Días</span>
+          </div>
+          <div class="time-box">
+            <strong data-hours>00</strong>
+            <span>Horas</span>
+          </div>
+          <div class="time-box">
+            <strong data-minutes>00</strong>
+            <span>Minutos</span>
+          </div>
+          <div class="time-box">
+            <strong data-seconds>00</strong>
+            <span>Segundos</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Countdown 04 · Franja académica</div>
+      <section class="countdown-section option-04">
+        <h2>24 de octubre · Inicio del congreso</h2>
+
+        <div class="countdown-grid countdown" data-countdown>
+          <div class="time-box">
+            <strong data-days>000</strong>
+            <span>Días</span>
+          </div>
+          <div class="time-box">
+            <strong data-hours>00</strong>
+            <span>Horas</span>
+          </div>
+          <div class="time-box">
+            <strong data-minutes>00</strong>
+            <span>Minutos</span>
+          </div>
+          <div class="time-box">
+            <strong data-seconds>00</strong>
+            <span>Segundos</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Countdown 05 · Tarjeta formal</div>
+      <section class="countdown-section option-05">
+        <div class="option-05-header">
+          <h2>Inicio del IAMS 2026</h2>
+          <p>Cuenta regresiva oficial para el 4th Congreso Internacional IAMS 2026 en Campeche, México.</p>
+        </div>
+
+        <div class="countdown-grid countdown" data-countdown>
+          <div class="time-box">
+            <strong data-days>000</strong>
+            <span>Días</span>
+          </div>
+          <div class="time-box">
+            <strong data-hours>00</strong>
+            <span>Horas</span>
+          </div>
+          <div class="time-box">
+            <strong data-minutes>00</strong>
+            <span>Minutos</span>
+          </div>
+          <div class="time-box">
+            <strong data-seconds>00</strong>
+            <span>Segundos</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Countdown 06 · Sobre imagen de Campeche</div>
+      <section class="countdown-section option-06">
+        <h2>Campeche recibe al IAMS 2026</h2>
+
+        <div class="countdown-grid countdown" data-countdown>
+          <div class="time-box">
+            <strong data-days>000</strong>
+            <span>Días</span>
+          </div>
+          <div class="time-box">
+            <strong data-hours>00</strong>
+            <span>Horas</span>
+          </div>
+          <div class="time-box">
+            <strong data-minutes>00</strong>
+            <span>Minutos</span>
+          </div>
+          <div class="time-box">
+            <strong data-seconds>00</strong>
+            <span>Segundos</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
   </main>
 
   <script>
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
+    const targetDate = new Date("2026-10-24T00:00:00-06:00").getTime();
 
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("open");
-      menuBtn.textContent = mobileMenu.classList.contains("open") ? "×" : "☰";
-    });
+    function updateCountdowns() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const safeDistance = Math.max(distance, 0);
+
+      const days = Math.floor(safeDistance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((safeDistance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((safeDistance / (1000 * 60)) % 60);
+      const seconds = Math.floor((safeDistance / 1000) % 60);
+
+      document.querySelectorAll("[data-countdown]").forEach((countdown) => {
+        countdown.querySelector("[data-days]").textContent = String(days).padStart(3, "0");
+        countdown.querySelector("[data-hours]").textContent = String(hours).padStart(2, "0");
+        countdown.querySelector("[data-minutes]").textContent = String(minutes).padStart(2, "0");
+        countdown.querySelector("[data-seconds]").textContent = String(seconds).padStart(2, "0");
+      });
+    }
+
+    updateCountdowns();
+    setInterval(updateCountdowns, 1000);
   </script>
 </body>
 </html>
