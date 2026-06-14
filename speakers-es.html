@@ -235,7 +235,7 @@
 
     .flag-panel {
       position: relative;
-      min-height: 390px;
+      min-height: 430px;
       border-radius: 38px;
       overflow: hidden;
       background:
@@ -244,6 +244,38 @@
         linear-gradient(135deg, #17104a 0%, #2417a0 58%, #5638f0 100%);
       box-shadow: 0 28px 80px rgba(7,23,49,0.16);
       border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .flag-card-mexico {
+      top: 44px;
+      left: 34px;
+    }
+    
+    .flag-card-philippines {
+      top: 58px;
+      right: 34px;
+    }
+    
+    .flag-card-germany {
+      top: 50%;
+      left: 28px;
+      transform: translateY(-50%);
+    }
+    
+    .flag-card-portugal {
+      top: 50%;
+      right: 28px;
+      transform: translateY(-50%);
+    }
+    
+    .flag-card-usa {
+      bottom: 44px;
+      left: 42px;
+    }
+    
+    .flag-card-switzerland {
+      bottom: 44px;
+      right: 42px;
     }
 
     .flag-panel::before {
@@ -741,19 +773,12 @@
         grid-template-columns: 1fr 1fr;
         gap: 10px;
       }
-      
-      .expected-metric span {
-        margin-top: 14px;
-        padding: 9px 13px;
-        font-size: 10px;
-        letter-spacing: 0.14em;
-      }
 
       .flag-panel::before,
       .flag-panel::after {
         display: none;
       }
-
+    
       .flag-core,
       .flag-card {
         position: relative;
@@ -764,7 +789,7 @@
         bottom: auto;
         transform: none;
       }
-
+    
       .flag-core {
         width: 100%;
         height: auto;
@@ -772,11 +797,7 @@
         grid-column: span 2;
         border-radius: 22px;
       }
-
-      .flag-core strong {
-        font-size: 34px;
-      }
-
+    
       .flag-card {
         width: 100%;
         min-height: 48px;
@@ -784,12 +805,19 @@
         font-size: 12px;
         padding: 8px 10px;
       }
-
+    
       .flag-card img {
         width: 34px;
         height: 24px;
       }
-
+          
+      .expected-metric span {
+        margin-top: 14px;
+        padding: 9px 13px;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+      }
+      
       .international-copy-card,
       .confirmation-card,
       .expected-panel {
@@ -797,29 +825,29 @@
       }
 
      .featured-doctors {
-    margin-top: 32px;
-  }
-
-  .featured-doctors-header {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    margin-bottom: 16px;
-  }
-
-  .featured-doctors-header h3 {
-    font-size: 30px;
-  }
-
-  .featured-doctors-header p {
-    font-size: 13px;
-    line-height: 1.45;
-  }
-
-  .doctors-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    max-width: none;
-  }
+        margin-top: 32px;
+      }
+    
+      .featured-doctors-header {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 16px;
+      }
+    
+      .featured-doctors-header h3 {
+        font-size: 30px;
+      }
+    
+      .featured-doctors-header p {
+        font-size: 13px;
+        line-height: 1.45;
+      }
+    
+      .doctors-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        max-width: none;
+      }
 
   .doctor-card {
     display: grid;
