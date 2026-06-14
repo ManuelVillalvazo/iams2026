@@ -1,0 +1,673 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Welcome Message Templates | IAMS 2026</title>
+
+  <style>
+    :root {
+      --navy: #191052;
+      --deep: #09051f;
+      --purple: #3320a8;
+      --violet: #5638f0;
+      --pink: #f04d8b;
+      --gold: #c9a24a;
+      --white: #ffffff;
+      --cream: #fbf7ef;
+      --sand: #efe1c5;
+      --light: #f7f7fb;
+      --dark-text: #111827;
+      --gray-text: #4b5563;
+      --border: #d8dee8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--dark-text);
+      padding: 48px 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .preview-page {
+      display: grid;
+      gap: 64px;
+    }
+
+    .template-label {
+      width: min(100% - 40px, 1120px);
+      margin: 0 auto 14px;
+      color: var(--gray-text);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 900;
+    }
+
+    .welcome {
+      width: min(100% - 40px, 1120px);
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .logo {
+      width: 150px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .kicker {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 12px;
+      font-weight: 950;
+      margin-bottom: 16px;
+    }
+
+    .title {
+      color: var(--navy);
+      font-size: clamp(34px, 5vw, 68px);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      font-weight: 950;
+      margin-bottom: 22px;
+    }
+
+    .copy {
+      color: var(--gray-text);
+      font-size: clamp(17px, 1.8vw, 21px);
+      line-height: 1.62;
+      max-width: 780px;
+    }
+
+    .copy p + p {
+      margin-top: 16px;
+    }
+
+    .copy strong {
+      color: var(--navy);
+      font-weight: 950;
+    }
+
+    /* TEMPLATE 01 */
+
+    .welcome-01 {
+      background: var(--white);
+      border: 1px solid rgba(25,16,82,0.10);
+      padding: clamp(36px, 6vw, 72px);
+      text-align: center;
+      box-shadow: 0 18px 52px rgba(7,23,49,0.07);
+    }
+
+    .welcome-01 .logo {
+      margin: 0 auto 28px;
+    }
+
+    .welcome-01 .copy {
+      margin: 0 auto;
+    }
+
+    /* TEMPLATE 02 */
+
+    .welcome-02 {
+      background: var(--cream);
+      border-left: 10px solid var(--gold);
+      padding: clamp(34px, 6vw, 70px);
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: clamp(28px, 5vw, 64px);
+      align-items: center;
+    }
+
+    .welcome-02 .logo-box {
+      background: var(--white);
+      border: 1px solid rgba(25,16,82,0.10);
+      padding: 32px;
+      display: grid;
+      place-items: center;
+    }
+
+    .welcome-02 .logo {
+      width: 130px;
+    }
+
+    /* TEMPLATE 03 */
+
+    .welcome-03 {
+      background:
+        radial-gradient(circle at 85% 12%, rgba(201,162,74,0.18), transparent 26%),
+        var(--white);
+      border: 1px solid rgba(25,16,82,0.10);
+      padding: clamp(38px, 6vw, 76px);
+      display: grid;
+      gap: 28px;
+      box-shadow: 0 20px 60px rgba(7,23,49,0.08);
+    }
+
+    .welcome-03 .top-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      border-bottom: 1px solid rgba(25,16,82,0.12);
+      padding-bottom: 24px;
+    }
+
+    .welcome-03 .logo {
+      width: 120px;
+    }
+
+    /* TEMPLATE 04 */
+
+    .welcome-04 {
+      background:
+        radial-gradient(circle at 15% 18%, rgba(201,162,74,0.16), transparent 32%),
+        linear-gradient(135deg, #17104a 0%, #2417a0 58%, #5638f0 100%);
+      color: var(--white);
+      padding: clamp(38px, 6vw, 76px);
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: clamp(30px, 5vw, 70px);
+      align-items: center;
+      box-shadow: 0 24px 70px rgba(7,23,49,0.18);
+    }
+
+    .welcome-04 .logo-card {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 36px;
+      display: grid;
+      place-items: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .welcome-04 .logo {
+      width: 130px;
+    }
+
+    .welcome-04 .title {
+      color: var(--white);
+    }
+
+    .welcome-04 .copy {
+      color: #dbe7ff;
+    }
+
+    .welcome-04 .copy strong {
+      color: var(--gold);
+    }
+
+    /* TEMPLATE 05 */
+
+    .welcome-05 {
+      background: var(--white);
+      padding: 0;
+      border: 1px solid rgba(25,16,82,0.10);
+      display: grid;
+      grid-template-columns: 0.42fr 1fr;
+      box-shadow: 0 18px 52px rgba(7,23,49,0.07);
+    }
+
+    .welcome-05 .logo-panel {
+      background:
+        radial-gradient(circle at 50% 50%, rgba(201,162,74,0.20), transparent 34%),
+        var(--cream);
+      display: grid;
+      place-items: center;
+      padding: clamp(38px, 6vw, 70px);
+      border-right: 1px solid rgba(25,16,82,0.10);
+    }
+
+    .welcome-05 .content-panel {
+      padding: clamp(36px, 6vw, 72px);
+    }
+
+    .welcome-05 .logo {
+      width: 155px;
+    }
+
+    /* TEMPLATE 06 */
+
+    .welcome-06 {
+      background: var(--cream);
+      padding: clamp(34px, 6vw, 74px);
+      border-top: 1px solid rgba(25,16,82,0.12);
+      border-bottom: 1px solid rgba(25,16,82,0.12);
+    }
+
+    .welcome-06 .header-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 32px;
+    }
+
+    .welcome-06 .logo {
+      width: 110px;
+    }
+
+    .welcome-06 .copy {
+      max-width: 900px;
+    }
+
+    /* TEMPLATE 07 */
+
+    .welcome-07 {
+      position: relative;
+      background: var(--white);
+      border: 1px solid rgba(25,16,82,0.10);
+      padding: clamp(42px, 7vw, 86px);
+      text-align: center;
+      box-shadow: 0 18px 52px rgba(7,23,49,0.07);
+    }
+
+    .welcome-07::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(25,16,82,0.10);
+      pointer-events: none;
+    }
+
+    .welcome-07 .logo-circle {
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      margin: 0 auto 28px;
+      background: var(--cream);
+      border: 1px solid rgba(25,16,82,0.10);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .welcome-07 .logo {
+      width: 86px;
+    }
+
+    .welcome-07 .copy {
+      margin: 0 auto;
+    }
+
+    /* TEMPLATE 08 */
+
+    .welcome-08 {
+      background:
+        linear-gradient(90deg, rgba(9,5,31,0.92), rgba(25,16,82,0.78)),
+        url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1781295548/5f33f12c1fd4ac34e715c02c_cq9tlc.jpg");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: clamp(42px, 7vw, 86px);
+      display: grid;
+      gap: 28px;
+    }
+
+    .welcome-08 .logo {
+      width: 118px;
+    }
+
+    .welcome-08 .title {
+      color: white;
+    }
+
+    .welcome-08 .copy {
+      color: #dbe7ff;
+    }
+
+    .welcome-08 .copy strong {
+      color: var(--gold);
+    }
+
+    /* TEMPLATE 09 */
+
+    .welcome-09 {
+      background: var(--white);
+      padding: clamp(34px, 6vw, 70px);
+      border: 1px solid rgba(25,16,82,0.10);
+      display: grid;
+      gap: 32px;
+    }
+
+    .welcome-09 .logo-strip {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(25,16,82,0.12);
+    }
+
+    .welcome-09 .logo {
+      width: 96px;
+    }
+
+    .welcome-09 .strip-text {
+      color: var(--navy);
+      font-size: clamp(22px, 3vw, 36px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      font-weight: 950;
+    }
+
+    .welcome-09 .copy {
+      max-width: 940px;
+    }
+
+    /* TEMPLATE 10 */
+
+    .welcome-10 {
+      background: var(--deep);
+      color: var(--white);
+      padding: clamp(34px, 6vw, 74px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .welcome-10::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      right: -200px;
+      top: -180px;
+      background:
+        repeating-radial-gradient(
+          circle,
+          rgba(255,255,255,0.14) 0 1px,
+          transparent 1px 9px
+        );
+      opacity: 0.45;
+    }
+
+    .welcome-10 .inner {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+
+    .welcome-10 .logo {
+      width: 118px;
+      margin-bottom: 30px;
+    }
+
+    .welcome-10 .title {
+      color: var(--white);
+    }
+
+    .welcome-10 .copy {
+      color: #dbe7ff;
+    }
+
+    .welcome-10 .copy strong {
+      color: var(--gold);
+    }
+
+    @media (max-width: 820px) {
+      body {
+        padding: 28px 0;
+      }
+
+      .preview-page {
+        gap: 42px;
+      }
+
+      .welcome {
+        width: 100%;
+      }
+
+      .template-label {
+        width: calc(100% - 40px);
+      }
+
+      .welcome-02,
+      .welcome-04,
+      .welcome-05 {
+        grid-template-columns: 1fr;
+      }
+
+      .welcome-03 .top-line,
+      .welcome-06 .header-row,
+      .welcome-09 .logo-strip {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .welcome-05 .logo-panel {
+        border-right: none;
+        border-bottom: 1px solid rgba(25,16,82,0.10);
+      }
+
+      .title {
+        font-size: clamp(36px, 12vw, 54px);
+      }
+
+      .copy {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="preview-page">
+
+    <div>
+      <div class="template-label">Template 01 · Centrado institucional</div>
+      <section class="welcome welcome-01">
+        <img class="logo" src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047563/Logo_hppm16.webp" alt="Logo IAMS">
+        <div class="kicker">Mensaje de bienvenida</div>
+        <h2 class="title">Bienvenidos al IAMS 4th World Congress 2026.</h2>
+        <div class="copy">
+          <p>
+            La International Academy of Medical Specialists, Inc. da la bienvenida a médicos, profesionales de la salud, instituciones e invitados internacionales a la cuarta edición del Congreso Internacional IAMS.
+          </p>
+          <p>
+            Bajo el lema <strong>“One World, One Health: Strengthening Global Medical Synergy”</strong>, este encuentro reunirá conocimiento médico, networking profesional y colaboración internacional en Campeche, México.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Template 02 · Carta institucional</div>
+      <section class="welcome welcome-02">
+        <div class="logo-box">
+          <img class="logo" src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047563/Logo_hppm16.webp" alt="Logo IAMS">
+        </div>
+        <div>
+          <div class="kicker">Mensaje de bienvenida</div>
+          <h2 class="title">Bienvenidos a Campeche.</h2>
+          <div class="copy">
+            <p>
+              La International Academy of Medical Specialists, Inc. recibe a médicos, especialistas y profesionales de la salud en el IAMS 4th World Congress 2026.
+            </p>
+            <p>
+              Este congreso busca crear un espacio de actualización médica, intercambio académico y conexión profesional entre participantes de distintas regiones.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Template 03 · Editorial con firma visual</div>
+      <section class="welcome welcome-03">
+        <div class="top-line">
+          <div>
+            <div class="kicker">Welcome Message</div>
+            <h2 class="title">Un encuentro para fortalecer la colaboración médica global.</h2>
+          </div>
+          <img class="logo" src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047563/Logo_hppm16.webp" alt="Logo IAMS">
+        </div>
+        <div class="copy">
+          <p>
+            El IAMS 4th World Congress 2026 reunirá médicos, profesionales de la salud e instituciones con el objetivo de compartir conocimiento, generar alianzas y promover una visión internacional de la medicina.
+          </p>
+          <p>
+            Campeche será la ciudad anfitriona de esta cuarta edición, bajo el lema <strong>“One World, One Health: Strengthening Global Medical Synergy”</strong>.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Template 04 · Bloque azul institucional</div>
+      <section class="welcome welcome-04">
+        <div class="logo-card">
+          <img class="logo" src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047563/Logo_hppm16.webp" alt="Logo IAMS">
+        </div>
+        <div>
+          <div class="kicker">Mensaje de bienvenida</div>
+          <h2 class="title">Bienvenidos al Congreso Internacional IAMS 2026.</h2>
+          <div class="copy">
+            <p>
+              La International Academy of Medical Specialists, Inc. invita a la comunidad médica internacional a participar en dos días de actualización, diálogo profesional y networking en Campeche, México.
+            </p>
+            <p>
+              Esta edición estará guiada por el lema <strong>“One World, One Health: Strengthening Global Medical Synergy”</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Template 05 · Panel lateral</div>
+      <section class="welcome welcome-05">
+        <div class="logo-panel">
+          <img class="logo" src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047563/Logo_hppm16.webp" alt="Logo IAMS">
+        </div>
+        <div class="content-panel">
+          <div class="kicker">Mensaje de bienvenida</div>
+          <h2 class="title">Una bienvenida institucional a Campeche.</h2>
+          <div class="copy">
+            <p>
+              El IAMS 4th World Congress 2026 abre sus puertas a médicos, especialistas, profesionales de la salud e invitados internacionales.
+            </p>
+            <p>
+              Este encuentro busca fortalecer el intercambio académico, la cooperación profesional y la sinergia médica global.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Template 06 · Formal con encabezado</div>
+      <section class="welcome welcome-06">
+        <div class="header-row">
+          <div>
+            <div class="kicker">Mensaje de bienvenida</div>
+            <h2 class="title">IAMS 4th World Congress 2026</h2>
+          </div>
+          <img class="logo" src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047563/Logo_hppm16.webp" alt="Logo IAMS">
+        </div>
+        <div class="copy">
+          <p>
+            La International Academy of Medical Specialists, Inc. da la bienvenida a esta cuarta edición del Congreso Internacional IAMS, un espacio creado para promover el aprendizaje médico, el networking profesional y la cooperación internacional.
+          </p>
+          <p>
+            Nos reuniremos en Campeche bajo el lema <strong>“One World, One Health: Strengthening Global Medical Synergy”</strong>.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Template 07 · Sello central</div>
+      <section class="welcome welcome-07">
+        <div class="logo-circle">
+          <img class="logo" src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047563/Logo_hppm16.webp" alt="Logo IAMS">
+        </div>
+        <div class="kicker">Mensaje de bienvenida</div>
+        <h2 class="title">Bienvenidos al IAMS 2026.</h2>
+        <div class="copy">
+          <p>
+            Este congreso reunirá a la comunidad médica en un entorno académico diseñado para compartir conocimiento, fortalecer alianzas y generar nuevas oportunidades de colaboración profesional.
+          </p>
+          <p>
+            Campeche será la sede de una edición enfocada en la sinergia médica global.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Template 08 · Imagen de ciudad</div>
+      <section class="welcome welcome-08">
+        <img class="logo" src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047563/Logo_hppm16.webp" alt="Logo IAMS">
+        <div>
+          <div class="kicker">Mensaje de bienvenida</div>
+          <h2 class="title">Campeche recibe al IAMS 4th World Congress 2026.</h2>
+          <div class="copy">
+            <p>
+              La International Academy of Medical Specialists, Inc. da la bienvenida a médicos e invitados internacionales a una experiencia académica y profesional en una de las ciudades históricas más importantes de México.
+            </p>
+            <p>
+              Bajo el lema <strong>“One World, One Health: Strengthening Global Medical Synergy”</strong>, el congreso promueve una visión médica colaborativa e internacional.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Template 09 · Franja de asociación</div>
+      <section class="welcome welcome-09">
+        <div class="logo-strip">
+          <img class="logo" src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047563/Logo_hppm16.webp" alt="Logo IAMS">
+          <div class="strip-text">
+            International Academy of Medical Specialists, Inc.
+          </div>
+        </div>
+        <div>
+          <div class="kicker">Mensaje de bienvenida</div>
+          <h2 class="title">Un congreso para conectar conocimiento médico internacional.</h2>
+          <div class="copy">
+            <p>
+              El IAMS 4th World Congress 2026 reunirá médicos, especialistas y profesionales de la salud para compartir experiencias, actualizar conocimientos y construir relaciones profesionales en Campeche, México.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Template 10 · Oscuro editorial</div>
+      <section class="welcome welcome-10">
+        <div class="inner">
+          <img class="logo" src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047563/Logo_hppm16.webp" alt="Logo IAMS">
+          <div class="kicker">Mensaje de bienvenida</div>
+          <h2 class="title">Bienvenidos al 4th Congreso Internacional IAMS 2026.</h2>
+          <div class="copy">
+            <p>
+              Esta cuarta edición convoca a médicos, profesionales de la salud e instituciones internacionales a participar en un espacio de actualización, diálogo y colaboración médica.
+            </p>
+            <p>
+              El lema <strong>“One World, One Health: Strengthening Global Medical Synergy”</strong> resume el propósito de esta edición: fortalecer la conexión entre conocimiento, práctica médica y cooperación global.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+</body>
+</html>
+```
