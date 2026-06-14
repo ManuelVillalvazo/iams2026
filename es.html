@@ -1,11 +1,10 @@
-```html id="x0ewxe"
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>IAMS World Congress 2026 | Campeche, México</title>
+  <title>IAMS 4th World Congress 2026 | Campeche, México</title>
 
   <style>
     :root {
@@ -184,34 +183,42 @@
       background: var(--cream);
     }
 
-    .hero {
-      min-height: 92vh;
-      display: flex;
-      align-items: flex-end;
+    .hero-home {
       position: relative;
-      color: var(--white);
+      min-height: calc(100vh - 78px);
       background:
-        linear-gradient(90deg, rgba(9,5,31,0.94) 0%, rgba(25,16,82,0.82) 48%, rgba(25,16,82,0.28) 100%),
-        url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1781295548/5f33f12c1fd4ac34e715c02c_cq9tlc.jpg");
-      background-size: cover;
-      background-position: center;
-      padding: clamp(86px, 9vw, 132px) clamp(24px, 6vw, 96px);
+        radial-gradient(circle at 78% 20%, rgba(240,77,139,0.28), transparent 26%),
+        radial-gradient(circle at 16% 84%, rgba(201,162,74,0.16), transparent 34%),
+        linear-gradient(135deg, #09051f 0%, #191052 48%, #3320a8 100%);
+      color: var(--white);
+      padding: clamp(64px, 8vw, 104px) clamp(24px, 6vw, 96px) 0;
+      overflow: hidden;
     }
 
-    .hero::after {
+    .hero-home::before {
       content: "";
       position: absolute;
       inset: 24px;
-      border: 1px solid rgba(255,255,255,0.16);
-      border-radius: 34px;
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 34px 34px 0 0;
+      border-bottom: none;
       pointer-events: none;
     }
 
-    .hero-content {
-      width: min(100%, 1180px);
-      margin: 0 auto;
+    .hero-inner {
       position: relative;
       z-index: 2;
+      width: min(100%, 1180px);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: clamp(32px, 6vw, 80px);
+      align-items: center;
+      min-height: calc(100vh - 170px);
+    }
+
+    .hero-copy {
+      padding-bottom: clamp(48px, 6vw, 76px);
     }
 
     .eyebrow,
@@ -224,29 +231,29 @@
       margin-bottom: 18px;
     }
 
-    .hero h1 {
-      max-width: 1000px;
-      font-size: clamp(54px, 8vw, 118px);
-      line-height: 0.92;
-      letter-spacing: -0.075em;
+    .hero-copy h1 {
+      max-width: 820px;
+      font-size: clamp(56px, 8vw, 116px);
+      line-height: 0.88;
+      letter-spacing: -0.08em;
       font-weight: 950;
       margin-bottom: 26px;
     }
 
     .hero-theme {
-      max-width: 860px;
-      color: #f8fbff;
+      max-width: 760px;
       font-size: clamp(22px, 3vw, 38px);
-      line-height: 1.18;
+      line-height: 1.16;
       font-weight: 850;
+      color: #f8fbff;
       margin-bottom: 24px;
     }
 
     .hero-text {
-      max-width: 760px;
+      max-width: 720px;
       color: #dbe7ff;
-      font-size: clamp(18px, 2vw, 24px);
-      line-height: 1.52;
+      font-size: clamp(17px, 1.8vw, 22px);
+      line-height: 1.56;
       margin-bottom: 34px;
     }
 
@@ -254,7 +261,6 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-bottom: 40px;
     }
 
     .primary-btn,
@@ -293,41 +299,195 @@
       background: rgba(255,255,255,0.15);
     }
 
-    .hero-meta {
+    .hero-visual {
+      min-height: 620px;
+      position: relative;
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      max-width: 900px;
+      place-items: center;
     }
 
-    .hero-meta-card {
-      border-radius: 22px;
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.18);
-      backdrop-filter: blur(10px);
+    .hero-orb {
+      width: min(100%, 560px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      position: relative;
+      background:
+        radial-gradient(circle at 35% 28%, rgba(255,255,255,0.96) 0 8%, transparent 9%),
+        radial-gradient(circle at 63% 58%, rgba(240,77,139,0.95) 0 13%, transparent 14%),
+        radial-gradient(circle at 50% 50%, rgba(201,162,74,0.32) 0 18%, transparent 19%),
+        conic-gradient(from 220deg, #c9a24a, #f04d8b, #5638f0, #3320a8, #c9a24a);
+      box-shadow: 0 42px 110px rgba(0,0,0,0.34);
+      overflow: hidden;
+    }
+
+    .hero-orb::before {
+      content: "";
+      position: absolute;
+      inset: 42px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.28);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.12), transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(9,5,31,0.22), transparent 58%);
+    }
+
+    .hero-orb::after {
+      content: "";
+      position: absolute;
+      width: 150%;
+      height: 44%;
+      left: -25%;
+      top: 37%;
+      transform: rotate(-18deg);
+      background:
+        repeating-linear-gradient(
+          90deg,
+          rgba(255,255,255,0.18) 0 14px,
+          transparent 14px 34px
+        );
+      opacity: 0.82;
+    }
+
+    .orb-content {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .orb-content strong {
+      display: block;
+      font-size: clamp(78px, 11vw, 148px);
+      line-height: 0.82;
+      letter-spacing: -0.09em;
+      font-weight: 950;
+      text-shadow: 0 18px 42px rgba(0,0,0,0.24);
+    }
+
+    .orb-content span {
+      display: block;
+      margin-top: 18px;
+      color: #fff4ca;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 13px;
+      font-weight: 950;
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 5;
+      min-width: 210px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.92);
+      color: var(--navy);
       padding: 18px;
+      box-shadow: 0 22px 60px rgba(0,0,0,0.22);
+      border: 1px solid rgba(255,255,255,0.34);
+      backdrop-filter: blur(10px);
     }
 
-    .hero-meta-card strong {
+    .floating-card strong {
       display: block;
       color: var(--gold);
-      font-size: 12px;
-      letter-spacing: 0.16em;
       text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 11px;
       font-weight: 950;
       margin-bottom: 8px;
     }
 
-    .hero-meta-card span {
+    .floating-card span {
       display: block;
-      color: var(--white);
-      font-size: 17px;
-      line-height: 1.3;
-      font-weight: 850;
+      font-size: 18px;
+      line-height: 1.16;
+      font-weight: 950;
+    }
+
+    .floating-card.one {
+      left: 0;
+      top: 80px;
+    }
+
+    .floating-card.two {
+      right: 0;
+      bottom: 92px;
+    }
+
+    .date-ribbon {
+      position: relative;
+      z-index: 3;
+      width: min(100%, 1180px);
+      margin: 0 auto;
+      transform: translateY(50%);
+      border-radius: 34px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.11), rgba(255,255,255,0.04)),
+        linear-gradient(135deg, #3320a8, #5638f0);
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 28px 80px rgba(7,23,49,0.24);
+      padding: clamp(18px, 3vw, 28px);
+      display: grid;
+      grid-template-columns: 1.1fr repeat(4, 0.65fr);
+      gap: 14px;
+      align-items: center;
+    }
+
+    .ribbon-title strong {
+      display: block;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      font-weight: 950;
+      margin-bottom: 8px;
+    }
+
+    .ribbon-title span {
+      display: block;
+      color: white;
+      font-size: clamp(22px, 2.8vw, 38px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      font-weight: 950;
+    }
+
+    .date-box {
+      border-radius: 22px;
+      background: rgba(255,255,255,0.11);
+      border: 1px solid rgba(255,255,255,0.16);
+      padding: 16px 12px;
+      text-align: center;
+      color: white;
+    }
+
+    .date-box strong {
+      display: block;
+      font-size: clamp(24px, 3vw, 42px);
+      line-height: 0.92;
+      letter-spacing: -0.06em;
+      font-weight: 950;
+      margin-bottom: 6px;
+    }
+
+    .date-box span {
+      display: block;
+      color: #dbe7ff;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 10px;
+      font-weight: 900;
     }
 
     .section {
-      padding: clamp(70px, 8vw, 112px) clamp(24px, 6vw, 96px);
+      padding: clamp(82px, 9vw, 124px) clamp(24px, 6vw, 96px);
+    }
+
+    .section.first-after-hero {
+      padding-top: clamp(130px, 13vw, 180px);
     }
 
     .section.white {
@@ -358,10 +518,6 @@
       margin-bottom: 28px;
     }
 
-    .section.dark .section-title {
-      color: var(--white);
-    }
-
     .section-lead {
       max-width: 850px;
       color: var(--gray-text);
@@ -369,35 +525,35 @@
       line-height: 1.58;
     }
 
-    .section.dark .section-lead {
-      color: #cbd5e1;
-    }
-
-    .registration-panel {
-      margin-top: 36px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .registration-card {
-      border-radius: 28px;
+    .important-shell {
+      margin-top: 44px;
+      border-radius: 36px;
       background: var(--white);
       border: 1px solid rgba(25,16,82,0.10);
-      box-shadow: 0 18px 52px rgba(7,23,49,0.08);
-      padding: 26px;
+      box-shadow: 0 24px 70px rgba(7,23,49,0.08);
+      overflow: hidden;
     }
 
-    .registration-card.featured {
+    .important-header {
       background:
-        radial-gradient(circle at 18% 18%, rgba(201,162,74,0.16), transparent 36%),
-        linear-gradient(135deg, #17104a 0%, #2417a0 60%, #5638f0 100%);
-      color: var(--white);
+        radial-gradient(circle at 12% 20%, rgba(201,162,74,0.18), transparent 32%),
+        linear-gradient(135deg, #17104a 0%, #2417a0 58%, #5638f0 100%);
+      color: white;
+      padding: clamp(26px, 4vw, 46px);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
     }
 
-    .registration-card span {
-      display: inline-flex;
-      margin-bottom: 18px;
+    .important-header h2 {
+      font-size: clamp(36px, 5vw, 72px);
+      line-height: 0.95;
+      letter-spacing: -0.065em;
+      font-weight: 950;
+    }
+
+    .important-header span {
       color: var(--gold);
       text-transform: uppercase;
       letter-spacing: 0.18em;
@@ -405,86 +561,111 @@
       font-weight: 950;
     }
 
-    .registration-card h3 {
-      color: var(--navy);
-      font-size: clamp(26px, 3vw, 42px);
-      line-height: 1;
-      letter-spacing: -0.055em;
+    .important-body {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr 0.95fr;
+      border-top: 1px solid rgba(25,16,82,0.08);
+    }
+
+    .important-column {
+      padding: clamp(24px, 4vw, 42px);
+      border-right: 1px solid rgba(25,16,82,0.10);
+    }
+
+    .important-column:last-child {
+      border-right: none;
+    }
+
+    .important-column small {
+      display: block;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
       font-weight: 950;
       margin-bottom: 16px;
     }
 
-    .registration-card.featured h3 {
-      color: var(--white);
-    }
-
-    .registration-card p {
-      color: var(--gray-text);
-      font-size: 15px;
-      line-height: 1.5;
+    .important-column h3 {
+      color: var(--navy);
+      font-size: clamp(25px, 3vw, 42px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      font-weight: 950;
       margin-bottom: 18px;
     }
 
-    .registration-card.featured p {
-      color: #dbe7ff;
+    .important-column p {
+      color: var(--gray-text);
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 22px;
     }
 
-    .price-row {
+    .price-list {
       display: grid;
-      gap: 10px;
-      margin-top: 18px;
+      gap: 12px;
     }
 
-    .price-item {
+    .price-line {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      padding: 12px 0;
+      gap: 18px;
+      padding: 14px 0;
       border-top: 1px solid rgba(25,16,82,0.10);
       color: var(--navy);
       font-weight: 850;
     }
 
-    .registration-card.featured .price-item {
-      color: var(--white);
-      border-top: 1px solid rgba(255,255,255,0.18);
-    }
-
-    .price-item strong {
+    .price-line strong {
       color: var(--gold);
       font-size: 22px;
       white-space: nowrap;
     }
 
-    .waitlist-mini {
-      margin-top: 20px;
+    .welcome-section {
+      background:
+        linear-gradient(180deg, var(--white), var(--cream));
     }
 
-    .welcome-layout {
+    .welcome-grid {
       display: grid;
       grid-template-columns: 0.85fr 1.15fr;
-      gap: clamp(32px, 6vw, 80px);
+      gap: clamp(34px, 6vw, 80px);
       align-items: center;
     }
 
-    .welcome-visual {
-      border-radius: 34px;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(201,162,74,0.14), transparent 34%),
-        var(--white);
-      border: 1px solid rgba(25,16,82,0.10);
-      box-shadow: 0 24px 70px rgba(7,23,49,0.08);
+    .welcome-image-card {
+      border-radius: 38px;
+      min-height: 500px;
       padding: clamp(28px, 5vw, 58px);
       display: grid;
       place-items: center;
-      min-height: 420px;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(201,162,74,0.18), transparent 34%),
+        radial-gradient(circle at 80% 80%, rgba(86,56,240,0.14), transparent 36%),
+        var(--white);
+      border: 1px solid rgba(25,16,82,0.10);
+      box-shadow: 0 24px 70px rgba(7,23,49,0.08);
+      position: relative;
+      overflow: hidden;
     }
 
-    .welcome-visual img {
-      max-width: 330px;
+    .welcome-image-card::after {
+      content: "";
+      position: absolute;
+      inset: 26px;
+      border-radius: 28px;
+      border: 1px solid rgba(25,16,82,0.08);
+      pointer-events: none;
+    }
+
+    .welcome-image-card img {
+      max-width: 340px;
       height: auto;
       object-fit: contain;
+      position: relative;
+      z-index: 2;
     }
 
     .welcome-copy p {
@@ -498,78 +679,102 @@
       color: var(--navy);
     }
 
-    .info-grid {
-      margin-top: 40px;
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 18px;
+    .info-banner {
+      padding: 0 clamp(24px, 6vw, 96px);
+      background: var(--cream);
     }
 
-    .info-card {
-      border-radius: 30px;
+    .info-banner-inner {
+      width: min(100%, 1180px);
+      margin: 0 auto;
+      border-radius: 42px;
+      background:
+        radial-gradient(circle at 14% 20%, rgba(201,162,74,0.18), transparent 34%),
+        linear-gradient(135deg, #17104a 0%, #2417a0 58%, #5638f0 100%);
+      color: var(--white);
+      padding: clamp(36px, 6vw, 76px);
+      box-shadow: 0 28px 80px rgba(7,23,49,0.16);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: end;
+    }
+
+    .info-banner h2 {
+      max-width: 850px;
+      font-size: clamp(42px, 7vw, 92px);
+      line-height: 0.92;
+      letter-spacing: -0.075em;
+      font-weight: 950;
+    }
+
+    .info-banner span {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 13px;
+      font-weight: 950;
+    }
+
+    .info-section {
+      background: var(--cream);
+      padding-top: clamp(46px, 6vw, 72px);
+    }
+
+    .info-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-radius: 34px;
       background: var(--white);
       border: 1px solid rgba(25,16,82,0.10);
-      box-shadow: 0 18px 52px rgba(7,23,49,0.08);
-      padding: clamp(26px, 4vw, 42px);
+      box-shadow: 0 20px 60px rgba(7,23,49,0.08);
+      overflow: hidden;
     }
 
-    .info-card.dark-card {
-      color: var(--white);
-      background:
-        radial-gradient(circle at 16% 20%, rgba(201,162,74,0.18), transparent 34%),
-        linear-gradient(135deg, #17104a 0%, #2417a0 60%, #5638f0 100%);
+    .info-row {
+      padding: 28px;
+      border-right: 1px solid rgba(25,16,82,0.10);
+      border-bottom: 1px solid rgba(25,16,82,0.10);
     }
 
-    .info-list {
-      display: grid;
-      gap: 22px;
+    .info-row:nth-child(2n) {
+      border-right: none;
     }
 
-    .info-item {
-      padding-bottom: 20px;
-      border-bottom: 1px solid rgba(25,16,82,0.12);
-    }
-
-    .info-item:last-child {
-      padding-bottom: 0;
+    .info-row:nth-last-child(-n+2) {
       border-bottom: none;
     }
 
-    .info-item strong {
+    .info-row strong {
       display: block;
       color: var(--gold);
       text-transform: uppercase;
       letter-spacing: 0.16em;
       font-size: 12px;
       font-weight: 950;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
-    .info-item span {
+    .info-row span {
       display: block;
       color: var(--navy);
-      font-size: clamp(18px, 2vw, 24px);
-      line-height: 1.36;
+      font-size: clamp(18px, 2vw, 25px);
+      line-height: 1.34;
       font-weight: 850;
     }
 
-    .info-card.dark-card .info-item {
-      border-bottom: 1px solid rgba(255,255,255,0.14);
-    }
-
-    .info-card.dark-card .info-item:last-child {
-      border-bottom: none;
-    }
-
-    .info-card.dark-card .info-item span {
-      color: var(--white);
-    }
-
-    .info-cta {
+    .info-actions {
       margin-top: 34px;
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
+    }
+
+    .info-actions .secondary-btn {
+      color: var(--navy);
+      background: var(--white);
+      border: 1px solid rgba(25,16,82,0.14);
     }
 
     .final-cta {
@@ -645,20 +850,45 @@
         place-items: center;
       }
 
-      .registration-panel {
+      .hero-inner {
         grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 520px;
+      }
+
+      .date-ribbon,
+      .important-body {
+        grid-template-columns: 1fr;
+      }
+
+      .important-column {
+        border-right: none;
+        border-bottom: 1px solid rgba(25,16,82,0.10);
+      }
+
+      .important-column:last-child {
+        border-bottom: none;
       }
     }
 
     @media (max-width: 900px) {
-      .hero-meta,
-      .welcome-layout,
-      .info-grid {
+      .welcome-grid,
+      .info-banner-inner,
+      .info-table {
         grid-template-columns: 1fr;
       }
 
-      .welcome-visual {
-        min-height: 300px;
+      .info-row,
+      .info-row:nth-child(2n),
+      .info-row:nth-last-child(-n+2) {
+        border-right: none;
+        border-bottom: 1px solid rgba(25,16,82,0.10);
+      }
+
+      .info-row:last-child {
+        border-bottom: none;
       }
     }
 
@@ -684,7 +914,11 @@
       }
 
       .section {
-        padding: 62px 20px;
+        padding: 64px 20px;
+      }
+
+      .section.first-after-hero {
+        padding-top: 128px;
       }
 
       .section-title {
@@ -702,23 +936,21 @@
     }
 
     @media (max-width: 720px) {
-      .hero {
-        min-height: 86vh;
-        padding: 88px 20px 60px;
-        background:
-          linear-gradient(180deg, rgba(9,5,31,0.25) 0%, rgba(9,5,31,0.90) 72%),
-          url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1781295548/5f33f12c1fd4ac34e715c02c_cq9tlc.jpg");
-        background-size: cover;
-        background-position: 58% center;
+      .hero-home {
+        padding: 78px 20px 0;
       }
 
-      .hero::after {
+      .hero-home::before {
         inset: 12px;
-        border-radius: 24px;
+        border-radius: 24px 24px 0 0;
       }
 
-      .hero h1 {
-        font-size: clamp(48px, 14vw, 74px);
+      .hero-copy {
+        padding-bottom: 24px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(48px, 15vw, 76px);
       }
 
       .hero-theme {
@@ -735,19 +967,59 @@
         width: 100%;
       }
 
-      .hero-meta {
+      .hero-visual {
+        min-height: 360px;
+        margin-top: -10px;
+      }
+
+      .hero-orb {
+        width: min(100%, 330px);
+      }
+
+      .orb-content strong {
+        font-size: 88px;
+      }
+
+      .floating-card {
+        display: none;
+      }
+
+      .date-ribbon {
+        transform: translateY(52%);
+        border-radius: 24px;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .ribbon-title {
+        grid-column: span 2;
+      }
+
+      .date-box {
+        border-radius: 18px;
+      }
+
+      .important-header {
         grid-template-columns: 1fr;
       }
 
-      .registration-card,
-      .welcome-visual,
-      .info-card {
-        border-radius: 24px;
+      .important-shell,
+      .welcome-image-card,
+      .info-banner-inner,
+      .info-table {
+        border-radius: 26px;
       }
 
-      .price-item {
+      .welcome-image-card {
+        min-height: 300px;
+      }
+
+      .welcome-image-card img {
+        max-width: 230px;
+      }
+
+      .info-actions {
         display: grid;
-        gap: 4px;
+        grid-template-columns: 1fr;
       }
     }
 
@@ -755,6 +1027,14 @@
       .brand-name {
         max-width: 185px;
         font-size: 9px;
+      }
+
+      .date-ribbon {
+        grid-template-columns: 1fr;
+      }
+
+      .ribbon-title {
+        grid-column: span 1;
       }
     }
   </style>
@@ -805,96 +1085,134 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-content">
-        <div class="eyebrow">IAMS World Congress 2026</div>
+    <section class="hero-home">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow">Campeche, México</div>
 
-        <h1>IAMS 4th World Congress 2026</h1>
+          <h1>IAMS 4th World Congress 2026</h1>
 
-        <div class="hero-theme">
-          One World, One Health: Strengthening Global Medical Synergy
-        </div>
-
-        <p class="hero-text">
-          Un encuentro médico internacional para fortalecer la colaboración, el intercambio académico y la conexión profesional entre especialistas de distintas regiones del mundo.
-        </p>
-
-        <div class="hero-actions">
-          <a href="waitlist-es.html" class="primary-btn">
-            Unirme a la lista de espera
-          </a>
-
-          <a href="#informacion" class="secondary-btn">
-            Solicitar información
-          </a>
-        </div>
-
-        <div class="hero-meta">
-          <div class="hero-meta-card">
-            <strong>Ciudad sede</strong>
-            <span>Campeche, México</span>
+          <div class="hero-theme">
+            One World, One Health: Strengthening Global Medical Synergy
           </div>
 
-          <div class="hero-meta-card">
-            <strong>Preventa</strong>
-            <span>15 de julio – 15 de septiembre</span>
-          </div>
+          <p class="hero-text">
+            Un encuentro médico internacional para fortalecer la colaboración, el intercambio académico y la conexión profesional entre especialistas de distintas regiones del mundo.
+          </p>
 
-          <div class="hero-meta-card">
-            <strong>Registro tardío</strong>
-            <span>16 de septiembre – 23 de octubre</span>
+          <div class="hero-actions">
+            <a href="waitlist-es.html" class="primary-btn">
+              Unirme a la lista de espera
+            </a>
+
+            <a href="#informacion" class="secondary-btn">
+              Solicitar información
+            </a>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="section cream">
-      <div class="section-inner">
-        <div class="section-kicker">Registro</div>
-
-        <h2 class="section-title">Fechas y precios de registro.</h2>
-
-        <p class="section-lead">
-          La preventa abrirá el 15 de julio. Los asistentes podrán registrarse con tarifa especial durante el periodo de preventa antes del inicio del registro tardío.
-        </p>
-
-        <div class="registration-panel">
-          <div class="registration-card featured">
-            <span>Preventa</span>
-            <h3>15 de julio – 15 de septiembre</h3>
-            <p>
-              Tarifa especial disponible durante el periodo inicial de registro.
-            </p>
-
-            <div class="price-row">
-              <div class="price-item">
-                <em>Doctores</em>
-                <strong>$200 USD</strong>
-              </div>
-
-              <div class="price-item">
-                <em>Personal de salud y acompañantes</em>
-                <strong>$120 USD</strong>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-orb">
+            <div class="orb-content">
+              <div>
+                <strong>2026</strong>
+                <span>World Congress</span>
               </div>
             </div>
           </div>
 
-          <div class="registration-card">
-            <span>Registro tardío</span>
-            <h3>16 de septiembre – 23 de octubre</h3>
-            <p>
-              Última etapa de registro antes del congreso, sujeta a disponibilidad y a las condiciones finales del programa.
-            </p>
+          <div class="floating-card one">
+            <strong>Sede</strong>
+            <span>Centro de Convenciones Campeche Siglo XXI</span>
           </div>
 
-          <div class="registration-card">
-            <span>Lista de espera</span>
-            <h3>Recibe el aviso de apertura</h3>
-            <p>
-              Déjanos tus datos para recibir información sobre registro, programa académico, ponentes y anuncios oficiales.
-            </p>
+          <div class="floating-card two">
+            <strong>Preventa</strong>
+            <span>15 de julio – 15 de septiembre</span>
+          </div>
+        </div>
+      </div>
 
-            <div class="waitlist-mini">
+      <div class="date-ribbon">
+        <div class="ribbon-title">
+          <strong>Fechas clave</strong>
+          <span>Registro 2026</span>
+        </div>
+
+        <div class="date-box">
+          <strong>15</strong>
+          <span>Julio · Abre preventa</span>
+        </div>
+
+        <div class="date-box">
+          <strong>15</strong>
+          <span>Septiembre · Cierra preventa</span>
+        </div>
+
+        <div class="date-box">
+          <strong>16</strong>
+          <span>Septiembre · Registro tardío</span>
+        </div>
+
+        <div class="date-box">
+          <strong>23</strong>
+          <span>Octubre · Cierre</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cream first-after-hero">
+      <div class="section-inner">
+        <div class="section-kicker">Important Dates</div>
+
+        <h2 class="section-title">Fechas y precios de registro.</h2>
+
+        <p class="section-lead">
+          La preventa estará disponible del 15 de julio al 15 de septiembre. Después iniciará el periodo de registro tardío, sujeto a disponibilidad.
+        </p>
+
+        <div class="important-shell">
+          <div class="important-header">
+            <h2>Registro del congreso</h2>
+            <span>IAMS 2026</span>
+          </div>
+
+          <div class="important-body">
+            <div class="important-column">
+              <small>Preventa</small>
+              <h3>15 de julio – 15 de septiembre</h3>
+              <p>
+                Tarifa especial para quienes se registren durante el primer periodo de venta.
+              </p>
+
+              <div class="price-list">
+                <div class="price-line">
+                  <span>Doctores</span>
+                  <strong>$200 USD</strong>
+                </div>
+
+                <div class="price-line">
+                  <span>Personal de salud y acompañantes</span>
+                  <strong>$120 USD</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="important-column">
+              <small>Registro tardío</small>
+              <h3>16 de septiembre – 23 de octubre</h3>
+              <p>
+                Última etapa de registro previo al congreso, sujeta a cupo, disponibilidad y condiciones finales del programa.
+              </p>
+            </div>
+
+            <div class="important-column">
+              <small>Lista de espera</small>
+              <h3>Recibe el aviso de apertura</h3>
+              <p>
+                Déjanos tus datos para recibir información sobre registro, ponentes, programa académico y anuncios oficiales.
+              </p>
+
               <a href="waitlist-es.html" class="primary-btn">
                 Unirme a la lista
               </a>
@@ -904,10 +1222,10 @@
       </div>
     </section>
 
-    <section class="section white">
+    <section class="section welcome-section">
       <div class="section-inner">
-        <div class="welcome-layout">
-          <div class="welcome-visual">
+        <div class="welcome-grid">
+          <div class="welcome-image-card">
             <img
               src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781136129/Amas_HighRes_1_1_1_ad1nle.webp"
               alt="Asistencia Médica y Apoyo Social A.C."
@@ -935,71 +1253,61 @@
       </div>
     </section>
 
-    <section class="section cream" id="informacion">
+    <section class="info-banner" id="informacion">
+      <div class="info-banner-inner">
+        <div>
+          <span>Congress Information</span>
+          <h2>Información del congreso.</h2>
+        </div>
+
+        <a href="waitlist-es.html" class="primary-btn">
+          Solicitar información
+        </a>
+      </div>
+    </section>
+
+    <section class="section info-section">
       <div class="section-inner">
-        <div class="section-kicker">Congress Information</div>
-
-        <h2 class="section-title">Información del congreso.</h2>
-
-        <p class="section-lead">
-          El IAMS 4th World Congress 2026 se celebrará en Campeche, México, con una agenda enfocada en colaboración médica internacional, actualización profesional y conexión entre especialistas.
-        </p>
-
-        <div class="info-grid">
-          <div class="info-card">
-            <div class="info-list">
-              <div class="info-item">
-                <strong>Nombre del congreso</strong>
-                <span>IAMS 4th World Congress 2026</span>
-              </div>
-
-              <div class="info-item">
-                <strong>Tema oficial</strong>
-                <span>One World, One Health: Strengthening Global Medical Synergy</span>
-              </div>
-
-              <div class="info-item">
-                <strong>Modalidad</strong>
-                <span>Presencial</span>
-              </div>
-
-              <div class="info-item">
-                <strong>Ciudad anfitriona</strong>
-                <span>Campeche, México</span>
-              </div>
-            </div>
+        <div class="info-table">
+          <div class="info-row">
+            <strong>Nombre del congreso</strong>
+            <span>IAMS 4th World Congress 2026</span>
           </div>
 
-          <div class="info-card dark-card">
-            <div class="info-list">
-              <div class="info-item">
-                <strong>Sede</strong>
-                <span>Centro de Convenciones Campeche Siglo XXI</span>
-              </div>
-
-              <div class="info-item">
-                <strong>Dirección</strong>
-                <span>
-                  Av. Pedro Sainz de Baranda No. 219, Área Ah-Kim-Pech, C.P. 24014, San Francisco de Campeche, Campeche
-                </span>
-              </div>
-
-              <div class="info-item">
-                <strong>Información</strong>
-                <span>Solicita detalles sobre registro, sede, ponentes y programa académico.</span>
-              </div>
-            </div>
-
-            <div class="info-cta">
-              <a href="waitlist-es.html" class="primary-btn">
-                Solicitar información
-              </a>
-
-              <a href="campeche-es.html" class="secondary-btn">
-                Ver ciudad anfitriona
-              </a>
-            </div>
+          <div class="info-row">
+            <strong>Tema oficial</strong>
+            <span>One World, One Health: Strengthening Global Medical Synergy</span>
           </div>
+
+          <div class="info-row">
+            <strong>Sede</strong>
+            <span>Centro de Convenciones Campeche Siglo XXI</span>
+          </div>
+
+          <div class="info-row">
+            <strong>Modalidad</strong>
+            <span>Presencial</span>
+          </div>
+
+          <div class="info-row">
+            <strong>Ciudad anfitriona</strong>
+            <span>Campeche, México</span>
+          </div>
+
+          <div class="info-row">
+            <strong>Dirección</strong>
+            <span>Av. Pedro Sainz de Baranda No. 219, Área Ah-Kim-Pech, C.P. 24014, San Francisco de Campeche, Campeche</span>
+          </div>
+        </div>
+
+        <div class="info-actions">
+          <a href="waitlist-es.html" class="primary-btn">
+            Solicitar información
+          </a>
+
+          <a href="campeche-es.html" class="secondary-btn">
+            Ver ciudad anfitriona
+          </a>
         </div>
       </div>
     </section>
@@ -1055,4 +1363,3 @@
   </script>
 </body>
 </html>
-```
