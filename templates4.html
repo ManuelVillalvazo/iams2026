@@ -1,0 +1,429 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ponentes Internacionales | Templates</title>
+
+  <style>
+    :root {
+      --navy: #191052;
+      --deep: #09051f;
+      --purple: #3320a8;
+      --violet: #5638f0;
+      --pink: #f04d8b;
+      --gold: #c9a24a;
+      --white: #ffffff;
+      --cream: #fbf7ef;
+      --sand: #efe1c5;
+      --light: #f7f7fb;
+      --dark-text: #111827;
+      --gray-text: #4b5563;
+      --border: #d8dee8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--dark-text);
+      padding: 42px 0;
+    }
+
+    .preview-page {
+      display: grid;
+      gap: 38px;
+    }
+
+    .template-label {
+      width: min(100% - 40px, 1120px);
+      margin: 0 auto 10px;
+      color: var(--gray-text);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 900;
+    }
+
+    .speakers-strip {
+      width: min(100% - 40px, 1120px);
+      min-height: 108px;
+      margin: 0 auto;
+      padding: 18px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .speakers-title {
+      font-size: clamp(24px, 3vw, 38px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      font-weight: 950;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .flags {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(10px, 1.6vw, 18px);
+      flex-wrap: wrap;
+    }
+
+    .flag {
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* TEMPLATE 01 */
+
+    .speakers-01 {
+      background: var(--white);
+      border: 1px solid rgba(25,16,82,0.10);
+      box-shadow: 0 14px 36px rgba(7,23,49,0.06);
+    }
+
+    .speakers-01 .speakers-title {
+      color: var(--navy);
+    }
+
+    /* TEMPLATE 02 */
+
+    .speakers-02 {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .speakers-02 .speakers-title {
+      color: var(--white);
+    }
+
+    /* TEMPLATE 03 */
+
+    .speakers-03 {
+      background: var(--cream);
+      border-top: 1px solid rgba(25,16,82,0.12);
+      border-bottom: 1px solid rgba(25,16,82,0.12);
+    }
+
+    .speakers-03 .speakers-title {
+      color: var(--navy);
+    }
+
+    /* TEMPLATE 04 */
+
+    .speakers-04 {
+      background:
+        linear-gradient(135deg, #191052 0%, #3320a8 100%);
+      color: white;
+      border-radius: 24px;
+      box-shadow: 0 16px 42px rgba(25,16,82,0.18);
+    }
+
+    .speakers-04 .flag {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 999px;
+      width: 46px;
+      height: 46px;
+    }
+
+    /* TEMPLATE 05 */
+
+    .speakers-05 {
+      background: var(--white);
+      border-left: 8px solid var(--gold);
+      border-right: 1px solid rgba(25,16,82,0.10);
+      border-top: 1px solid rgba(25,16,82,0.10);
+      border-bottom: 1px solid rgba(25,16,82,0.10);
+    }
+
+    .speakers-05 .speakers-title {
+      color: var(--navy);
+    }
+
+    .speakers-05 .flag {
+      filter: drop-shadow(0 4px 8px rgba(7,23,49,0.12));
+    }
+
+    /* TEMPLATE 06 */
+
+    .speakers-06 {
+      background:
+        radial-gradient(circle at 20% 40%, rgba(201,162,74,0.20), transparent 24%),
+        var(--deep);
+      color: white;
+    }
+
+    .speakers-06 .speakers-title {
+      color: var(--gold);
+    }
+
+    /* TEMPLATE 07 */
+
+    .speakers-07 {
+      background: var(--white);
+      border: 1px solid rgba(25,16,82,0.10);
+      border-radius: 999px;
+      box-shadow: 0 14px 36px rgba(7,23,49,0.06);
+    }
+
+    .speakers-07 .speakers-title {
+      color: var(--navy);
+    }
+
+    /* TEMPLATE 08 */
+
+    .speakers-08 {
+      background: var(--sand);
+      border: 1px solid rgba(25,16,82,0.10);
+    }
+
+    .speakers-08 .speakers-title {
+      color: var(--navy);
+    }
+
+    .speakers-08 .flag {
+      background: var(--white);
+      border-radius: 999px;
+      width: 44px;
+      height: 44px;
+      box-shadow: 0 8px 20px rgba(7,23,49,0.08);
+    }
+
+    /* TEMPLATE 09 */
+
+    .speakers-09 {
+      background:
+        linear-gradient(90deg, rgba(9,5,31,0.94), rgba(25,16,82,0.74)),
+        url("https://res.cloudinary.com/dh3cjks1a/image/upload/v1781295548/5f33f12c1fd4ac34e715c02c_cq9tlc.jpg");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .speakers-09 .speakers-title {
+      color: white;
+    }
+
+    /* TEMPLATE 10 */
+
+    .speakers-10 {
+      background: transparent;
+      border-top: 1px solid rgba(25,16,82,0.16);
+      border-bottom: 1px solid rgba(25,16,82,0.16);
+    }
+
+    .speakers-10 .speakers-title {
+      color: var(--navy);
+    }
+
+    .speakers-10 .flags {
+      gap: 22px;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding: 28px 0;
+      }
+
+      .preview-page {
+        gap: 30px;
+      }
+
+      .speakers-strip {
+        width: 100%;
+        min-height: 116px;
+        padding: 20px;
+      }
+
+      .template-label {
+        width: calc(100% - 40px);
+      }
+
+      .speakers-title {
+        font-size: 28px;
+      }
+
+      .flag {
+        font-size: 28px;
+      }
+
+      .speakers-07 {
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="preview-page">
+
+    <div>
+      <div class="template-label">Template 01 · Blanco institucional</div>
+      <section class="speakers-strip speakers-01">
+        <h2 class="speakers-title">Ponentes internacionales</h2>
+        <div class="flags">
+          <span class="flag">🇲🇽</span>
+          <span class="flag">🇺🇸</span>
+          <span class="flag">🇵🇭</span>
+          <span class="flag">🇩🇪</span>
+          <span class="flag">🇵🇹</span>
+          <span class="flag">🇨🇭</span>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Template 02 · Azul sólido</div>
+      <section class="speakers-strip speakers-02">
+        <h2 class="speakers-title">Ponentes internacionales</h2>
+        <div class="flags">
+          <span class="flag">🇲🇽</span>
+          <span class="flag">🇺🇸</span>
+          <span class="flag">🇵🇭</span>
+          <span class="flag">🇩🇪</span>
+          <span class="flag">🇵🇹</span>
+          <span class="flag">🇨🇭</span>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Template 03 · Crema editorial</div>
+      <section class="speakers-strip speakers-03">
+        <h2 class="speakers-title">Ponentes internacionales</h2>
+        <div class="flags">
+          <span class="flag">🇲🇽</span>
+          <span class="flag">🇺🇸</span>
+          <span class="flag">🇵🇭</span>
+          <span class="flag">🇩🇪</span>
+          <span class="flag">🇵🇹</span>
+          <span class="flag">🇨🇭</span>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Template 04 · Gradiente con cápsulas</div>
+      <section class="speakers-strip speakers-04">
+        <h2 class="speakers-title">Ponentes internacionales</h2>
+        <div class="flags">
+          <span class="flag">🇲🇽</span>
+          <span class="flag">🇺🇸</span>
+          <span class="flag">🇵🇭</span>
+          <span class="flag">🇩🇪</span>
+          <span class="flag">🇵🇹</span>
+          <span class="flag">🇨🇭</span>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Template 05 · Franja dorada lateral</div>
+      <section class="speakers-strip speakers-05">
+        <h2 class="speakers-title">Ponentes internacionales</h2>
+        <div class="flags">
+          <span class="flag">🇲🇽</span>
+          <span class="flag">🇺🇸</span>
+          <span class="flag">🇵🇭</span>
+          <span class="flag">🇩🇪</span>
+          <span class="flag">🇵🇹</span>
+          <span class="flag">🇨🇭</span>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Template 06 · Oscuro con acento dorado</div>
+      <section class="speakers-strip speakers-06">
+        <h2 class="speakers-title">Ponentes internacionales</h2>
+        <div class="flags">
+          <span class="flag">🇲🇽</span>
+          <span class="flag">🇺🇸</span>
+          <span class="flag">🇵🇭</span>
+          <span class="flag">🇩🇪</span>
+          <span class="flag">🇵🇹</span>
+          <span class="flag">🇨🇭</span>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Template 07 · Cápsula limpia</div>
+      <section class="speakers-strip speakers-07">
+        <h2 class="speakers-title">Ponentes internacionales</h2>
+        <div class="flags">
+          <span class="flag">🇲🇽</span>
+          <span class="flag">🇺🇸</span>
+          <span class="flag">🇵🇭</span>
+          <span class="flag">🇩🇪</span>
+          <span class="flag">🇵🇹</span>
+          <span class="flag">🇨🇭</span>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Template 08 · Banderas en círculos</div>
+      <section class="speakers-strip speakers-08">
+        <h2 class="speakers-title">Ponentes internacionales</h2>
+        <div class="flags">
+          <span class="flag">🇲🇽</span>
+          <span class="flag">🇺🇸</span>
+          <span class="flag">🇵🇭</span>
+          <span class="flag">🇩🇪</span>
+          <span class="flag">🇵🇹</span>
+          <span class="flag">🇨🇭</span>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Template 09 · Sobre imagen</div>
+      <section class="speakers-strip speakers-09">
+        <h2 class="speakers-title">Ponentes internacionales</h2>
+        <div class="flags">
+          <span class="flag">🇲🇽</span>
+          <span class="flag">🇺🇸</span>
+          <span class="flag">🇵🇭</span>
+          <span class="flag">🇩🇪</span>
+          <span class="flag">🇵🇹</span>
+          <span class="flag">🇨🇭</span>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <div class="template-label">Template 10 · Línea minimal</div>
+      <section class="speakers-strip speakers-10">
+        <h2 class="speakers-title">Ponentes internacionales</h2>
+        <div class="flags">
+          <span class="flag">🇲🇽</span>
+          <span class="flag">🇺🇸</span>
+          <span class="flag">🇵🇭</span>
+          <span class="flag">🇩🇪</span>
+          <span class="flag">🇵🇹</span>
+          <span class="flag">🇨🇭</span>
+        </div>
+      </section>
+    </div>
+
+  </main>
+</body>
+</html>
+```
