@@ -191,22 +191,21 @@
     }
 
     .poster {
-      position: relative;
-      width: 100%;
-      max-width: none;
-      margin: 0 auto;
-      min-height: 430px;
-      overflow: hidden;
-      color: white;
-      background:
-        radial-gradient(circle at 84% 18%, rgba(240,77,139,0.46), transparent 27%),
-        radial-gradient(circle at 70% 70%, rgba(201,162,74,0.34), transparent 33%),
-        linear-gradient(135deg, #17104a 0%, #2417a0 58%, #5638f0 100%);
-      display: grid;
-      grid-template-columns: 0.92fr 1.08fr;
-      align-items: center;
-      border-radius: 0;
-    }
+        position: relative;
+        max-width: 1600px;
+        width: 100%;
+        margin: 0 auto;
+        min-height: 540px;
+        overflow: hidden;
+        color: white;
+        background:
+          radial-gradient(circle at 84% 18%, rgba(240,77,139,0.46), transparent 27%),
+          radial-gradient(circle at 70% 70%, rgba(201,162,74,0.34), transparent 33%),
+          linear-gradient(135deg, #17104a 0%, #2417a0 58%, #5638f0 100%);
+        display: grid;
+        grid-template-columns: 0.56fr 0.44fr;
+        align-items: center;
+      }
 
     .poster::before {
       content: "";
@@ -242,8 +241,8 @@
     .poster-copy {
       position: relative;
       z-index: 3;
-      padding: clamp(38px, 6vw, 70px);
-      max-width: 620px;
+      padding: 54px clamp(42px, 5vw, 72px);
+      max-width: 720px;
     }
 
     .poster-kicker {
@@ -264,17 +263,18 @@
     }
 
     .poster h1 {
-      font-size: clamp(42px, 6vw, 78px);
-      line-height: 0.94;
-      letter-spacing: -0.065em;
-      font-weight: 950;
-      margin-bottom: 22px;
-    }
+        max-width: 680px;
+        font-size: clamp(48px, 4.8vw, 74px);
+        line-height: 0.94;
+        letter-spacing: -0.065em;
+        font-weight: 950;
+        margin-bottom: 18px;
+      }
 
     .poster-theme {
-      max-width: 520px;
-      font-size: clamp(20px, 2.6vw, 34px);
-      line-height: 1.15;
+      max-width: 600px;
+      font-size: clamp(22px, 2.2vw, 32px);
+      line-height: 1.14;
       letter-spacing: -0.035em;
       font-weight: 900;
       color: var(--white);
@@ -282,13 +282,13 @@
     }
 
     .poster-description {
-      max-width: 540px;
+      max-width: 560px;
       color: #dbe7ff;
-      font-size: clamp(15px, 1.5vw, 18px);
-      line-height: 1.52;
-      margin-bottom: 28px;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 26px;
     }
-
+    
     .poster-actions {
       display: flex;
       flex-wrap: wrap;
@@ -333,32 +333,32 @@
     .poster-art {
       position: relative;
       z-index: 2;
-      min-height: 430px;
+      min-height: 540px;
     }
 
     .poster-art::before {
       content: "";
       position: absolute;
-      right: clamp(40px, 8vw, 100px);
+      right: clamp(40px, 6vw, 90px);
       top: 50%;
       transform: translateY(-50%);
-      width: clamp(220px, 34vw, 420px);
-      height: clamp(220px, 34vw, 420px);
+      width: clamp(260px, 28vw, 390px);
+      height: clamp(260px, 28vw, 390px);
       border-radius: 50%;
       background:
         radial-gradient(circle at 50% 50%, rgba(25,16,82,0.96) 0 21%, transparent 22%),
         conic-gradient(from 190deg, #c9a24a, #f04d8b, #5638f0, #2c228e, #c9a24a);
       box-shadow: 0 28px 80px rgba(0,0,0,0.28);
     }
-
+    
     .poster-art::after {
       content: "IAMS";
       position: absolute;
-      right: clamp(82px, 13vw, 170px);
+      right: clamp(90px, 12vw, 168px);
       top: 50%;
       transform: translateY(-50%);
       color: white;
-      font-size: clamp(34px, 6vw, 72px);
+      font-size: clamp(38px, 5vw, 66px);
       line-height: 1;
       letter-spacing: -0.08em;
       font-weight: 950;
@@ -728,17 +728,20 @@
       }
 
       .poster-copy {
-        padding: 44px 24px 42px;
+        padding: 38px 24px 36px;
       }
 
       .poster h1 {
-        font-size: clamp(40px, 12vw, 58px);
+        font-size: clamp(38px, 11vw, 54px);
       }
 
       .poster-theme {
-        font-size: clamp(22px, 6vw, 32px);
+        font-size: clamp(20px, 5.8vw, 28px);
       }
-
+      
+      .poster-description {
+        font-size: 15px;
+      }
       .poster-actions {
         display: grid;
         grid-template-columns: 1fr;
@@ -872,15 +875,15 @@
             IAMS 4th World Congress 2026
           </div>
 
-          <h1>Congreso médico internacional presencial</h1>
+          <h1>Congreso médico internacional</h1>
 
-          <div class="poster-theme">
-            One World, One Health: Strengthening Global Medical Synergy
-          </div>
-
-          <p class="poster-description">
-            Un encuentro académico para médicos, especialistas y profesionales de la salud, enfocado en actualización médica, networking profesional y colaboración internacional.
-          </p>
+        <div class="poster-theme">
+          Actualización médica, networking profesional y colaboración global.
+        </div>
+        
+        <p class="poster-description">
+          IAMS 4th World Congress 2026 se realizará de forma presencial en Campeche, México, bajo el lema “One World, One Health: Strengthening Global Medical Synergy”.
+        </p>
 
           <div class="poster-actions">
             <a href="waitlist-es.html" class="primary-btn">
