@@ -1,0 +1,238 @@
+<style>
+  .past-editions-section {
+    background: var(--cream);
+    padding: clamp(56px, 7vw, 92px) clamp(20px, 5vw, 72px);
+    overflow: hidden;
+  }
+
+  .past-editions-inner {
+    width: min(100%, 1180px);
+    margin: 0 auto;
+  }
+
+  .past-editions-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+
+  .past-editions-title {
+    color: var(--navy);
+    font-size: clamp(38px, 6vw, 78px);
+    line-height: 0.96;
+    letter-spacing: -0.065em;
+    font-weight: 950;
+  }
+
+  .past-slider-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .past-slider-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid rgba(25,16,82,0.16);
+    background: var(--white);
+    color: var(--navy);
+    font-size: 22px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 12px 28px rgba(7,23,49,0.08);
+    transition: 0.18s ease;
+  }
+
+  .past-slider-btn:hover {
+    transform: translateY(-2px);
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .past-slider {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .past-slider-track {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+  .past-slider-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .past-slide {
+    flex: 0 0 min(78vw, 620px);
+    scroll-snap-align: start;
+    border-radius: 30px;
+    overflow: hidden;
+    background: #e5e7eb;
+    border: 1px solid rgba(25,16,82,0.10);
+    box-shadow: 0 20px 60px rgba(7,23,49,0.12);
+  }
+
+  .past-slide img {
+    width: 100%;
+    height: clamp(280px, 42vw, 460px);
+    object-fit: cover;
+    display: block;
+  }
+
+  .past-slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 22px;
+  }
+
+  .past-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(25,16,82,0.24);
+    border: none;
+  }
+
+  .past-dot.active {
+    background: var(--gold);
+  }
+
+  @media (max-width: 720px) {
+    .past-editions-section {
+      padding: 52px 20px;
+    }
+
+    .past-editions-header {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .past-slider-controls {
+      display: none;
+    }
+
+    .past-slide {
+      flex-basis: 88vw;
+      border-radius: 22px;
+    }
+
+    .past-slide img {
+      height: 300px;
+    }
+
+    .past-editions-title {
+      font-size: clamp(38px, 13vw, 58px);
+    }
+  }
+</style>
+
+<section class="past-editions-section">
+  <div class="past-editions-inner">
+    <div class="past-editions-header">
+      <h2 class="past-editions-title">Ediciones pasadas</h2>
+
+      <div class="past-slider-controls">
+        <button class="past-slider-btn" type="button" id="pastPrev" aria-label="Foto anterior">‹</button>
+        <button class="past-slider-btn" type="button" id="pastNext" aria-label="Siguiente foto">›</button>
+      </div>
+    </div>
+
+    <div class="past-slider">
+      <div class="past-slider-track" id="pastSliderTrack">
+        <div class="past-slide">
+          <img
+            src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047585/398308056_1375189060038532_3090151407649753373_n-768x513.jpg_d0lrau.webp"
+            alt="Edición pasada IAMS"
+          />
+        </div>
+
+        <div class="past-slide">
+          <img
+            src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047585/2ndWorldCongres-1536x1024.jpg_e5braa.webp"
+            alt="Edición pasada IAMS"
+          />
+        </div>
+
+        <div class="past-slide">
+          <img
+            src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047586/image-3-1536x1536.jpg_vgpzae.webp"
+            alt="Edición pasada IAMS"
+          />
+        </div>
+
+        <div class="past-slide">
+          <img
+            src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047586/407175188_1336334890584227_3622101827879852177_n-768x512_pdhtam.jpg"
+            alt="Edición pasada IAMS"
+          />
+        </div>
+      </div>
+
+      <div class="past-slider-dots" id="pastSliderDots">
+        <button class="past-dot active" type="button" aria-label="Foto 1"></button>
+        <button class="past-dot" type="button" aria-label="Foto 2"></button>
+        <button class="past-dot" type="button" aria-label="Foto 3"></button>
+        <button class="past-dot" type="button" aria-label="Foto 4"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const pastTrack = document.getElementById("pastSliderTrack");
+  const pastPrev = document.getElementById("pastPrev");
+  const pastNext = document.getElementById("pastNext");
+  const pastDots = document.querySelectorAll(".past-dot");
+
+  function getPastSlideWidth() {
+    const slide = pastTrack.querySelector(".past-slide");
+    return slide.offsetWidth + 18;
+  }
+
+  function updatePastDots() {
+    const slideWidth = getPastSlideWidth();
+    const activeIndex = Math.round(pastTrack.scrollLeft / slideWidth);
+
+    pastDots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === activeIndex);
+    });
+  }
+
+  pastNext.addEventListener("click", () => {
+    pastTrack.scrollBy({
+      left: getPastSlideWidth(),
+      behavior: "smooth"
+    });
+  });
+
+  pastPrev.addEventListener("click", () => {
+    pastTrack.scrollBy({
+      left: -getPastSlideWidth(),
+      behavior: "smooth"
+    });
+  });
+
+  pastDots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      pastTrack.scrollTo({
+        left: index * getPastSlideWidth(),
+        behavior: "smooth"
+      });
+    });
+  });
+
+  pastTrack.addEventListener("scroll", () => {
+    window.requestAnimationFrame(updatePastDots);
+  });
+</script>
