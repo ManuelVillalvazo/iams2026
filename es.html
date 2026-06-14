@@ -45,7 +45,7 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 100;
       background: var(--navy);
       color: var(--white);
       border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -53,28 +53,26 @@
 
     .navbar {
       min-height: 78px;
-      padding: 0 clamp(20px, 4vw, 52px);
-      display: flex;
+      padding: 0 clamp(28px, 5vw, 96px);
+      display: grid;
+      grid-template-columns: auto 1fr auto auto;
       align-items: center;
-      justify-content: space-between;
-      gap: 18px;
+      gap: 28px;
     }
-
+    
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      min-width: 0;
-      flex-shrink: 0;
     }
-
+    
     .brand-logo {
       width: 44px;
       height: 44px;
       border-radius: 50%;
       object-fit: cover;
       border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.08);
       flex-shrink: 0;
     }
 
@@ -83,24 +81,23 @@
       font-weight: 800;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      line-height: 1.2;
-      color: rgba(255,255,255,0.92);
-      max-width: 285px;
+      line-height: 1.25;
+      color: rgba(255,255,255,0.86);
+      max-width: 280px;
     }
-
+    
     .nav-links {
       display: flex;
       align-items: center;
-      gap: clamp(14px, 1.6vw, 28px);
-      font-size: 14px;
+      gap: clamp(14px, 1.6vw, 26px);
+      font-size: 18px;
       font-weight: 800;
-      color: rgba(255,255,255,0.94);
+      color: rgba(255,255,255,0.92);
       white-space: nowrap;
-      margin-left: auto;
     }
 
     .nav-links a:hover {
-      color: var(--gold-soft);
+      color: var(--gold);
     }
 
     .header-actions {
@@ -110,13 +107,13 @@
       flex-shrink: 0;
     }
 
-    .buy-btn {
+      .buy-btn {
       background: linear-gradient(135deg, var(--pink), #ff6b4a);
       color: white;
-      padding: 13px 22px;
+      padding: 13px 21px;
       border-radius: 999px;
       font-weight: 900;
-      box-shadow: 0 12px 28px rgba(240, 77, 139, 0.28);
+      box-shadow: 0 12px 28px rgba(240, 77, 139, 0.35);
       white-space: nowrap;
     }
 
@@ -148,10 +145,9 @@
     }
 
     .mobile-menu {
-      display: none;
+       display: none;
       background: var(--navy);
-      padding: 0 22px 20px;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 0 24px 22px;
     }
 
     .mobile-menu.open {
@@ -167,7 +163,13 @@
     }
 
     .mobile-menu .mobile-buy {
-      color: var(--gold-soft);
+      margin-top: 14px;
+      padding: 14px 20px;
+      text-align: center;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--pink), #ff6b4a);
+      border-top: none;
+      box-shadow: 0 12px 28px rgba(240, 77, 139, 0.25);
     }
 
     .hero {
