@@ -246,38 +246,6 @@
       border: 1px solid rgba(255,255,255,0.18);
     }
 
-    .flag-card-mexico {
-      top: 44px;
-      left: 34px;
-    }
-    
-    .flag-card-philippines {
-      top: 58px;
-      right: 34px;
-    }
-    
-    .flag-card-germany {
-      top: 50%;
-      left: 28px;
-      transform: translateY(-50%);
-    }
-    
-    .flag-card-portugal {
-      top: 50%;
-      right: 28px;
-      transform: translateY(-50%);
-    }
-    
-    .flag-card-usa {
-      bottom: 44px;
-      left: 42px;
-    }
-    
-    .flag-card-switzerland {
-      bottom: 44px;
-      right: 42px;
-    }
-
     .flag-panel::before {
       content: "";
       position: absolute;
@@ -360,25 +328,53 @@
       border-radius: 6px;
       box-shadow: 0 4px 10px rgba(7,23,49,0.18);
     }
-
+    
     .flag-card-mexico {
-      top: 52px;
-      left: 38px;
-    }
-
-    .flag-card-philippines {
-      top: 68px;
-      right: 34px;
-    }
-
-    .flag-card-germany {
-      bottom: 72px;
+      top: 44px;
       left: 34px;
+      right: auto;
+      bottom: auto;
+      transform: none;
     }
-
+    
+    .flag-card-philippines {
+      top: 58px;
+      right: 34px;
+      left: auto;
+      bottom: auto;
+      transform: none;
+    }
+    
+    .flag-card-germany {
+      top: 50%;
+      left: 28px;
+      right: auto;
+      bottom: auto;
+      transform: translateY(-50%);
+    }
+    
+    .flag-card-portugal {
+      top: 50%;
+      right: 28px;
+      left: auto;
+      bottom: auto;
+      transform: translateY(-50%);
+    }
+    
     .flag-card-usa {
-      bottom: 52px;
-      right: 38px;
+      bottom: 44px;
+      left: 42px;
+      top: auto;
+      right: auto;
+      transform: none;
+    }
+    
+    .flag-card-switzerland {
+      bottom: 44px;
+      right: 42px;
+      top: auto;
+      left: auto;
+      transform: none;
     }
 
     .international-copy-card {
@@ -1138,7 +1134,7 @@
             <p>
               El congreso contará con conferencias especializadas orientadas al intercambio clínico, la actualización profesional y el diálogo entre médicos, ponentes e instituciones de distintos países.
           </p>
-            </p>
+         
           </div>
         </div>
       </div>
