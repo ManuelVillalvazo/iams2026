@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>IAMS World Congress 2026 | Waitlist</title>
-
   <style>
     :root {
       --navy: #191052;
@@ -41,146 +38,127 @@
     }
 
     /* WAITLIST CONTENT */
+    .waitlist-section {
+      position: relative;
+      z-index: 2;
+      padding: 0 clamp(24px, 6vw, 96px) 100px;
+    }
 
-.hero {
-  position: relative;
-  z-index: 2;
-  padding: clamp(70px, 10vw, 140px) clamp(24px, 6vw, 96px) 60px;
-}
+    /* INCREASED FORM SIZE FOR DESKTOP */
+    .waitlist-card {
+      max-width: 960px; /* Increased from 860px */
+      margin: 0 auto;
+      background: rgba(255,255,255,0.97);
+      border-radius: 38px;
+      padding: clamp(40px, 5vw, 64px); /* Increased padding */
+      box-shadow: 0 30px 80px rgba(0,0,0,0.22);
+      color: var(--dark-text);
+    }
 
-.hero-inner {
-  max-width: 1000px;
-}
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(201,162,74,0.15);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
 
-.hero p {
-  max-width: 760px;
-  color: #dbe7ff;
-  font-size: clamp(18px, 2vw, 26px);
-  line-height: 1.55;
-}
+    .waitlist-card h2 {
+      color: var(--navy);
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      margin-bottom: 14px;
+    }
 
-.waitlist-section {
-  position: relative;
-  z-index: 2;
-  padding: 0 clamp(24px, 6vw, 96px) 100px;
-}
+    .waitlist-description {
+      color: var(--gray-text);
+      font-size: 20px; /* Increased from 18px */
+      margin-bottom: 40px; /* Increased from 34px */
+    }
 
-.waitlist-card {
-  max-width: 860px;
-  margin: 0 auto;
-  background: rgba(255,255,255,0.97);
-  border-radius: 38px;
-  padding: clamp(30px, 5vw, 52px);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.22);
-  color: var(--dark-text);
-}
+    .waitlist-form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px; /* Increased from 16px */
+    }
 
-.section-label {
-  display: inline-flex;
-  align-items: center;
-  min-height: 32px;
-  padding: 0 14px;
-  border-radius: 999px;
-  background: rgba(201,162,74,0.15);
-  color: var(--gold);
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-}
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px; /* Increased from 16px */
+    }
 
-.waitlist-card h2 {
-  color: var(--navy);
-  font-size: clamp(34px, 5vw, 62px);
-  line-height: 0.95;
-  letter-spacing: -0.06em;
-  margin-bottom: 14px;
-}
+    .phone-row {
+      display: grid;
+      grid-template-columns: 130px 1fr; /* Increased country code width slightly */
+      gap: 24px; /* Increased from 16px */
+    }
 
-.waitlist-description {
-  color: var(--gray-text);
-  font-size: 18px;
-  margin-bottom: 34px;
-}
+    /* BIGGER INPUTS */
+    .waitlist-form input,
+    .waitlist-form select {
+      width: 100%;
+      min-height: 64px; /* Increased from 56px */
+      padding: 0 24px; /* Increased from 18px */
+      border-radius: 16px;
+      border: 1px solid #d8dee8;
+      background: white;
+      font-size: 16px; /* Increased from 15px */
+      color: var(--dark-text);
+    }
 
-.waitlist-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
+    .waitlist-form input:focus,
+    .waitlist-form select:focus {
+      outline: none;
+      border-color: var(--violet);
+    }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
+    /* BIGGER BUTTON */
+    .submit-btn {
+      margin-top: 8px;
+      min-height: 64px; /* Increased from 58px */
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--pink), #ff6b4a);
+      color: white;
+      font-size: 16px; /* Increased from 15px */
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 14px 36px rgba(240,77,139,0.32);
+      transition: transform 0.2s ease;
+    }
 
-.phone-row {
-  display: grid;
-  grid-template-columns: 110px 1fr;
-  gap: 16px;
-}
+    .submit-btn:hover {
+      transform: translateY(-2px);
+    }
 
-.waitlist-form input,
-.waitlist-form select {
-  width: 100%;
-  min-height: 56px;
-  padding: 0 18px;
-  border-radius: 16px;
-  border: 1px solid #d8dee8;
-  background: white;
-  font-size: 15px;
-  color: var(--dark-text);
-}
+    .note {
+      margin-top: 24px; /* Increased from 18px */
+      color: var(--gray-text);
+      font-size: 14px; /* Increased from 13px */
+      text-align: center;
+    }
 
-.waitlist-form input:focus,
-.waitlist-form select:focus {
-  outline: none;
-  border-color: var(--violet);
-}
+    /* FOOTER */
+    footer {
+      background: #09051f;
+      padding: 40px 24px;
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+    }
 
-.submit-btn {
-  margin-top: 8px;
-  min-height: 58px;
-  border: none;
-  border-radius: 999px;
-  background: linear-gradient(
-    135deg,
-    var(--pink),
-    #ff6b4a
-  );
-  color: white;
-  font-size: 15px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 14px 36px rgba(240,77,139,0.32);
-}
-
-.submit-btn:hover {
-  transform: translateY(-2px);
-}
-
-.note {
-  margin-top: 18px;
-  color: var(--gray-text);
-  font-size: 13px;
-  text-align: center;
-}
-
-/* FOOTER */
-
-footer {
-  background: #09051f;
-  padding: 40px 24px;
-  text-align: center;
-  color: rgba(255,255,255,0.7);
-  font-size: 14px;
-}
-
-footer p + p {
-  margin-top: 6px;
-}
+    footer p + p {
+      margin-top: 6px;
+    }
 
     a {
       color: inherit;
@@ -193,7 +171,6 @@ footer p + p {
     }
 
     /* HEADER */
-
     header {
       position: sticky;
       top: 0;
@@ -321,8 +298,7 @@ footer p + p {
       box-shadow: 0 12px 28px rgba(240, 77, 139, 0.25);
     }
 
-    /* SIMPLE WAITLIST HERO */
-
+    /* WAITLIST HERO SECTION */
     main {
       min-height: calc(100vh - 78px);
       background:
@@ -354,8 +330,8 @@ footer p + p {
     .waitlist-hero {
       position: relative;
       z-index: 2;
-      min-height: calc(100vh - 78px);
-      padding: clamp(70px, 10vw, 150px) clamp(22px, 6vw, 96px);
+      min-height: calc(50vh);
+      padding: clamp(70px, 10vw, 150px) clamp(22px, 6vw, 96px) 60px;
       display: flex;
       align-items: center;
     }
@@ -412,7 +388,6 @@ footer p + p {
     }
 
     /* RESPONSIVE */
-
     @media (max-width: 1180px) {
       .nav-links {
         display: none;
@@ -445,6 +420,7 @@ footer p + p {
       .form-row,
       .phone-row {
         grid-template-columns: 1fr;
+        gap: 16px; /* Reset gap slightly smaller on mobile */
       }
       
       .waitlist-card {
@@ -521,7 +497,6 @@ footer p + p {
         <a href="whatisIAMS-es.html">About IAMS</a>
       </div>
 
-
       <a class="language-btn" href="waitlist-es.html">
         Español
       </a>
@@ -535,278 +510,176 @@ footer p + p {
       <a href="speakers-en.html">Speakers</a>
       <a href="whatisIAMS-en.html">About IAMS</a>
     </div>
-  </header>
+</header>
 
 <main>
 
-<section class="hero">
-
-  <div class="hero-inner">
-    
-<h1>
-  Join the Waitlist
-</h1>
-
-<p>
-  Be among the first to receive information about registration,
-  speakers, scientific sessions, hotel options,
-  and ticket availability for the 4th IAMS World Congress 2026.
-</p>
-
+<section class="waitlist-hero">
+  <div class="waitlist-content">
+    <div class="eyebrow">4th IAMS World Congress 2026</div>
+    <h1>Join the Waitlist</h1>
+    <p class="hero-copy">
+      Be among the first to receive information about registration,
+      speakers, scientific sessions, hotel options,
+      and ticket availability for the 4th IAMS World Congress 2026.
+    </p>
   </div>
-
 </section>
 
 <section class="waitlist-section">
-
   <div class="waitlist-card">
 
+    <div class="section-label">
+      World Congress 2026
+    </div>
 
-<div class="section-label">
-  World Congress 2026
-</div>
+    <h2>
+      Reserve Your Spot
+    </h2>
 
-<h2>
-  Reserve Your Spot
-</h2>
+    <p class="waitlist-description">
+      Join our priority list and receive updates before public announcements.
+    </p>
 
-<p class="waitlist-description">
-  Join our priority list and receive updates before public announcements.
-</p>
+    <form
+      id="waitlistForm"
+      class="waitlist-form">
 
-<form
-  id="waitlistForm"
-  class="waitlist-form">
+      <div class="form-row">
+        <input
+        type="text"
+        name="firstName"
+        placeholder="First Name"
+        required>
 
-  <div class="form-row">
+        <input
+        type="text"
+        name="lastName"
+        placeholder="Last Name"
+        required>
+      </div>
 
-    <input
-    type="text"
-    name="firstName"
-    placeholder="First Name"
-    required>
+      <div class="form-row">
+        <select
+        id="country"
+        name="country"
+        required>
+          <option value="">Select Country</option>
+          <option value="Mexico" data-code="+52">Mexico</option>
+          <option value="United States" data-code="+1">United States</option>
+          <option value="Philippines" data-code="+63">Philippines</option>
+          <option value="Portugal" data-code="+351">Portugal</option>
+          <option value="Germany" data-code="+49">Germany</option>
+          <option disabled>───────────────</option>
+          <option value="Canada" data-code="+1">Canada</option>
+          <option value="Spain" data-code="+34">Spain</option>
+          <option value="France" data-code="+33">France</option>
+          <option value="Italy" data-code="+39">Italy</option>
+          <option value="United Kingdom" data-code="+44">United Kingdom</option>
+          <option value="Australia" data-code="+61">Australia</option>
+          <option value="Singapore" data-code="+65">Singapore</option>
+        </select>
 
-    <input
-    type="text"
-    name="lastName"
-    placeholder="Last Name"
-    required>
+        <select
+        name="professionalCategory"
+        required>
+          <option value="">Professional Category</option>
+          <option value="Physician">Physician</option>
+          <option value="Allied Medical Professional">Allied Medical Professional</option>
+          <option value="Medical Student">Medical Student</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
 
-  </div>
+      <input
+      type="email"
+      name="email"
+      placeholder="Email Address"
+      required>
 
-  <div class="form-row">
+      <div class="phone-row">
+        <input
+        id="phoneCode"
+        type="text"
+        value="+52">
 
-    <select
-    id="country"
-    name="country"
-    required>
+        <input
+        type="tel"
+        name="phone"
+        placeholder="Phone Number">
+      </div>
 
-      <option value="">
-        Select Country
-      </option>
+      <button
+      type="submit"
+      class="submit-btn"
+      id="submitBtn">
+        JOIN THE WAITLIST
+      </button>
 
-      <option value="Mexico" data-code="+52">
-        Mexico
-      </option>
+    </form>
 
-      <option value="United States" data-code="+1">
-        United States
-      </option>
-
-      <option value="Philippines" data-code="+63">
-        Philippines
-      </option>
-
-      <option value="Portugal" data-code="+351">
-        Portugal
-      </option>
-
-      <option value="Germany" data-code="+49">
-        Germany
-      </option>
-
-      <option disabled>
-        ───────────────
-      </option>
-
-      <option value="Canada" data-code="+1">Canada</option>
-      <option value="Spain" data-code="+34">Spain</option>
-      <option value="France" data-code="+33">France</option>
-      <option value="Italy" data-code="+39">Italy</option>
-      <option value="United Kingdom" data-code="+44">United Kingdom</option>
-      <option value="Australia" data-code="+61">Australia</option>
-      <option value="Singapore" data-code="+65">Singapore</option>
-
-    </select>
-
-    <select
-    name="professionalCategory"
-    required>
-
-      <option value="">
-        Professional Category
-      </option>
-
-      <option value="Physician">
-        Physician
-      </option>
-
-      <option value="Allied Medical Professional">
-        Allied Medical Professional
-      </option>
-
-      <option value="Medical Student">
-        Medical Student
-      </option>
-
-      <option value="Other">
-        Other
-      </option>
-
-    </select>
+    <div class="note">
+      By joining the waitlist you agree to receive event updates.
+    </div>
 
   </div>
-
-  <input
-  type="email"
-  name="email"
-  placeholder="Email Address"
-  required>
-
-  <div class="phone-row">
-
-    <input
-    id="phoneCode"
-    type="text"
-    value="+52">
-
-    <input
-    type="tel"
-    name="phone"
-    placeholder="Phone Number">
-
-  </div>
-
-  <button
-  type="submit"
-  class="submit-btn"
-  id="submitBtn">
-
-    JOIN THE WAITLIST
-
-  </button>
-
-</form>
-
-<div class="note">
-  By joining the waitlist you agree to receive event updates.
-</div>
-
-  </div>
-
 </section>
 
 </main>
 
 <footer>
-
-  <p>
-    International Academy of Medical Specialists, Inc.
-  </p>
-
-  <p>
-    4th IAMS World Congress 2026 · Campeche, México
-  </p>
-
+  <p>International Academy of Medical Specialists, Inc.</p>
+  <p>4th IAMS World Congress 2026 · Campeche, México</p>
 </footer>
 
 <script>
+const WEB_APP_URL = "PASTE_YOUR_APPS_SCRIPT_EXEC_URL_HERE";
 
-const WEB_APP_URL =
-"PASTE_YOUR_APPS_SCRIPT_EXEC_URL_HERE";
+const country = document.getElementById("country");
+const phoneCode = document.getElementById("phoneCode");
 
-const country =
-document.getElementById("country");
-
-const phoneCode =
-document.getElementById("phoneCode");
-
-country.addEventListener(
-"change",
-function(){
-
-  const selected =
-  this.options[this.selectedIndex];
-
-  const code =
-  selected.dataset.code;
-
+country.addEventListener("change", function(){
+  const selected = this.options[this.selectedIndex];
+  const code = selected.dataset.code;
   if(code){
     phoneCode.value = code;
   }
-
 });
 
-document
-.getElementById("waitlistForm")
-.addEventListener(
-"submit",
-async function(e){
-
+document.getElementById("waitlistForm").addEventListener("submit", async function(e){
   e.preventDefault();
-
-  const button =
-  document.getElementById("submitBtn");
-
+  const button = document.getElementById("submitBtn");
   button.disabled = true;
+  button.textContent = "JOINING WAITLIST...";
 
-  button.textContent =
-  "JOINING WAITLIST...";
+  const formData = new FormData(this);
+  const fullPhone = phoneCode.value + " " + (formData.get("phone") || "");
+  
+  formData.set("phone", fullPhone);
 
-  const formData =
-  new FormData(this);
-
-  const fullPhone =
-  phoneCode.value +
-  " " +
-  (formData.get("phone") || "");
-
-  formData.set(
-    "phone",
-    fullPhone
-  );
-
-  try{
-
-    const response =
-    await fetch(
-      WEB_APP_URL,
-      {
-        method:"POST",
-        body:formData
-      }
-    );
+  try {
+    const response = await fetch(WEB_APP_URL, {
+      method:"POST",
+      body:formData
+    });
 
     if(!response.ok){
       throw new Error();
     }
+    window.location.href = "thank-you.html";
 
-    window.location.href =
-    "thank-you.html";
-
-  }catch(error){
-
-    alert(
-      "Unable to submit. Please try again."
-    );
-
+  } catch(error) {
+    alert("Unable to submit. Please try again.");
     button.disabled = false;
-
-    button.textContent =
-    "JOIN THE WAITLIST";
-
+    button.textContent = "JOIN THE WAITLIST";
   }
-
 });
 
+// Mobile Menu Toggle logic
+document.getElementById('menuBtn').addEventListener('click', function() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+});
 </script>
+
+</body>
+</html>
