@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Tickets Soon | IAMS 4th World Congress 2026</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IAMS World Congress 2026 | Waitlist</title>
   <style>
     :root {
       --navy: #191052;
@@ -20,6 +18,24 @@
       --light: #f7f7fb;
       --dark-text: #111827;
       --gray-text: #4b5563;
+    }
+
+    .announcement-banner {
+      background: linear-gradient(135deg, var(--pink), #ff6b4a);
+      color: white;
+      text-align: center;
+      padding: 12px 24px;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      position: relative;
+      z-index: 101;
+    }
+
+    .announcement-banner span {
+      font-weight: 500;
+      opacity: 0.9;
+      margin-left: 6px;
     }
 
     * {
@@ -39,6 +55,155 @@
       line-height: 1.55;
     }
 
+    /* WAITLIST CONTENT */
+    .waitlist-section {
+      position: relative;
+      z-index: 2;
+      padding: 0 clamp(24px, 6vw, 96px) 120px;
+    }
+
+    /* FORMULARIO MÁS GRANDE Y AMPLIO EN DESKTOP */
+    .waitlist-card {
+      max-width: 1080px; /* Incrementado para mayor presencia en Desktop */
+      margin: 0 auto;
+      background: rgba(255,255,255,0.97);
+      border-radius: 40px;
+      padding: clamp(44px, 6vw, 76px); /* Más espacio interno */
+      box-shadow: 0 35px 90px rgba(0,0,0,0.25);
+      color: var(--dark-text);
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: rgba(201,162,74,0.15);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .waitlist-card h2 {
+      color: var(--navy);
+      font-size: clamp(38px, 5vw, 66px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      margin-bottom: 16px;
+    }
+
+    .waitlist-description {
+      color: var(--gray-text);
+      font-size: 21px; /* Texto ligeramente más grande */
+      margin-bottom: 44px; /* Mayor separación antes del form */
+    }
+
+    .waitlist-form {
+      display: flex;
+      flex-direction: column;
+      gap: 28px; /* Más espacio entre filas */
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px; /* Más espacio entre columnas */
+    }
+
+    .phone-row {
+      display: grid;
+      grid-template-columns: 140px 1fr; /* Ancho optimizado para el prefijo */
+      gap: 28px;
+    }
+
+    /* CAMPOS MÁS ALTOS Y AMPLIOS */
+    .waitlist-form input,
+    .waitlist-form select {
+      width: 100%;
+      min-height: 68px; /* Campos más altos e imponentes */
+      padding: 0 24px;
+      border-radius: 18px;
+      border: 1px solid #d8dee8;
+      background: white;
+      font-size: 17px; /* Fuente más legible y grande */
+      color: var(--dark-text);
+    }
+
+    .waitlist-form input:focus,
+    .waitlist-form select:focus {
+      outline: none;
+      border-color: var(--violet);
+    }
+
+    /* STYLE PARA EL CHECKBOX DE "¿QUIERES RECIBIR NOTIFICACIONES CUANDO HAYA CAMBIOS?" */
+
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 4px;
+      margin-bottom: 8px;
+    }
+
+    .checkbox-row input[type="checkbox"] {
+      /* Resets the height we set for text inputs */
+      width: 22px; 
+      min-height: 22px; 
+      margin-top: 2px;
+      accent-color: var(--pink);
+      cursor: pointer;
+    }
+
+    .checkbox-row label {
+      color: var(--gray-text);
+      font-size: 15px;
+      line-height: 1.45;
+      cursor: pointer;
+    }
+
+    /* BOTÓN MÁS GRANDE */
+    .submit-btn {
+      margin-top: 10px;
+      min-height: 68px;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--pink), #ff6b4a);
+      color: white;
+      font-size: 17px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 14px 36px rgba(240,77,139,0.32);
+      transition: transform 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .note {
+      margin-top: 28px;
+      color: var(--gray-text);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #09051f;
+      padding: 40px 24px;
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+    }
+
+    footer p + p {
+      margin-top: 6px;
+    }
+
     a {
       color: inherit;
       text-decoration: none;
@@ -50,7 +215,6 @@
     }
 
     /* HEADER */
-
     header {
       position: sticky;
       top: 0;
@@ -168,18 +332,7 @@
       color: rgba(255,255,255,0.94);
     }
 
-    .mobile-menu .mobile-buy {
-      margin-top: 14px;
-      padding: 14px 20px;
-      text-align: center;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--pink), #ff6b4a);
-      border-top: none;
-      box-shadow: 0 12px 28px rgba(240, 77, 139, 0.25);
-    }
-
-    /* SIMPLE WAITLIST HERO */
-
+    /* WAITLIST HERO SECTION */
     main {
       min-height: calc(100vh - 78px);
       background:
@@ -211,65 +364,47 @@
     .waitlist-hero {
       position: relative;
       z-index: 2;
-      min-height: calc(100vh - 78px);
-      padding: clamp(70px, 10vw, 150px) clamp(22px, 6vw, 96px);
+      min-height: calc(45vh);
+      padding: clamp(70px, 10vw, 140px) clamp(22px, 6vw, 96px) 100px;
       display: flex;
       align-items: center;
+      justify-content: center;
     }
 
     .waitlist-content {
       width: 100%;
-      max-width: 1040px;
+      max-width: 1400px;
+      text-align: center;
     }
 
     .eyebrow {
       color: var(--gold);
       text-transform: uppercase;
-      letter-spacing: 0.22em;
-      font-size: 13px;
+      letter-spacing: 0.45em;
+      font-size: 18px;
       font-weight: 950;
       margin-bottom: 26px;
     }
 
     h1 {
       color: var(--white);
-      font-size: clamp(52px, 8vw, 118px);
+      font-size: clamp(52px, 8vw, 110px);
       line-height: 0.88;
-      letter-spacing: -0.075em;
+      letter-spacing: -0.030em;
       font-weight: 950;
       margin-bottom: 30px;
     }
 
     .hero-copy {
       color: #dbe7ff;
-      font-size: clamp(20px, 2.2vw, 30px);
+      font-size: clamp(24px, 3.5vw, 35px);
       line-height: 1.42;
-      font-weight: 750;
-      max-width: 880px;
-      margin-bottom: 38px;
-    }
-
-    .highlight-date {
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      padding: 18px 24px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.11);
-      border: 1px solid rgba(255,255,255,0.18);
-      color: var(--white);
-      font-size: clamp(16px, 1.5vw, 19px);
-      font-weight: 900;
-      box-shadow: 0 18px 42px rgba(0,0,0,0.18);
-    }
-
-    .highlight-date strong {
-      color: var(--gold);
-      font-weight: 950;
+      font-weight: 850;
+      max-width: 750px;
+      margin: 0 auto 20px auto;
     }
 
     /* RESPONSIVE */
-
     @media (max-width: 1180px) {
       .nav-links {
         display: none;
@@ -294,9 +429,35 @@
         height: 42px;
       }
 
+      .announcement-banner {
+        font-size: 17px;
+        padding: 10px 18px;
+      }
+      .announcement-banner span {
+        display: block; /* Drops the second sentence to a new line on mobile */
+        margin-left: 0;
+        margin-top: 2px;
+      }
+
       .brand-name {
         font-size: 10px;
         max-width: 205px;
+      }
+
+      /* Volver a gaps más pequeños en móviles para que no ocupe demasiada pantalla */
+      .form-row,
+      .phone-row {
+        grid-template-columns: 1fr;
+        gap: 16px; 
+      }
+
+      .waitlist-form {
+        gap: 16px;
+      }
+      
+      .waitlist-card {
+        border-radius: 28px;
+        padding: 26px;
       }
 
       .buy-btn {
@@ -314,7 +475,7 @@
       }
 
       .waitlist-hero {
-        padding: 64px 20px 80px;
+        padding: 64px 20px 40px;
       }
 
       h1 {
@@ -323,12 +484,6 @@
 
       .hero-copy {
         font-size: 19px;
-      }
-
-      .highlight-date {
-        align-items: flex-start;
-        flex-direction: column;
-        border-radius: 24px;
       }
     }
 
@@ -347,7 +502,12 @@
 </head>
 
 <body>
-  <header>
+  
+  <div class="announcement-banner">
+    🎟️ <strong>Early Bird Registration</strong> opens <strong>September 15th</strong>. 
+  </div>
+
+<header>
     <nav class="navbar">
       <a href="en.html" class="brand">
         <img
@@ -361,12 +521,11 @@
       </a>
 
       <div class="nav-links">
-        <a href="es.html">Homepage</a>
-        <a href="campeche-es.html">Host City</a>
-        <a href="speakers-es.html">Speakers</a>
-        <a href="whatisIAMS-es.html">About IAMS</a>
+        <a href="en.html">Homepage</a>
+        <a href="campeche-en.html">Host City</a>
+        <a href="speakers-en.html">Speakers</a>
+        <a href="whatisIAMS-en.html">About IAMS</a>
       </div>
-
 
       <a class="language-btn" href="waitlist-es.html">
         Español
@@ -381,38 +540,233 @@
       <a href="speakers-en.html">Speakers</a>
       <a href="whatisIAMS-en.html">About IAMS</a>
     </div>
-  </header>
+</header>
 
-  <main>
-    <section class="waitlist-hero">
-      <div class="waitlist-content">
-        <div class="eyebrow">Tickets Soon</div>
+<main>
 
-        <h1>The sale will open soon.</h1>
+<section class="waitlist-hero">
+  <div class="waitlist-content">
+    <h1>Get Notified When Tickets Go Live</h1>
+    <p class="hero-copy">
+      Ticket sales for the 4th IAMS World Congress 2026 will be available soon.
+    
+    <p class="hero-copy">
+     Leave your details below, and we'll remind you the moment Early Bird registration opens.
+    </p>
+    
+  </div>
+</section>
 
-        <p class="hero-copy">
-          We are preparing the registration system for the IAMS 4th World Congress 2026.
-        </p>
+<section class="waitlist-section">
+  <div class="waitlist-card">
 
-        <div class="highlight-date">
-          <span>Early Bird:</span>
-          <strong>July 15 - September 15</strong>
-        </div>
+    <div class="section-label">
+      World Congress 2026
+    </div>
+
+    <h2>
+      Join the Waitlist
+    </h2>
+
+    <form
+      id="waitlistForm"
+      class="waitlist-form">
+      <input type="hidden" name="language" value="English">
+
+      <div class="form-row">
+        <input
+        type="text"
+        name="firstName"
+        placeholder="First Name"
+        required>
+
+        <input
+        type="text"
+        name="lastName"
+        placeholder="Last Name"
+        required>
       </div>
-    </section>
-  </main>
 
-  <script>
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
+      <div class="form-row">
+        <select
+        id="country"
+        name="country"
+        required>
+          <option value="">Select Country</option>
+          <option value="Mexico" data-code="+52">🇲🇽 Mexico</option>
+          <option value="Philippines" data-code="+63">🇵🇭 Philippines</option>
+          <option disabled>───────────────</option>
+          <option value="Argentina" data-code="+54">🇦🇷 Argentina</option>
+          <option value="Australia" data-code="+61">🇦🇺 Australia</option>
+          <option value="Austria" data-code="+43">🇦🇹 Austria</option>
+          <option value="Belgium" data-code="+32">🇧🇪 Belgium</option>
+          <option value="Bolivia" data-code="+591">🇧🇴 Bolivia</option>
+          <option value="Botswana" data-code="+267">🇧🇼 Botswana</option>
+          <option value="Brazil" data-code="+55">🇧🇷 Brazil</option>
+          <option value="Brunei" data-code="+673">🇧🇳 Brunei</option>
+          <option value="Canada" data-code="+1">🇨🇦 Canada</option>
+          <option value="Chile" data-code="+56">🇨🇱 Chile</option>
+          <option value="China" data-code="+86">🇨🇳 China</option>
+          <option value="Colombia" data-code="+57">🇨🇴 Colombia</option>
+          <option value="Costa Rica" data-code="+506">🇨🇷 Costa Rica</option>
+          <option value="Czech Republic" data-code="+420">🇨🇿 Czech Republic</option>
+          <option value="Denmark" data-code="+45">🇩🇰 Denmark</option>
+          <option value="Ecuador" data-code="+593">🇪🇨 Ecuador</option>
+          <option value="Egypt" data-code="+20">🇪🇬 Egypt</option>
+          <option value="El Salvador" data-code="+503">🇸🇻 El Salvador</option>
+          <option value="Finland" data-code="+358">🇫🇮 Finland</option>
+          <option value="France" data-code="+33">🇫🇷 France</option>
+          <option value="Germany" data-code="+49">🇩🇪 Germany</option>
+          <option value="Guatemala" data-code="+502">🇬🇹 Guatemala</option>
+          <option value="Guyana" data-code="+592">🇬🇾 Guyana</option>
+          <option value="Honduras" data-code="+504">🇭🇳 Honduras</option>
+          <option value="Hong Kong" data-code="+852">🇭🇰 Hong Kong</option>
+          <option value="India" data-code="+91">🇮🇳 India</option>
+          <option value="Iran" data-code="+98">🇮🇷 Iran</option>
+          <option value="Ireland" data-code="+353">🇮🇪 Ireland</option>
+          <option value="Italy" data-code="+39">🇮🇹 Italy</option>
+          <option value="Japan" data-code="+81">🇯🇵 Japan</option>
+          <option value="Jordan" data-code="+962">🇯🇴 Jordan</option>
+          <option value="Laos" data-code="+856">🇱🇦 Laos</option>
+          <option value="Lebanon" data-code="+961">🇱🇧 Lebanon</option>
+          <option value="Mexico" data-code="+52">🇲🇽 Mexico</option>
+          <option value="Morocco and Western Sahara" data-code="+212">🇲🇦 Morocco</option>
+          <option value="Nauru" data-code="+674">🇳🇷 Nauru</option>
+          <option value="Netherlands" data-code="+31">🇳🇱 Netherlands</option>
+          <option value="New Zealand and Pitcairn Islands" data-code="+64">🇳🇿 New Zealand</option>
+          <option value="Norway" data-code="+47">🇳🇴 Norway</option>
+          <option value="Pakistan" data-code="+92">🇵🇰 Pakistan</option>
+          <option value="Palestine" data-code="+970">🇵🇸 Palestine</option>
+          <option value="Panama" data-code="+507">🇵🇦 Panama</option>
+          <option value="Paraguay" data-code="+595">🇵🇾 Paraguay</option>
+          <option value="Peru" data-code="+51">🇵🇪 Peru</option>
+          <option value="Philippines" data-code="+63">🇵🇭 Philippines</option>
+          <option value="Poland" data-code="+48">🇵🇱 Poland</option>
+          <option value="Portugal" data-code="+351">🇵🇹 Portugal</option>
+          <option value="Samoa" data-code="+685">🇼🇸 Samoa</option>
+          <option value="Singapore" data-code="+65">🇸🇬 Singapore</option>
+          <option value="South Africa" data-code="+27">🇿🇦 South Africa</option>
+          <option value="South Korea" data-code="+82">🇰🇷 South Korea</option>
+          <option value="Spain" data-code="+34">🇪🇸 Spain</option>
+          <option value="Sweden" data-code="+46">🇸🇪 Sweden</option>
+          <option value="Switzerland" data-code="+41">🇨🇭 Switzerland</option>
+          <option value="Taiwan" data-code="+886">🇹🇼 Taiwan</option>
+          <option value="Tajikistan" data-code="+992">🇹🇯 Tajikistan</option>
+          <option value="Tunisia" data-code="+216">🇹🇳 Tunisia</option>
+          <option value="Turkmenistan" data-code="+993">🇹🇲 Turkmenistan</option>
+          <option value="United Kingdom" data-code="+44">🇬🇧 United Kingdom</option>
+          <option value="United States" data-code="+1">🇺🇸 United States</option>
+          <option value="Uruguay" data-code="+598">🇺🇾 Uruguay</option>
+          <option value="Venezuela" data-code="+58">🇻🇪 Venezuela</option>
+          <option value="Vietnam" data-code="+84">🇻🇳 Vietnam</option>
+          <option value="Other" data-code="+">🌐 Other</option>
+        </select>
 
-    if (menuBtn && mobileMenu) {
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("open");
-        menuBtn.textContent = mobileMenu.classList.contains("open") ? "×" : "☰";
-      });
+        <select
+        name="professionalCategory"
+        required>
+          <option value="">Professional Category</option>
+          <option value="Physician">Physician</option>
+          <option value="Allied Medical Professional">Allied Medical Professional</option>
+          <option value="Medical Student">Medical Student</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <input
+      type="email"
+      name="email"
+      placeholder="Email Address"
+      required>
+
+      <div class="phone-row">
+        <input
+        id="phoneCode"
+        type="text"
+        value="+52">
+
+        <input
+        type="tel"
+        name="phone"
+        placeholder="Phone Number"
+        required>
+      </div>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="updates" name="receiveUpdates" value="Yes" checked>
+        <label for="updates">I also want to receive occasional updates about the scientific program, new speakers, and venue details.</label>
+      </div>
+
+      <button
+      type="submit"
+      class="submit-btn"
+      id="submitBtn">
+        JOIN THE WAITLIST
+      </button>
+
+    </form>
+
+    <div class="note">
+      By joining the waitlist you agree to receive event updates.
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>International Academy of Medical Specialists, Inc.</p>
+  <p>4th IAMS World Congress 2026 · Campeche, México</p>
+</footer>
+
+<script>
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxCF5F8JCC7E59XvigBdb3MTOEKUg_8zdiq_7EKqVqHXyRbQbMLuhApAHiva3K7y1Yr/exec";
+
+const country = document.getElementById("country");
+const phoneCode = document.getElementById("phoneCode");
+
+country.addEventListener("change", function(){
+  const selected = this.options[this.selectedIndex];
+  const code = selected.dataset.code;
+  if(code){
+    phoneCode.value = code;
+  }
+});
+
+document.getElementById("waitlistForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+  const button = document.getElementById("submitBtn");
+  button.disabled = true;
+  button.textContent = "JOINING WAITLIST...";
+
+  const formData = new FormData(this);
+  const fullPhone = phoneCode.value + " " + (formData.get("phone") || "");
+  
+  formData.set("phone", fullPhone);
+
+  try {
+    const response = await fetch(WEB_APP_URL, {
+      method:"POST",
+      body:formData
+    });
+
+    if(!response.ok){
+      throw new Error();
     }
-  </script>
+    window.location.href = "thank-you.html";
+
+  } catch(error) {
+    alert("Unable to submit. Please try again.");
+    button.disabled = false;
+    button.textContent = "JOIN THE WAITLIST";
+  }
+});
+
+document.getElementById('menuBtn').addEventListener('click', function() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+});
+</script>
+
 </body>
-</html>
 </html>
