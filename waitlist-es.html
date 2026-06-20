@@ -1,1 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IAMS World Congress 2026 | Pre-registro</title>
+  <style>
+    :root {
+      --navy: #191052;
+      --deep: #09051f;
+      --purple: #3320a8;
+      --violet: #5638f0;
+      --pink: #f04d8b;
+      --gold: #c9a24a;
+      --gold-soft: #d8b25d;
+      --white: #ffffff;
+      --cream: #fbf7ef;
+      --light: #f7f7fb;
+      --dark-text: #111827;
+      --gray-text: #4b5563;
+    }
 
+    .announcement-banner {
+      background: linear-gradient(135deg, var(--pink), #ff6b4a);
+      color: white;
+      text-align: center;
+      padding: 12px 24px;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      position: relative;
+      z-index: 101;
+    }
+
+    .announcement-banner span {
+      font-weight: 500;
+      opacity: 0.9;
+      margin-left: 6px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--deep);
+      color: var(--white);
+      line-height: 1.55;
+    }
+
+    /* WAITLIST CONTENT */
+    .waitlist-section {
+      position: relative;
+      z-index: 2;
+      padding: 0 clamp(24px, 6vw, 96px) 120px;
+    }
+
+    /* FORMULARIO MÁS GRANDE Y AMPLIO EN DESKTOP */
+    .waitlist-card {
+      max-width: 1080px; /* Incrementado para mayor presencia en Desktop */
+      margin: 0 auto;
+      background: rgba(255,255,255,0.97);
+      border-radius: 40px;
+      padding: clamp(44px, 6vw, 76px); /* Más espacio interno */
+      box-shadow: 0 35px 90px rgba(0,0,0,0.25);
+      color: var(--dark-text);
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: rgba(201,162,74,0.15);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .waitlist-card h2 {
+      color: var(--navy);
+      font-size: clamp(38px, 5vw, 66px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      margin-bottom: 16px;
+    }
+
+    .waitlist-description {
+      color: var(--gray-text);
+      font-size: 21px; /* Texto ligeramente más grande */
+      margin-bottom: 44px; /* Mayor separación antes del form */
+    }
+
+    .waitlist-form {
+      display: flex;
+      flex-direction: column;
+      gap: 28px; /* Más espacio entre filas */
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px; /* Más espacio entre columnas */
+    }
+
+    .phone-row {
+      display: grid;
+      grid-template-columns: 140px 1fr; /* Ancho optimizado para el prefijo */
+      gap: 28px;
+    }
+
+    /* CAMPOS MÁS ALTOS Y AMPLIOS */
+    .waitlist-form input,
+    .waitlist-form select {
+      width: 100%;
+      min-height: 68px; /* Campos más altos e imponentes */
+      padding: 0 24px;
+      border-radius: 18px;
+      border: 1px solid #d8dee8;
+      background: white;
+      font-size: 17px; /* Fuente más legible y grande */
+      color: var(--dark-text);
+    }
+
+    .waitlist-form input:focus,
+    .waitlist-form select:focus {
+      outline: none;
+      border-color: var(--violet);
+    }
+
+    /* STYLE PARA EL CHECKBOX DE "¿QUIERES RECIBIR NOTIFICACIONES CUANDO HAYA CAMBIOS?" */
+
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 4px;
+      margin-bottom: 8px;
+    }
+
+    .checkbox-row input[type="checkbox"] {
+      /* Resets the height we set for text inputs */
+      width: 22px; 
+      min-height: 22px; 
+      margin-top: 2px;
+      accent-color: var(--pink);
+      cursor: pointer;
+    }
+
+    .checkbox-row label {
+      color: var(--gray-text);
+      font-size: 15px;
+      line-height: 1.45;
+      cursor: pointer;
+    }
+
+    /* BOTÓN MÁS GRANDE */
+    .submit-btn {
+      margin-top: 10px;
+      min-height: 68px;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--pink), #ff6b4a);
+      color: white;
+      font-size: 17px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 14px 36px rgba(240,77,139,0.32);
+      transition: transform 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .note {
+      margin-top: 28px;
+      color: var(--gray-text);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #09051f;
+      padding: 40px 24px;
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+    }
+
+    footer p + p {
+      margin-top: 6px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      color: var(--white);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .navbar {
+      min-height: 78px;
+      padding: 0 clamp(28px, 5vw, 96px);
+      display: grid;
+      grid-template-columns: auto 1fr auto auto;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.25;
+      color: rgba(255,255,255,0.86);
+      max-width: 280px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(14px, 1.6vw, 26px);
+      font-size: 18px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.92);
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .buy-btn {
+      background: linear-gradient(135deg, var(--pink), #ff6b4a);
+      color: white;
+      padding: 13px 21px;
+      border-radius: 999px;
+      font-weight: 900;
+      box-shadow: 0 12px 28px rgba(240, 77, 139, 0.35);
+      white-space: nowrap;
+    }
+
+    .language-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 102px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .language-btn:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.08);
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .mobile-menu {
+      display: none;
+      background: var(--navy);
+      padding: 0 24px 22px;
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 15px 0;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      font-weight: 800;
+      color: rgba(255,255,255,0.94);
+    }
+
+    /* WAITLIST HERO SECTION */
+    main {
+      min-height: calc(100vh - 78px);
+      background:
+        radial-gradient(circle at 84% 18%, rgba(255,255,255,0.13), transparent 18%),
+        radial-gradient(circle at 14% 84%, rgba(201,162,74,0.13), transparent 20%),
+        linear-gradient(135deg, #160f4b 0%, #221687 52%, #3320a8 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    main::before {
+      content: "";
+      position: absolute;
+      width: 680px;
+      height: 680px;
+      border-radius: 50%;
+      right: -260px;
+      top: -180px;
+      background:
+        repeating-radial-gradient(
+          circle,
+          rgba(255,255,255,0.18) 0 1px,
+          transparent 1px 9px
+        );
+      opacity: 0.52;
+      pointer-events: none;
+    }
+
+    .waitlist-hero {
+      position: relative;
+      z-index: 2;
+      min-height: calc(45vh);
+      padding: clamp(70px, 10vw, 140px) clamp(22px, 6vw, 96px) 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .waitlist-content {
+      width: 100%;
+      max-width: 1400px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.45em;
+      font-size: 18px;
+      font-weight: 950;
+      margin-bottom: 26px;
+    }
+
+    h1 {
+      color: var(--white);
+      font-size: clamp(52px, 8vw, 110px);
+      line-height: 0.88;
+      letter-spacing: -0.030em;
+      font-weight: 950;
+      margin-bottom: 30px;
+    }
+
+    .hero-copy {
+      color: #dbe7ff;
+      font-size: clamp(24px, 3.5vw, 30px);
+      line-height: 1.2;
+      font-weight: 730;
+      max-width: 1400px;
+      margin: 0 auto 20px auto;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1180px) {
+      .nav-links {
+        display: none;
+      }
+
+      .menu-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .navbar {
+        min-height: 74px;
+        padding: 0 18px;
+        gap: 14px;
+      }
+
+      .brand-logo {
+        width: 42px;
+        height: 42px;
+      }
+
+      .announcement-banner {
+        font-size: 15px;
+        padding: 10px 18px;
+      }
+      .announcement-banner span {
+        display: block; /* Drops the second sentence to a new line on mobile */
+        margin-left: 0;
+        margin-top: 2px;
+      }
+
+      .brand-name {
+        font-size: 10px;
+        max-width: 205px;
+      }
+
+      /* Volver a gaps más pequeños en móviles para que no ocupe demasiada pantalla */
+      .form-row,
+      .phone-row {
+        grid-template-columns: 1fr;
+        gap: 16px; 
+      }
+
+      .waitlist-form {
+        gap: 16px;
+      }
+      
+      .waitlist-card {
+        border-radius: 28px;
+        padding: 26px;
+      }
+
+      .buy-btn {
+        display: none;
+      }
+
+      .language-btn {
+        min-width: 92px;
+        padding: 12px 16px;
+      }
+
+      main,
+      .waitlist-hero {
+        min-height: calc(100vh - 74px);
+      }
+
+      .waitlist-hero {
+        padding: 25px 20px 40px;
+      }
+
+      h1 {
+        font-size: clamp(48px, 15vw, 76px);
+      }
+
+      .hero-copy {
+        font-size: 19px;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .brand-name {
+        font-size: 9px;
+        max-width: 185px;
+      }
+
+      .language-btn {
+        min-width: 86px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+  <div class="announcement-banner">
+    🎟️ <strong>Early Bird Registration</strong> opens <strong>September 15th</strong>. 
+  </div>
+
+<header>
+    <nav class="navbar">
+      <a href="en.html" class="brand">
+        <img
+          class="brand-logo"
+          src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1781047563/Logo_hppm16.webp"
+          alt="Logo de International Academy of Medical Specialists"
+        />
+        <span class="brand-name">
+          International Academy of Medical Specialists, Inc.
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="es.html">Inicio</a>
+        <a href="campeche-es.html">Ciudad anfitriona</a>
+        <a href="speakers-es.html">Ponentes</a>
+        <a href="whatisIAMS-es.html">¿Qué es IAMS?</a>
+      </div>
+
+      <a class="language-btn" href="waitlist-en.html">
+        English
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Menú">☰</button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="es.html">Inicio</a>
+      <a href="campeche-es.html">Ciudad anfitriona</a>
+      <a href="speakers-es.html">Ponentes</a>
+      <a href="whatisIAMS-es.html">¿Qué es IAMS?</a>
+    </div>
+</header>
+
+<main>
+
+<section class="waitlist-hero">
+  <div class="waitlist-content">
+    <h1>Get Notified When Tickets Go Live</h1>
+    <p class="hero-copy">
+      La venta de boletos para el 4to Congreso Mundial IAMS 2026 comenzará muy pronto
+    
+    <p class="hero-copy">
+    Déjanos tus datos y te enviaremos un recordatorio cuandos comience la venta anticipada.
+    </p>
+    
+  </div>
+</section>
+
+<section class="waitlist-section">
+  <div class="waitlist-card">
+
+    <div class="section-label">
+      World Congress 2026
+    </div>
+
+    <h2>
+      Regístrate
+    </h2>
+
+    <form
+      id="waitlistForm"
+      class="waitlist-form">
+      <input type="hidden" name="language" value="Español">
+
+      <div class="form-row">
+        <input
+        type="text"
+        name="firstName"
+        placeholder="Nombre"
+        required>
+
+        <input
+        type="text"
+        name="lastName"
+        placeholder="Apellido"
+        required>
+      </div>
+
+      <div class="form-row">
+        <select
+        id="country"
+        name="country"
+        required>
+          <option value="">Selecciona tu país</option>
+          <option value="México" data-code="+52">🇲🇽 México</option>
+          <option value="Filipinas" data-code="+63">🇵🇭 Filipinas</option>
+          <option disabled>───────────────</option>
+          <option value="Argentina" data-code="+54">🇦🇷 Argentina</option>
+          <option value="Australia" data-code="+61">🇦🇺 Australia</option>
+          <option value="Austria" data-code="+43">🇦🇹 Austria</option>
+          <option value="Bélgica" data-code="+32">🇧🇪 Bélgica</option>
+          <option value="Bolivia" data-code="+591">🇧🇴 Bolivia</option>
+          <option value="Botsuana" data-code="+267">🇧🇼 Botsuana</option>
+          <option value="Brasil" data-code="+55">🇧🇷 Brasil</option>
+          <option value="Brunéi" data-code="+673">🇧🇳 Brunéi</option>
+          <option value="Canadá" data-code="+1">🇨🇦 Canadá</option>
+          <option value="Chile" data-code="+56">🇨🇱 Chile</option>
+          <option value="China" data-code="+86">🇨🇳 China</option>
+          <option value="Colombia" data-code="+57">🇨🇴 Colombia</option>
+          <option value="Costa Rica" data-code="+506">🇨🇷 Costa Rica</option>
+          <option value="República Checa" data-code="+420">🇨🇿 República Checa</option>
+          <option value="Dinamarca" data-code="+45">🇩🇰 Dinamarca</option>
+          <option value="Ecuador" data-code="+593">🇪🇨 Ecuador</option>
+          <option value="Egipto" data-code="+20">🇪🇬 Egipto</option>
+          <option value="El Salvador" data-code="+503">🇸🇻 El Salvador</option>
+          <option value="Finlandia" data-code="+358">🇫🇮 Finlandia</option>
+          <option value="Francia" data-code="+33">🇫🇷 Francia</option>
+          <option value="Alemania" data-code="+49">🇩🇪 Alemania</option>
+          <option value="Guatemala" data-code="+502">🇬🇹 Guatemala</option>
+          <option value="Guyana" data-code="+592">🇬🇾 Guyana</option>
+          <option value="Honduras" data-code="+504">🇭🇳 Honduras</option>
+          <option value="Hong Kong" data-code="+852">🇭🇰 Hong Kong</option>
+          <option value="India" data-code="+91">🇮🇳 India</option>
+          <option value="Irán" data-code="+98">🇮🇷 Irán</option>
+          <option value="Irlanda" data-code="+353">🇮🇪 Irlanda</option>
+          <option value="Italia" data-code="+39">🇮🇹 Italia</option>
+          <option value="Japón" data-code="+81">🇯🇵 Japón</option>
+          <option value="Jordania" data-code="+962">🇯🇴 Jordania</option>
+          <option value="Laos" data-code="+856">🇱🇦 Laos</option>
+          <option value="Líbano" data-code="+961">🇱🇧 Líbano</option>
+          <option value="México" data-code="+52">🇲🇽 México</option>
+          <option value="Marruecos" data-code="+212">🇲🇦 Marruecos</option>
+          <option value="Nauru" data-code="+674">🇳🇷 Nauru</option>
+          <option value="Países Bajos" data-code="+31">🇳🇱 Países Bajos</option>
+          <option value="Nueva Zelanda" data-code="+64">🇳🇿 Nueva Zelanda</option>
+          <option value="Noruega" data-code="+47">🇳🇴 Noruega</option>
+          <option value="Pakistán" data-code="+92">🇵🇰 Pakistán</option>
+          <option value="Palestina" data-code="+970">🇵🇸 Palestina</option>
+          <option value="Panamá" data-code="+507">🇵🇦 Panamá</option>
+          <option value="Paraguay" data-code="+595">🇵🇾 Paraguay</option>
+          <option value="Perú" data-code="+51">🇵🇪 Perú</option>
+          <option value="Filipinas" data-code="+63">🇵🇭 Filipinas</option>
+          <option value="Polonia" data-code="+48">🇵🇱 Polonia</option>
+          <option value="Portugal" data-code="+351">🇵🇹 Portugal</option>
+          <option value="Samoa" data-code="+685">🇼🇸 Samoa</option>
+          <option value="Singapur" data-code="+65">🇸🇬 Singapur</option>
+          <option value="Sudáfrica" data-code="+27">🇿🇦 Sudáfrica</option>
+          <option value="Corea del Sur" data-code="+82">🇰🇷 Corea del Sur</option>
+          <option value="España" data-code="+34">🇪🇸 España</option>
+          <option value="Suecia" data-code="+46">🇸🇪 Suecia</option>
+          <option value="Suiza" data-code="+41">🇨🇭 Suiza</option>
+          <option value="Taiwán" data-code="+886">🇹🇼 Taiwán</option>
+          <option value="Tayikistán" data-code="+992">🇹🇯 Tayikistán</option>
+          <option value="Túnez" data-code="+216">🇹🇳 Túnez</option>
+          <option value="Turkmenistán" data-code="+993">🇹🇲 Turkmenistán</option>
+          <option value="Reino Unido" data-code="+44">🇬🇧 Reino Unido</option>
+          <option value="Estados Unidos" data-code="+1">🇺🇸 Estados Unidos</option>
+          <option value="Uruguay" data-code="+598">🇺🇾 Uruguay</option>
+          <option value="Venezuela" data-code="+58">🇻🇪 Venezuela</option>
+          <option value="Vietnam" data-code="+84">🇻🇳 Vietnam</option>
+          <option value="Otro" data-code="+">🌐 Otro</option>
+        </select>
+
+        <select
+        name="professionalCategory"
+        required>
+          <option value="">Categoría Profesional</option>
+          <option value="Médico">Médico</option>
+          <option value="Profesional de la Salud">Profesional de la Salud</option>
+          <option value="Estudiante de Medicina">Estudiante de Medicina</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+
+      <input
+      type="email"
+      name="email"
+      placeholder="Correo electrónico"
+      required>
+
+      <div class="phone-row">
+        <input
+        id="phoneCode"
+        type="text"
+        value="+52">
+
+        <input
+        type="tel"
+        name="phone"
+        placeholder="Número de teléfono"
+        required>
+      </div>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="updates" name="receiveUpdates" value="Yes" checked>
+        <label for="updates">Quiero recibir novedades sobre el programa, los ponentes y detalles del evento.</label>
+      </div>
+
+      <button
+      type="submit"
+      class="submit-btn"
+      id="submitBtn">
+        Enviar
+      </button>
+
+    </form>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>International Academy of Medical Specialists, Inc.</p>
+  <p>4th IAMS World Congress 2026 · Campeche, México</p>
+</footer>
+
+<script>
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxCF5F8JCC7E59XvigBdb3MTOEKUg_8zdiq_7EKqVqHXyRbQbMLuhApAHiva3K7y1Yr/exec";
+
+const country = document.getElementById("country");
+const phoneCode = document.getElementById("phoneCode");
+
+country.addEventListener("change", function(){
+  const selected = this.options[this.selectedIndex];
+  const code = selected.dataset.code;
+  if(code){
+    phoneCode.value = code;
+  }
+});
+
+document.getElementById("waitlistForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+  const button = document.getElementById("submitBtn");
+  button.disabled = true;
+  button.textContent = "JOINING WAITLIST...";
+
+  const formData = new FormData(this);
+  const fullPhone = phoneCode.value + " " + (formData.get("phone") || "");
+  
+  formData.set("phone", fullPhone);
+
+  try {
+    const response = await fetch(WEB_APP_URL, {
+      method:"POST",
+      body:formData
+    });
+
+    if(!response.ok){
+      throw new Error();
+    }
+    window.location.href = "thank-you.html";
+
+  } catch(error) {
+    alert("Unable to submit. Please try again.");
+    button.disabled = false;
+    button.textContent = "JOIN THE WAITLIST";
+  }
+});
+
+document.getElementById('menuBtn').addEventListener('click', function() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+});
+</script>
+
+</body>
+</html>
