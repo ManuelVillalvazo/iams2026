@@ -20,6 +20,24 @@
       --gray-text: #4b5563;
     }
 
+    .announcement-banner {
+      background: linear-gradient(135deg, var(--pink), #ff6b4a);
+      color: white;
+      text-align: center;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      position: relative;
+      z-index: 101;
+    }
+
+    .announcement-banner span {
+      font-weight: 500;
+      opacity: 0.9;
+      margin-left: 6px;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -337,7 +355,7 @@
       color: var(--gold);
       text-transform: uppercase;
       letter-spacing: 0.22em;
-      font-size: 13px;
+      font-size: 18px;
       font-weight: 950;
       margin-bottom: 26px;
     }
@@ -383,6 +401,16 @@
       .brand-logo {
         width: 42px;
         height: 42px;
+      }
+
+      .announcement-banner {
+        font-size: 13px;
+        padding: 10px 18px;
+      }
+      .announcement-banner span {
+        display: block; /* Drops the second sentence to a new line on mobile */
+        margin-left: 0;
+        margin-top: 2px;
       }
 
       .brand-name {
@@ -448,6 +476,11 @@
 </head>
 
 <body>
+  
+  <div class="announcement-banner">
+    🎟️ <strong>Early Bird Registration</strong> opens <strong>September 15th</strong>. 
+    <span>Join the priority list below to secure your spot.</span>
+  </div>
 
 <header>
     <nav class="navbar">
