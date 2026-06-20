@@ -25,7 +25,7 @@
       color: white;
       text-align: center;
       padding: 12px 24px;
-      font-size: 14px;
+      font-size: 20px;
       font-weight: 700;
       letter-spacing: 0.03em;
       position: relative;
@@ -137,6 +137,32 @@
     .waitlist-form select:focus {
       outline: none;
       border-color: var(--violet);
+    }
+
+    /* STYLE PARA EL CHECKBOX DE "¿QUIERES RECIBIR NOTIFICACIONES CUANDO HAYA CAMBIOS?" */
+
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 4px;
+      margin-bottom: 8px;
+    }
+
+    .checkbox-row input[type="checkbox"] {
+      /* Resets the height we set for text inputs */
+      width: 22px; 
+      min-height: 22px; 
+      margin-top: 2px;
+      accent-color: var(--pink);
+      cursor: pointer;
+    }
+
+    .checkbox-row label {
+      color: var(--gray-text);
+      font-size: 15px;
+      line-height: 1.45;
+      cursor: pointer;
     }
 
     /* BOTÓN MÁS GRANDE */
@@ -404,7 +430,7 @@
       }
 
       .announcement-banner {
-        font-size: 13px;
+        font-size: 17px;
         padding: 10px 18px;
       }
       .announcement-banner span {
@@ -479,7 +505,6 @@
   
   <div class="announcement-banner">
     🎟️ <strong>Early Bird Registration</strong> opens <strong>September 15th</strong>. 
-    <span>Join the priority list below to secure your spot.</span>
   </div>
 
 <header>
@@ -522,11 +547,9 @@
 <section class="waitlist-hero">
   <div class="waitlist-content">
     <div class="eyebrow">4th IAMS World Congress 2026</div>
-    <h1>Join the Waitlist</h1>
+    <h1>Get Notified When Tickets Go Live</h1>
     <p class="hero-copy">
-      Be among the first to receive information about registration,
-      speakers, scientific sessions, hotel options,
-      and ticket availability for the 4th IAMS World Congress 2026.
+      Ticket sales for the 4th IAMS World Congress 2026 will be available soon. Leave your details below, and we will send you a direct reminder the moment Early Bird registration opens.
     </p>
   </div>
 </section>
@@ -539,12 +562,8 @@
     </div>
 
     <h2>
-      Reserve Your Spot
+      Join the Waitlist
     </h2>
-
-    <p class="waitlist-description">
-      Join our priority list and receive updates before public announcements.
-    </p>
 
     <form
       id="waitlistForm"
@@ -668,6 +687,11 @@
         name="phone"
         placeholder="Phone Number"
         required>
+      </div>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="updates" name="receiveUpdates" value="Yes" checked>
+        <label for="updates">I also want to receive occasional updates about the scientific program, new speakers, and venue details.</label>
       </div>
 
       <button
